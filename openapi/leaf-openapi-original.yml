@@ -8,7 +8,7 @@ paths:
   /api/authenticate:
     post:
       tags:
-        - API Reference > Leaf auth
+        - API Reference > Leaf Auth
       summary: Leaf Agriculture Get your Leaf Token
       requestBody:
         content:
@@ -235,7 +235,7 @@ paths:
   /get_url:
     post:
       tags:
-        - API Reference > Providers auth > Trimble auth
+        - API Reference > Providers Auth > Trimble Auth
       summary: Leaf Agriculture Get Trimble auth URL
       requestBody:
         content:
@@ -254,7 +254,7 @@ paths:
   /get_token:
     post:
       tags:
-        - API Reference > Providers auth > Trimble auth
+        - API Reference > Providers Auth > Trimble Auth
       summary: Leaf Agriculture Get Trimble Token
       requestBody:
         content:
@@ -274,7 +274,7 @@ paths:
   /url:
     post:
       tags:
-        - API Reference > Providers auth > ClimateFieldView auth
+        - API Reference > Providers Auth > ClimateFieldView Auth
       summary: Leaf Agriculture 1. Get CFV auth URL
       requestBody:
         content:
@@ -292,7 +292,7 @@ paths:
   /api/oauth/token:
     post:
       tags:
-        - API Reference > Providers auth > ClimateFieldView auth
+        - API Reference > Providers Auth > ClimateFieldView Auth
       summary: Leaf Agriculture 2. Get CFV Tokens
       description: >-
         Access token (and refresh token) request as detailed on step 4 of the
@@ -331,7 +331,7 @@ paths:
   /autenticacao:
     post:
       tags:
-        - API Reference > Providers auth > Stara auth
+        - API Reference > Providers Auth > Stara Auth
       summary: Leaf Agriculture Get Stara API key
       requestBody:
         content:
@@ -353,7 +353,7 @@ paths:
   /token:
     post:
       tags:
-        - API Reference > Providers auth > Stara auth
+        - API Reference > Providers Auth > Stara Auth
       summary: Leaf Agriculture Get Stara Tokens
       requestBody:
         content:
@@ -375,7 +375,7 @@ paths:
   /lindsay/url:
     post:
       tags:
-        - API Reference > Providers auth > Lindsay auth
+        - API Reference > Providers Auth > Lindsay Auth
       summary: Leaf Agriculture 1. Get Lindsay auth URL
       requestBody:
         content:
@@ -394,7 +394,7 @@ paths:
   /lindsay/token:
     post:
       tags:
-        - API Reference > Providers auth > Lindsay auth
+        - API Reference > Providers Auth > Lindsay Auth
       summary: Leaf Agriculture 2. Get Lindsay Token
       requestBody:
         content:
@@ -2134,7 +2134,7 @@ paths:
   /services/uploadservice/api/upload:
     post:
       tags:
-        - API Reference > Field Boundary Management > Fields > Upload field file
+        - API Reference > Field Boundary Management > Fields > Upload Field File
       summary: Leaf Agriculture Upload a field file
       requestBody:
         content:
@@ -2163,7 +2163,7 @@ paths:
             application/json: {}
     get:
       tags:
-        - API Reference > Field Boundary Management > Fields > Upload field file
+        - API Reference > Field Boundary Management > Fields > Upload Field File
       summary: Leaf Agriculture Get all uploads
       parameters:
         - name: Content-Type
@@ -2184,7 +2184,7 @@ paths:
   /services/uploadservice/api/upload/{upload_field_id}:
     get:
       tags:
-        - API Reference > Field Boundary Management > Fields > Upload field file
+        - API Reference > Field Boundary Management > Fields > Upload Field File
       summary: Leaf Agriculture Get an upload
       parameters:
         - name: Content-Type
@@ -2210,7 +2210,7 @@ paths:
   /services/uploadservice/api/upload/{upload_field_id}/entries:
     get:
       tags:
-        - API Reference > Field Boundary Management > Fields > Upload field file
+        - API Reference > Field Boundary Management > Fields > Upload Field File
       summary: Leaf Agriculture Get the upload entries
       parameters:
         - name: Content-Type
@@ -5303,7 +5303,7 @@ paths:
   /services/usermanagement/api/app-keys/AgLeader:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > AgLeader
+        - API Reference > Leaf Link > Provider Applications Info > AgLeader
       summary: Leaf Agriculture Get all AgLeader app information
       parameters:
         - name: Content-Type
@@ -5324,7 +5324,7 @@ paths:
   /services/usermanagement/api/app-keys/AgLeader/{app_name}:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > AgLeader
+        - API Reference > Leaf Link > Provider Applications Info > AgLeader
       summary: Leaf Agriculture Get a AgLeader app information
       parameters:
         - name: Content-Type
@@ -5349,7 +5349,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - API Reference > Leaf Link > Provider applications info > AgLeader
+        - API Reference > Leaf Link > Provider Applications Info > AgLeader
       summary: Leaf Agriculture Create a AgLeader app information
       requestBody:
         content:
@@ -5382,7 +5382,7 @@ paths:
             application/json: {}
     put:
       tags:
-        - API Reference > Leaf Link > Provider applications info > AgLeader
+        - API Reference > Leaf Link > Provider Applications Info > AgLeader
       summary: Leaf Agriculture Update a AgLeader app information
       requestBody:
         content:
@@ -5415,7 +5415,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - API Reference > Leaf Link > Provider applications info > AgLeader
+        - API Reference > Leaf Link > Provider Applications Info > AgLeader
       summary: Leaf Agriculture Delete a AgLeader app information
       parameters:
         - name: Content-Type
@@ -5441,7 +5441,7 @@ paths:
   /services/usermanagement/api/app-keys/CNHI:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > CNHi
+        - API Reference > Leaf Link > Provider Applications Info > CNHi
       summary: Leaf Agriculture Get all CNHi app information
       parameters:
         - name: Content-Type
@@ -5462,7 +5462,7 @@ paths:
   /services/usermanagement/api/app-keys/CNHI/{app_name}/{cnhi_client_environment}:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > CNHi
+        - API Reference > Leaf Link > Provider Applications Info > CNHi
       summary: Leaf Agriculture Get a CNHi app information
       parameters:
         - name: Content-Type
@@ -5492,7 +5492,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - API Reference > Leaf Link > Provider applications info > CNHi
+        - API Reference > Leaf Link > Provider Applications Info > CNHi
       summary: Leaf Agriculture Create a CNHi app information
       requestBody:
         content:
@@ -5531,7 +5531,7 @@ paths:
             application/json: {}
     put:
       tags:
-        - API Reference > Leaf Link > Provider applications info > CNHi
+        - API Reference > Leaf Link > Provider Applications Info > CNHi
       summary: Leaf Agriculture Update a CNHi app information
       requestBody:
         content:
@@ -5570,7 +5570,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - API Reference > Leaf Link > Provider applications info > CNHi
+        - API Reference > Leaf Link > Provider Applications Info > CNHi
       summary: Leaf Agriculture Delete a CNHi app information
       parameters:
         - name: Content-Type
@@ -5601,9 +5601,7 @@ paths:
   /services/usermanagement/api/app-keys/ClimateFieldView:
     get:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Climate
-          FieldView
+        - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
       summary: Leaf Agriculture Get all ClimateFieldView app information
       parameters:
         - name: Content-Type
@@ -5624,9 +5622,7 @@ paths:
   /services/usermanagement/api/app-keys/ClimateFieldView/{app_name}:
     get:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Climate
-          FieldView
+        - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
       summary: Leaf Agriculture Get a ClimateFieldView app information
       parameters:
         - name: Content-Type
@@ -5651,9 +5647,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Climate
-          FieldView
+        - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
       summary: Leaf Agriculture Create a ClimateFieldView app information
       requestBody:
         content:
@@ -5687,9 +5681,7 @@ paths:
             application/json: {}
     put:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Climate
-          FieldView
+        - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
       summary: Leaf Agriculture Update a ClimateFieldView app information
       requestBody:
         content:
@@ -5723,9 +5715,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Climate
-          FieldView
+        - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
       summary: Leaf Agriculture Delete a ClimateFieldView app information
       parameters:
         - name: Content-Type
@@ -5751,7 +5741,7 @@ paths:
   /services/usermanagement/api/app-keys/JohnDeere:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > John Deere
+        - API Reference > Leaf Link > Provider Applications Info > John Deere
       summary: Leaf Agriculture Get all John Deere app information
       parameters:
         - name: Content-Type
@@ -5772,7 +5762,7 @@ paths:
   /services/usermanagement/api/app-keys/JohnDeere/{app_name}/{jd_client_environment}:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > John Deere
+        - API Reference > Leaf Link > Provider Applications Info > John Deere
       summary: Leaf Agriculture Get a John Deere app information
       parameters:
         - name: Content-Type
@@ -5802,7 +5792,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - API Reference > Leaf Link > Provider applications info > John Deere
+        - API Reference > Leaf Link > Provider Applications Info > John Deere
       summary: Leaf Agriculture Create a John Deere app information
       requestBody:
         content:
@@ -5840,7 +5830,7 @@ paths:
             application/json: {}
     put:
       tags:
-        - API Reference > Leaf Link > Provider applications info > John Deere
+        - API Reference > Leaf Link > Provider Applications Info > John Deere
       summary: Leaf Agriculture Update a John Deere app information
       requestBody:
         content:
@@ -5878,7 +5868,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - API Reference > Leaf Link > Provider applications info > John Deere
+        - API Reference > Leaf Link > Provider Applications Info > John Deere
       summary: Leaf Agriculture Delete a John Deere app information
       parameters:
         - name: Content-Type
@@ -5909,7 +5899,7 @@ paths:
   /services/usermanagement/api/app-keys/Trimble:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > Trimble
+        - API Reference > Leaf Link > Provider Applications Info > Trimble
       summary: Leaf Agriculture Get all Trimble app information
       parameters:
         - name: Content-Type
@@ -5930,7 +5920,7 @@ paths:
   /services/usermanagement/api/app-keys/Trimble/{app_name}:
     get:
       tags:
-        - API Reference > Leaf Link > Provider applications info > Trimble
+        - API Reference > Leaf Link > Provider Applications Info > Trimble
       summary: Leaf Agriculture Get a Trimble app information
       parameters:
         - name: Content-Type
@@ -5955,7 +5945,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - API Reference > Leaf Link > Provider applications info > Trimble
+        - API Reference > Leaf Link > Provider Applications Info > Trimble
       summary: Leaf Agriculture Create a Trimble app information
       requestBody:
         content:
@@ -5989,7 +5979,7 @@ paths:
             application/json: {}
     put:
       tags:
-        - API Reference > Leaf Link > Provider applications info > Trimble
+        - API Reference > Leaf Link > Provider Applications Info > Trimble
       summary: Leaf Agriculture Update a Trimble app information
       requestBody:
         content:
@@ -6023,7 +6013,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - API Reference > Leaf Link > Provider applications info > Trimble
+        - API Reference > Leaf Link > Provider Applications Info > Trimble
       summary: Leaf Agriculture Delete a Trimble app information
       parameters:
         - name: Content-Type
@@ -6049,9 +6039,7 @@ paths:
   /services/usermanagement/api/app-keys/RavenSlingshot:
     get:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Raven
-          Slingshot
+        - API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
       summary: Leaf Agriculture Get all RavenSlingshot app information
       parameters:
         - name: Content-Type
@@ -6072,9 +6060,7 @@ paths:
   /services/usermanagement/api/app-keys/RavenSlingshot/{app_name}:
     get:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Raven
-          Slingshot
+        - API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
       summary: Leaf Agriculture Get a RavenSlingshot app information
       parameters:
         - name: Content-Type
@@ -6099,9 +6085,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Raven
-          Slingshot
+        - API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
       summary: Leaf Agriculture Create a RavenSlingshot app information
       requestBody:
         content:
@@ -6134,9 +6118,7 @@ paths:
             application/json: {}
     put:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Raven
-          Slingshot
+        - API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
       summary: Leaf Agriculture Update a RavenSlingshot app information
       requestBody:
         content:
@@ -6169,9 +6151,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - >-
-          API Reference > Leaf Link > Provider applications info > Raven
-          Slingshot
+        - API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
       summary: Leaf Agriculture Delete a RavenSlingshot app information
       parameters:
         - name: Content-Type
@@ -6622,3 +6602,63 @@ paths:
           description: Successful response
           content:
             application/json: {}
+tags:
+  - name: API Reference > Alerts
+  - name: API Reference > Beta > Implements
+  - name: API Reference > Beta > Input Database > Products
+  - name: API Reference > Beta > Input Database > Tank Mixes
+  - name: API Reference > Beta > Input Database > Varieties
+  - name: API Reference > Beta > Layers
+  - name: API Reference > Beta > Machines
+  - name: API Reference > Beta > Operators
+  - name: API Reference > Beta > Prescription > AgLeader
+  - name: API Reference > Beta > Prescription > ClimateFieldView
+  - name: API Reference > Beta > Prescription > CNHi
+  - name: API Reference > Beta > Prescription > John Deere
+  - name: API Reference > Beta > Prescription > RavenSlingshot
+  - name: API Reference > Beta > Prescription > Trimble
+  - name: API Reference > Configurations > Api Owner
+  - name: API Reference > Configurations > Leaf User
+  - name: API Reference > Crop Monitoring
+  - name: API Reference > Field Boundary Management > Boundaries
+  - name: API Reference > Field Boundary Management > Farms
+  - name: API Reference > Field Boundary Management > Fields
+  - name: API Reference > Field Boundary Management > Fields > Upload Field File
+  - name: API Reference > Field Boundary Management > Files
+  - name: API Reference > Field Boundary Management > Growers
+  - name: API Reference > Field Operations
+  - name: API Reference > Integrations
+  - name: API Reference > Irrigation
+  - name: API Reference > Leaf Auth
+  - name: API Reference > Leaf Connect
+  - name: API Reference > Leaf Link > API Key
+  - name: API Reference > Leaf Link > Provider Applications Info > AgLeader
+  - name: API Reference > Leaf Link > Provider Applications Info > Climate FieldView
+  - name: API Reference > Leaf Link > Provider Applications Info > CNHi
+  - name: API Reference > Leaf Link > Provider Applications Info > John Deere
+  - name: API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
+  - name: API Reference > Leaf Link > Provider Applications Info > Trimble
+  - name: API Reference > Leaf User
+  - name: API Reference > Leaf User > Provider Credentials > AgLeader
+  - name: API Reference > Leaf User > Provider Credentials > Agvance
+  - name: API Reference > Leaf User > Provider Credentials > ClimateFieldView
+  - name: API Reference > Leaf User > Provider Credentials > CNHi
+  - name: API Reference > Leaf User > Provider Credentials > JohnDeere
+  - name: API Reference > Leaf User > Provider Credentials > Lindsay
+  - name: API Reference > Leaf User > Provider Credentials > Provider Organizations List
+  - name: API Reference > Leaf User > Provider Credentials > Raven
+  - name: API Reference > Leaf User > Provider Credentials > RavenSlingshot
+  - name: API Reference > Leaf User > Provider Credentials > Sentera
+  - name: API Reference > Leaf User > Provider Credentials > Stara
+  - name: API Reference > Leaf User > Provider Credentials > Trimble
+  - name: API Reference > Leaf User > Provider Credentials > Valley
+  - name: API Reference > Machine File Conversion
+  - name: API Reference > Magic Link > Authentication
+  - name: API Reference > Magic Link > File Upload
+  - name: API Reference > Magic Link > Magic Link with Leaf User Creation
+  - name: API Reference > Magic Link > Provider
+  - name: API Reference > Providers Auth > ClimateFieldView Auth
+  - name: API Reference > Providers Auth > Lindsay Auth
+  - name: API Reference > Providers Auth > Stara Auth
+  - name: API Reference > Providers Auth > Trimble Auth
+  - name: API Reference > Weather
