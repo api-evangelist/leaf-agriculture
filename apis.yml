@@ -43,7 +43,7 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.withleaf.io/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.withleaf.io/docs/welcome
       - type: Authentication
         url: https://docs.withleaf.io/docs/authentication
@@ -54,7 +54,7 @@ common:
     url: https://withleaf.io
   - type: Documentation
     url: https://docs.withleaf.io/
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/Leaf-Agriculture
 maintainers:
   - FN: Kin Lane
