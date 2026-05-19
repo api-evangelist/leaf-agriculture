@@ -1,0 +1,576 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf Connect
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf Connect. 9 operations. Lead operation: Leaf Agriculture Create
+    an API Owner Sharing relation. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf Connect
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-connect
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf Connect business capability. Self-contained, no shared references.
+    resources:
+    - name: services-usermanagement-api-api-owners-sharing-relation-receiver
+      path: /services/usermanagement/api/api-owners/sharing-relation/receiver
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create an API Owner Sharing relation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-api-owners-sharing-relation-receiver-receiver_api_ow
+      path: /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver_api_owner}/users-permissions/{leaf_user_id}
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a LeafUser permissions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: receiver_api_owner
+          in: path
+          type: string
+          required: true
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-api-owners-sharing-relation-receiver-receiver_api_ow
+      path: /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver_api_owner}/users-permissions/{leaf_user_id}/{sharing_relation_resource}
+      operations:
+      - name: patch
+        method: PATCH
+        description: Leaf Agriculture Update LeafUser permissions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: receiver_api_owner
+          in: path
+          type: string
+          required: true
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: sharing_relation_resource
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role
+      path: /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get API Owner sharing relation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sharing_relation_role
+          in: path
+          type: string
+          required: true
+    - name: services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta
+      path: /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}
+      operations:
+      - name: patch
+        method: PATCH
+        description: Leaf Agriculture Update an API Owner sharing relation status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sharing_relation_role
+          in: path
+          type: string
+          required: true
+        - name: target_api_owner
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta
+      path: /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/invalidate-tokens
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Invalidate receiver's tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sharing_relation_role
+          in: path
+          type: string
+          required: true
+        - name: target_api_owner
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta
+      path: /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/status
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get API Owner sharing relation status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sharing_relation_role
+          in: path
+          type: string
+          required: true
+        - name: target_api_owner
+          in: path
+          type: string
+          required: true
+    - name: services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta
+      path: /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/users-permissions/{leaf_user_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get LeafUser permissions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sharing_relation_role
+          in: path
+          type: string
+          required: true
+        - name: target_api_owner
+          in: path
+          type: string
+          required: true
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete LeafUser permissions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sharing_relation_role
+          in: path
+          type: string
+          required: true
+        - name: target_api_owner
+          in: path
+          type: string
+          required: true
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-connect-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf Connect. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/receiver
+      name: services-usermanagement-api-api-owners-sharing-relation-receiver
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-receiver.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create an API Owner Sharing relation
+        call: leaf-agriculture-api-reference-leaf-connect.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver-api-owner}/users-permissions/{leaf-user-id}
+      name: services-usermanagement-api-api-owners-sharing-relation-receiver-receiver-api-ow
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-receiver-receiver_api_ow.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a LeafUser permissions
+        call: leaf-agriculture-api-reference-leaf-connect.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          receiver_api_owner: rest.receiver_api_owner
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver-api-owner}/users-permissions/{leaf-user-id}/{sharing-relation-resource}
+      name: services-usermanagement-api-api-owners-sharing-relation-receiver-receiver-api-ow
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-receiver-receiver_api_ow.
+      operations:
+      - method: PATCH
+        name: patch
+        description: Leaf Agriculture Update LeafUser permissions
+        call: leaf-agriculture-api-reference-leaf-connect.patch
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          receiver_api_owner: rest.receiver_api_owner
+          leaf_user_id: rest.leaf_user_id
+          sharing_relation_resource: rest.sharing_relation_resource
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/{sharing-relation-role}
+      name: services-usermanagement-api-api-owners-sharing-relation-sharing-relation-role
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get API Owner sharing relation
+        call: leaf-agriculture-api-reference-leaf-connect.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sharing_relation_role: rest.sharing_relation_role
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/{sharing-relation-role}/{target-api-owner}
+      name: services-usermanagement-api-api-owners-sharing-relation-sharing-relation-role-ta
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta.
+      operations:
+      - method: PATCH
+        name: patch
+        description: Leaf Agriculture Update an API Owner sharing relation status
+        call: leaf-agriculture-api-reference-leaf-connect.patch
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sharing_relation_role: rest.sharing_relation_role
+          target_api_owner: rest.target_api_owner
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/{sharing-relation-role}/{target-api-owner}/invalidate-tokens
+      name: services-usermanagement-api-api-owners-sharing-relation-sharing-relation-role-ta
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Invalidate receiver's tokens
+        call: leaf-agriculture-api-reference-leaf-connect.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sharing_relation_role: rest.sharing_relation_role
+          target_api_owner: rest.target_api_owner
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/{sharing-relation-role}/{target-api-owner}/status
+      name: services-usermanagement-api-api-owners-sharing-relation-sharing-relation-role-ta
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get API Owner sharing relation status
+        call: leaf-agriculture-api-reference-leaf-connect.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sharing_relation_role: rest.sharing_relation_role
+          target_api_owner: rest.target_api_owner
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-owners/sharing-relation/{sharing-relation-role}/{target-api-owner}/users-permissions/{leaf-user-id}
+      name: services-usermanagement-api-api-owners-sharing-relation-sharing-relation-role-ta
+      description: REST surface for services-usermanagement-api-api-owners-sharing-relation-sharing_relation_role-ta.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get LeafUser permissions
+        call: leaf-agriculture-api-reference-leaf-connect.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sharing_relation_role: rest.sharing_relation_role
+          target_api_owner: rest.target_api_owner
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete LeafUser permissions
+        call: leaf-agriculture-api-reference-leaf-connect.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sharing_relation_role: rest.sharing_relation_role
+          target_api_owner: rest.target_api_owner
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-connect-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf Connect. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-create-api-owner
+      description: Leaf Agriculture Create an API Owner Sharing relation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-connect.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-leafuser-permissions
+      description: Leaf Agriculture Create a LeafUser permissions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-connect.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        receiver_api_owner: tools.receiver_api_owner
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-leafuser-permissions
+      description: Leaf Agriculture Update LeafUser permissions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-connect.patch
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        receiver_api_owner: tools.receiver_api_owner
+        leaf_user_id: tools.leaf_user_id
+        sharing_relation_resource: tools.sharing_relation_resource
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-api-owner
+      description: Leaf Agriculture Get API Owner sharing relation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-connect.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sharing_relation_role: tools.sharing_relation_role
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-api-owner
+      description: Leaf Agriculture Update an API Owner sharing relation status
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-connect.patch
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sharing_relation_role: tools.sharing_relation_role
+        target_api_owner: tools.target_api_owner
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-invalidate-receiver-s-tokens
+      description: Leaf Agriculture Invalidate receiver's tokens
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-connect.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sharing_relation_role: tools.sharing_relation_role
+        target_api_owner: tools.target_api_owner
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-api-owner-2
+      description: Leaf Agriculture Get API Owner sharing relation status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-connect.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sharing_relation_role: tools.sharing_relation_role
+        target_api_owner: tools.target_api_owner
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-leafuser-permissions
+      description: Leaf Agriculture Get LeafUser permissions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-connect.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sharing_relation_role: tools.sharing_relation_role
+        target_api_owner: tools.target_api_owner
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-leafuser-permissions
+      description: Leaf Agriculture Delete LeafUser permissions
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-connect.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sharing_relation_role: tools.sharing_relation_role
+        target_api_owner: tools.target_api_owner
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.

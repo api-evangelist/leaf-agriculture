@@ -1,0 +1,182 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf Link > API Key
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf Link > API Key. 3 operations. Lead operation: Leaf Agriculture
+    Get all Leaf User API keys. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf Link > API Key
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-link-api-key
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf Link > API Key business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: services-usermanagement-api-api-keys
+      path: /services/usermanagement/api/api-keys
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all Leaf User API keys
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leafUserId
+          in: query
+          type: string
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a Leaf User API key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-api-keys-api_key_id
+      path: /services/usermanagement/api/api-keys/{api_key_id}
+      operations:
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Revoke a Leaf User API key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: api_key_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-link-api-key-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > API Key. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/usermanagement/api/api-keys
+      name: services-usermanagement-api-api-keys
+      description: REST surface for services-usermanagement-api-api-keys.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all Leaf User API keys
+        call: leaf-agriculture-api-reference-leaf-link-api-key.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leafUserId: rest.leafUserId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a Leaf User API key
+        call: leaf-agriculture-api-reference-leaf-link-api-key.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/api-keys/{api-key-id}
+      name: services-usermanagement-api-api-keys-api-key-id
+      description: REST surface for services-usermanagement-api-api-keys-api_key_id.
+      operations:
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Revoke a Leaf User API key
+        call: leaf-agriculture-api-reference-leaf-link-api-key.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          api_key_id: rest.api_key_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-link-api-key-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > API Key. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-leaf
+      description: Leaf Agriculture Get all Leaf User API keys
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-api-key.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leafUserId: tools.leafUserId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-leaf-user
+      description: Leaf Agriculture Create a Leaf User API key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-link-api-key.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-revoke-leaf-user
+      description: Leaf Agriculture Revoke a Leaf User API key
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-api-key.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        api_key_id: tools.api_key_id
+      outputParameters:
+      - type: object
+        mapping: $.

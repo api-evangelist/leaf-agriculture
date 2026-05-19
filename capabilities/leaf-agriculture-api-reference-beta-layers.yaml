@@ -1,0 +1,151 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Layers
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Layers. 2 operations. Lead operation: Leaf Agriculture
+    Get all layers. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Layers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-layers
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Layers business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: services-beta-api-users-leaf_user_id-layers
+      path: /services/beta/api/users/{leaf_user_id}/layers
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all layers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-users-leaf_user_id-layers-climateFieldView
+      path: /services/beta/api/users/{leaf_user_id}/layers/climateFieldView
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload a layer to Climate Field View
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: uploadType
+          in: query
+          type: string
+          description: only true color image (RGB) files are supported
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-layers-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Layers. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/api/users/{leaf-user-id}/layers
+      name: services-beta-api-users-leaf-user-id-layers
+      description: REST surface for services-beta-api-users-leaf_user_id-layers.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all layers
+        call: leaf-agriculture-api-reference-beta-layers.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/users/{leaf-user-id}/layers/climatefieldview
+      name: services-beta-api-users-leaf-user-id-layers-climatefieldview
+      description: REST surface for services-beta-api-users-leaf_user_id-layers-climateFieldView.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload a layer to Climate Field View
+        call: leaf-agriculture-api-reference-beta-layers.post
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          uploadType: rest.uploadType
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-layers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Layers. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-layers
+      description: Leaf Agriculture Get all layers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-layers.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-upload-layer-climate
+      description: Leaf Agriculture Upload a layer to Climate Field View
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-beta-layers.post
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        uploadType: tools.uploadType
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Integrations
+  description: 'Leaf Agriculture Leaf API — API Reference > Integrations. 1 operations. Lead operation: Leaf Agriculture Get
+    Integrations Resources. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Integrations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-integrations
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Integrations business capability. Self-contained, no shared references.
+    resources:
+    - name: services-integrations-api-resources
+      path: /services/integrations/api/resources
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Integrations Resources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-integrations-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Integrations. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/integrations/api/resources
+      name: services-integrations-api-resources
+      description: REST surface for services-integrations-api-resources.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Integrations Resources
+        call: leaf-agriculture-api-reference-integrations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-integrations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Integrations. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-integrations-resources
+      description: Leaf Agriculture Get Integrations Resources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-integrations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.

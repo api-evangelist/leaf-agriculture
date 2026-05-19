@@ -1,0 +1,265 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf User
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf User. 5 operations. Lead operation: Leaf Agriculture Get
+    all Leaf Users. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf User
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-user
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf User business capability. Self-contained, no shared references.
+    resources:
+    - name: services-usermanagement-api-users
+      path: /services/usermanagement/api/users/
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all Leaf Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+      - name: put
+        method: PUT
+        description: Leaf Agriculture Update Leaf User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create Leaf User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-usermanagement-api-users-leaf_user_id
+      path: /services/usermanagement/api/users/{leaf_user_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get specific Leaf User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete Leaf User
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-user-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf User. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/usermanagement/api/users
+      name: services-usermanagement-api-users
+      description: REST surface for services-usermanagement-api-users.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all Leaf Users
+        call: leaf-agriculture-api-reference-leaf-user.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Leaf Agriculture Update Leaf User
+        call: leaf-agriculture-api-reference-leaf-user.put
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create Leaf User
+        call: leaf-agriculture-api-reference-leaf-user.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/users/{leaf-user-id}
+      name: services-usermanagement-api-users-leaf-user-id
+      description: REST surface for services-usermanagement-api-users-leaf_user_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get specific Leaf User
+        call: leaf-agriculture-api-reference-leaf-user.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete Leaf User
+        call: leaf-agriculture-api-reference-leaf-user.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-user-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf User. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-leaf
+      description: Leaf Agriculture Get all Leaf Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-user.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-leaf-user
+      description: Leaf Agriculture Update Leaf User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-user.put
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-leaf-user
+      description: Leaf Agriculture Create Leaf User
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-user.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-specific-leaf
+      description: Leaf Agriculture Get specific Leaf User
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-user.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-leaf-user
+      description: Leaf Agriculture Delete Leaf User
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-user.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,234 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Magic Link > Provider
+  description: 'Leaf Agriculture Leaf API — API Reference > Magic Link > Provider. 4 operations. Lead operation: Leaf Agriculture
+    Get All Provider Magic Link. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Magic Link > Provider
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-magic-link-provider
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Magic Link > Provider business capability. Self-contained, no
+      shared references.
+    resources:
+    - name: services-widgets-api-magic-link-provider
+      path: /services/widgets/api/magic-link/provider
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get All Provider Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-widgets-api-magic-link-provider-magic_link_id
+      path: /services/widgets/api/magic-link/provider/{magic_link_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a Provider Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: magic_link_id
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete a Provider Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: magic_link_id
+          in: path
+          type: string
+          required: true
+    - name: services-widgets-api-magic-link-users-leaf_user_id-provider
+      path: /services/widgets/api/magic-link/users/{leaf_user_id}/provider
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a Provider Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-magic-link-provider-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Magic Link > Provider. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/widgets/api/magic-link/provider
+      name: services-widgets-api-magic-link-provider
+      description: REST surface for services-widgets-api-magic-link-provider.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get All Provider Magic Link
+        call: leaf-agriculture-api-reference-magic-link-provider.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/widgets/api/magic-link/provider/{magic-link-id}
+      name: services-widgets-api-magic-link-provider-magic-link-id
+      description: REST surface for services-widgets-api-magic-link-provider-magic_link_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a Provider Magic Link
+        call: leaf-agriculture-api-reference-magic-link-provider.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          magic_link_id: rest.magic_link_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete a Provider Magic Link
+        call: leaf-agriculture-api-reference-magic-link-provider.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          magic_link_id: rest.magic_link_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/widgets/api/magic-link/users/{leaf-user-id}/provider
+      name: services-widgets-api-magic-link-users-leaf-user-id-provider
+      description: REST surface for services-widgets-api-magic-link-users-leaf_user_id-provider.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a Provider Magic Link
+        call: leaf-agriculture-api-reference-magic-link-provider.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-magic-link-provider-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Magic Link > Provider. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-provider
+      description: Leaf Agriculture Get All Provider Magic Link
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-magic-link-provider.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-provider-magic
+      description: Leaf Agriculture Get a Provider Magic Link
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-magic-link-provider.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        magic_link_id: tools.magic_link_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-provider-magic
+      description: Leaf Agriculture Delete a Provider Magic Link
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-magic-link-provider.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        magic_link_id: tools.magic_link_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-provider-magic
+      description: Leaf Agriculture Create a Provider Magic Link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-magic-link-provider.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

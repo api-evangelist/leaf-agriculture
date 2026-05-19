@@ -1,0 +1,469 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields
+  description: 'Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields. 8 operations. Lead operation:
+    Leaf Agriculture Get all fields. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Field Boundary Management > Fields
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-field-boundary-management-fields
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-fields-api-fields
+      path: /services/fields/api/fields
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leafUserId
+          in: query
+          type: string
+          description: your Leaf User id
+    - name: services-fields-api-fields-query-intersects
+      path: /services/fields/api/fields/query/intersects
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Get Fields by geometry
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-fields-api-users-leaf_user_id-fields
+      path: /services/fields/api/users/{leaf_user_id}/fields
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a Field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-fields-api-users-leaf_user_id-fields-intersect
+      path: /services/fields/api/users/{leaf_user_id}/fields/intersect
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Get intersection of fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-fields-api-users-leaf_user_id-fields-field_id
+      path: /services/fields/api/users/{leaf_user_id}/fields/{field_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete a field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: Leaf Agriculture Patch a field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-fields-api-users-leaf_user_id-fields-field_id-integration-provider_name
+      path: /services/fields/api/users/{leaf_user_id}/fields/{field_id}/integration/{provider_name}
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload Field to Provider
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+        - name: provider_name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-field-boundary-management-fields-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/fields/api/fields
+      name: services-fields-api-fields
+      description: REST surface for services-fields-api-fields.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all fields
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leafUserId: rest.leafUserId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/fields/query/intersects
+      name: services-fields-api-fields-query-intersects
+      description: REST surface for services-fields-api-fields-query-intersects.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Get Fields by geometry
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields
+      name: services-fields-api-users-leaf-user-id-fields
+      description: REST surface for services-fields-api-users-leaf_user_id-fields.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a Field
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+        with:
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields/intersect
+      name: services-fields-api-users-leaf-user-id-fields-intersect
+      description: REST surface for services-fields-api-users-leaf_user_id-fields-intersect.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Get intersection of fields
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields/{field-id}
+      name: services-fields-api-users-leaf-user-id-fields-field-id
+      description: REST surface for services-fields-api-users-leaf_user_id-fields-field_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a field
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.get
+        with:
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete a field
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.delete
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: Leaf Agriculture Patch a field
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.patch
+        with:
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields/{field-id}/integration/{provider-name}
+      name: services-fields-api-users-leaf-user-id-fields-field-id-integration-provider-name
+      description: REST surface for services-fields-api-users-leaf_user_id-fields-field_id-integration-provider_name.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload Field to Provider
+        call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+        with:
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+          provider_name: rest.provider_name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-field-boundary-management-fields-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-fields
+      description: Leaf Agriculture Get all fields
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leafUserId: tools.leafUserId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-fields-geometry
+      description: Leaf Agriculture Get Fields by geometry
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-field
+      description: Leaf Agriculture Create a Field
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+      with:
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-intersection-fields
+      description: Leaf Agriculture Get intersection of fields
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-field
+      description: Leaf Agriculture Get a field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.get
+      with:
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-field
+      description: Leaf Agriculture Delete a field
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.delete
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-patch-field
+      description: Leaf Agriculture Patch a field
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.patch
+      with:
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-upload-field-provider
+      description: Leaf Agriculture Upload Field to Provider
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-boundary-management-fields.post
+      with:
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+        provider_name: tools.provider_name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,491 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Weather
+  description: 'Leaf Agriculture Leaf API — API Reference > Weather. 8 operations. Lead operation: Leaf Agriculture Get Daily
+    Forecast. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Weather
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-weather
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Weather business capability. Self-contained, no shared references.
+    resources:
+    - name: services-weather-api-users-leaf_user_id-weather-forecast-field-field_id-daily
+      path: /services/weather/api/users/{leaf_user_id}/weather/forecast/field/{field_id}/daily
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Daily Forecast
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-users-leaf_user_id-weather-forecast-field-field_id-hourly
+      path: /services/weather/api/users/{leaf_user_id}/weather/forecast/field/{field_id}/hourly
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Hourly Forecast
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-users-leaf_user_id-weather-historical-field-field_id-daily
+      path: /services/weather/api/users/{leaf_user_id}/weather/historical/field/{field_id}/daily
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Daily Historical
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-users-leaf_user_id-weather-historical-field-field_id-hourly
+      path: /services/weather/api/users/{leaf_user_id}/weather/historical/field/{field_id}/hourly
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Hourly Historical
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-weather-forecast-daily-lat},{lon
+      path: /services/weather/api/weather/forecast/daily/{lat},{lon}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Daily Forecast for lat/lon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: lat
+          in: path
+          type: string
+          required: true
+        - name: lon
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-weather-forecast-hourly-lat},{lon
+      path: /services/weather/api/weather/forecast/hourly/{lat},{lon}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Hourly Forecast for lat/lon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: lat
+          in: path
+          type: string
+          required: true
+        - name: lon
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-weather-historical-daily-lat},{lon
+      path: /services/weather/api/weather/historical/daily/{lat},{lon}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Daily Historical for lat/lon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: lat
+          in: path
+          type: string
+          required: true
+        - name: lon
+          in: path
+          type: string
+          required: true
+    - name: services-weather-api-weather-historical-hourly-lat},{lon
+      path: /services/weather/api/weather/historical/hourly/{lat},{lon}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get Hourly Historical for lat/lon
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: lat
+          in: path
+          type: string
+          required: true
+        - name: lon
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-weather-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Weather. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/weather/api/users/{leaf-user-id}/weather/forecast/field/{field-id}/daily
+      name: services-weather-api-users-leaf-user-id-weather-forecast-field-field-id-daily
+      description: REST surface for services-weather-api-users-leaf_user_id-weather-forecast-field-field_id-daily.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Daily Forecast
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/users/{leaf-user-id}/weather/forecast/field/{field-id}/hourly
+      name: services-weather-api-users-leaf-user-id-weather-forecast-field-field-id-hourly
+      description: REST surface for services-weather-api-users-leaf_user_id-weather-forecast-field-field_id-hourly.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Hourly Forecast
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/users/{leaf-user-id}/weather/historical/field/{field-id}/daily
+      name: services-weather-api-users-leaf-user-id-weather-historical-field-field-id-daily
+      description: REST surface for services-weather-api-users-leaf_user_id-weather-historical-field-field_id-daily.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Daily Historical
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/users/{leaf-user-id}/weather/historical/field/{field-id}/hourly
+      name: services-weather-api-users-leaf-user-id-weather-historical-field-field-id-hourly
+      description: REST surface for services-weather-api-users-leaf_user_id-weather-historical-field-field_id-hourly.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Hourly Historical
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/weather/forecast/daily/{lat-lon}
+      name: services-weather-api-weather-forecast-daily-lat-lon
+      description: REST surface for services-weather-api-weather-forecast-daily-lat},{lon.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Daily Forecast for lat/lon
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/weather/forecast/hourly/{lat-lon}
+      name: services-weather-api-weather-forecast-hourly-lat-lon
+      description: REST surface for services-weather-api-weather-forecast-hourly-lat},{lon.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Hourly Forecast for lat/lon
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/weather/historical/daily/{lat-lon}
+      name: services-weather-api-weather-historical-daily-lat-lon
+      description: REST surface for services-weather-api-weather-historical-daily-lat},{lon.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Daily Historical for lat/lon
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/weather/api/weather/historical/hourly/{lat-lon}
+      name: services-weather-api-weather-historical-hourly-lat-lon
+      description: REST surface for services-weather-api-weather-historical-hourly-lat},{lon.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get Hourly Historical for lat/lon
+        call: leaf-agriculture-api-reference-weather.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          lat: rest.lat
+          lon: rest.lon
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-weather-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Weather. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-daily-forecast
+      description: Leaf Agriculture Get Daily Forecast
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-hourly-forecast
+      description: Leaf Agriculture Get Hourly Forecast
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-daily-historical
+      description: Leaf Agriculture Get Daily Historical
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-hourly-historical
+      description: Leaf Agriculture Get Hourly Historical
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-daily-forecast-2
+      description: Leaf Agriculture Get Daily Forecast for lat/lon
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-hourly-forecast-2
+      description: Leaf Agriculture Get Hourly Forecast for lat/lon
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-daily-historical-2
+      description: Leaf Agriculture Get Daily Historical for lat/lon
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-hourly-historical-2
+      description: Leaf Agriculture Get Hourly Historical for lat/lon
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-weather.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        lat: tools.lat
+        lon: tools.lon
+      outputParameters:
+      - type: object
+        mapping: $.

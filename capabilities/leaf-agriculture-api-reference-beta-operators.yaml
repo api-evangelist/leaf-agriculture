@@ -1,0 +1,144 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Operators
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Operators. 2 operations. Lead operation: Leaf Agriculture
+    Get All Operators. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Operators
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-operators
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Operators business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: services-beta-api-users-leaf_user_id-operators
+      path: /services/beta/api/users/{leaf_user_id}/operators
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get All Operators
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-users-leaf_user_id-operators-operator_id
+      path: /services/beta/api/users/{leaf_user_id}/operators/{operator_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get An Operator
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: operator_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-operators-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Operators. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/api/users/{leaf-user-id}/operators
+      name: services-beta-api-users-leaf-user-id-operators
+      description: REST surface for services-beta-api-users-leaf_user_id-operators.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get All Operators
+        call: leaf-agriculture-api-reference-beta-operators.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/users/{leaf-user-id}/operators/{operator-id}
+      name: services-beta-api-users-leaf-user-id-operators-operator-id
+      description: REST surface for services-beta-api-users-leaf_user_id-operators-operator_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get An Operator
+        call: leaf-agriculture-api-reference-beta-operators.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          operator_id: rest.operator_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-operators-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Operators. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-operators
+      description: Leaf Agriculture Get All Operators
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-operators.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operator
+      description: Leaf Agriculture Get An Operator
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-operators.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        operator_id: tools.operator_id
+      outputParameters:
+      - type: object
+        mapping: $.

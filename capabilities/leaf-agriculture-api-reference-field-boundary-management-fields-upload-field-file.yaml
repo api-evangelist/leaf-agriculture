@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields > Upload Field File
+  description: 'Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields > Upload Field File. 4 operations.
+    Lead operation: Leaf Agriculture Upload a field file. Self-contained Naftiko capability covering one Leaf Agriculture
+    business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Field Boundary Management > Fields > Upload Field File
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields > Upload Field File business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: services-uploadservice-api-upload
+      path: /services/uploadservice/api/upload
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload a field file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: leafUserId
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all uploads
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-uploadservice-api-upload-upload_field_id
+      path: /services/uploadservice/api/upload/{upload_field_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an upload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: upload_field_id
+          in: path
+          type: string
+          required: true
+    - name: services-uploadservice-api-upload-upload_field_id-entries
+      path: /services/uploadservice/api/upload/{upload_field_id}/entries
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get the upload entries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: upload_field_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields > Upload
+      Field File. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/uploadservice/api/upload
+      name: services-uploadservice-api-upload
+      description: REST surface for services-uploadservice-api-upload.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload a field file
+        call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.post
+        with:
+          Authorization: rest.Authorization
+          leafUserId: rest.leafUserId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all uploads
+        call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/uploadservice/api/upload/{upload-field-id}
+      name: services-uploadservice-api-upload-upload-field-id
+      description: REST surface for services-uploadservice-api-upload-upload_field_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an upload
+        call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          upload_field_id: rest.upload_field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/uploadservice/api/upload/{upload-field-id}/entries
+      name: services-uploadservice-api-upload-upload-field-id-entries
+      description: REST surface for services-uploadservice-api-upload-upload_field_id-entries.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get the upload entries
+        call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          upload_field_id: rest.upload_field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Fields > Upload Field
+      File. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-upload-field-file
+      description: Leaf Agriculture Upload a field file
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.post
+      with:
+        Authorization: tools.Authorization
+        leafUserId: tools.leafUserId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-all-uploads
+      description: Leaf Agriculture Get all uploads
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-upload
+      description: Leaf Agriculture Get an upload
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        upload_field_id: tools.upload_field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-upload-entries
+      description: Leaf Agriculture Get the upload entries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        upload_field_id: tools.upload_field_id
+      outputParameters:
+      - type: object
+        mapping: $.

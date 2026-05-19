@@ -1,61 +1,175 @@
 aid: leaf-agriculture
 name: Leaf Agriculture
-description: >-
-  Leaf Agriculture is the provider of a unified farm data API. The platform
-  addresses the difficulty of building applications in food and agriculture
-  by providing a standardized API for accessing data from multiple farm data
-  sources, including field boundaries, machine operations (planting, harvest,
-  application, tillage), weather data, provider integrations (John Deere,
-  CNHi, Climate FieldView, Trimble), webhooks for real-time notifications,
-  and Leaf Lake for SQL-based analysis of normalized farm data.
+description: Leaf Agriculture is the provider of a unified farm data API. The platform addresses the difficulty of building
+  applications in food and agriculture by providing a standardized API for accessing data from multiple farm data sources,
+  including field boundaries, machine operations (planting, harvest, application, tillage), weather data, provider integrations
+  (John Deere, CNHi, Climate FieldView, Trimble), webhooks for real-time notifications, and Leaf Lake for SQL-based analysis
+  of normalized farm data.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+- Agriculture
+- Farm Data
+- Field Boundaries
+- Machine Operations
+- Provider Integrations
+- Unified API
+- Weather
+- Webhooks
+url: https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/apis.yml
+created: '2024-07-11'
+modified: '2026-05-19'
+specificationVersion: '0.19'
+apis:
+- aid: leaf-agriculture:leaf-agriculture
+  name: Leaf Agriculture API
+  description: Leaf Agriculture's unified farm data API for accessing agricultural data from multiple sources and farm management
+    systems. The API provides Bearer-token authentication and exposes endpoints for field management, machine operation files,
+    weather forecasts, provider integrations, and webhook subscriptions.
+  humanURL: https://withleaf.io
+  tags:
   - Agriculture
   - Farm Data
   - Field Boundaries
   - Machine Operations
-  - Provider Integrations
-  - Unified API
   - Weather
   - Webhooks
-url: https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/apis.yml
-created: '2024-07-11'
-modified: '2026-04-28'
-specificationVersion: '0.19'
-apis:
-  - aid: leaf-agriculture:leaf-agriculture
-    name: Leaf Agriculture API
-    description: >-
-      Leaf Agriculture's unified farm data API for accessing agricultural data
-      from multiple sources and farm management systems. The API provides
-      Bearer-token authentication and exposes endpoints for field management,
-      machine operation files, weather forecasts, provider integrations, and
-      webhook subscriptions.
-    humanURL: https://withleaf.io
-    tags:
-      - Agriculture
-      - Farm Data
-      - Field Boundaries
-      - Machine Operations
-      - Weather
-      - Webhooks
-    properties:
-      - type: Documentation
-        url: https://docs.withleaf.io/
-      - type: GettingStarted
-        url: https://docs.withleaf.io/docs/welcome
-      - type: Authentication
-        url: https://docs.withleaf.io/docs/authentication
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/openapi/leaf-agriculture-openapi.yml
-common:
-  - type: Website
-    url: https://withleaf.io
+  properties:
   - type: Documentation
     url: https://docs.withleaf.io/
-  - type: GitHubOrganization
-    url: https://github.com/Leaf-Agriculture
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/openapi/leaf-agriculture-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-alerts.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-implements.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-input-database-products.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-input-database-tank-mixes.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-input-database-varieties.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-layers.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-machines.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-operators.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-prescription-agleader.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-prescription-cnhi.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-prescription-climatefieldview.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-prescription-john-deere.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-prescription-ravenslingshot.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-beta-prescription-trimble.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-configurations-api-owner.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-configurations-leaf-user.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-crop-monitoring.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-boundary-management-boundaries.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-boundary-management-farms.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-boundary-management-fields.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-boundary-management-files.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-boundary-management-growers.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-field-operations.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-integrations.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-irrigation.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-auth.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-connect.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-api-key.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-provider-applications-info-agleader.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-provider-applications-info-raven-slingshot.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-link-provider-applications-info-trimble.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-agleader.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-agvance.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-cnhi.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-climatefieldview.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-johndeere.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-lindsay.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-provider-organizations-list.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-raven.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-ravenslingshot.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-sentera.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-stara.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-trimble.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-leaf-user-provider-credentials-valley.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-machine-file-conversion.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-magic-link-authentication.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-magic-link-file-upload.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-magic-link-provider.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-providers-auth-climatefieldview-auth.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-providers-auth-lindsay-auth.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-providers-auth-stara-auth.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-providers-auth-trimble-auth.yaml
+  - type: NaftikoCapability
+    url: capabilities/leaf-agriculture-api-reference-weather.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/leaf-agriculture
+- type: Website
+  url: https://withleaf.io
+- type: Documentation
+  url: https://docs.withleaf.io/
+- type: GitHubOrganization
+  url: https://github.com/Leaf-Agriculture
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

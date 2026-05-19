@@ -1,0 +1,228 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Varieties
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Varieties. 4 operations. Lead operation:
+    Leaf Agriculture Search for varieties. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Input Database > Varieties
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-input-database-varieties
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Varieties business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-beta-api-products-search
+      path: /services/beta/api/products/search
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Search for varieties
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+    - name: services-beta-api-users-leaf_user_id-varieties-summary
+      path: /services/beta/api/users/{leaf_user_id}/varieties/summary
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get summarized varieties
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-varieties
+      path: /services/beta/api/varieties
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all varieties
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+    - name: services-beta-api-varieties-variety_id
+      path: /services/beta/api/varieties/{variety_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a variety
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: variety_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-input-database-varieties-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Varieties. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/api/products/search
+      name: services-beta-api-products-search
+      description: REST surface for services-beta-api-products-search.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Search for varieties
+        call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/users/{leaf-user-id}/varieties/summary
+      name: services-beta-api-users-leaf-user-id-varieties-summary
+      description: REST surface for services-beta-api-users-leaf_user_id-varieties-summary.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get summarized varieties
+        call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/varieties
+      name: services-beta-api-varieties
+      description: REST surface for services-beta-api-varieties.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all varieties
+        call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/varieties/{variety-id}
+      name: services-beta-api-varieties-variety-id
+      description: REST surface for services-beta-api-varieties-variety_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a variety
+        call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          variety_id: rest.variety_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-input-database-varieties-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Varieties. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-search-varieties
+      description: Leaf Agriculture Search for varieties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-summarized-varieties
+      description: Leaf Agriculture Get summarized varieties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-all-varieties
+      description: Leaf Agriculture Get all varieties
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-variety
+      description: Leaf Agriculture Get a variety
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-varieties.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        variety_id: tools.variety_id
+      outputParameters:
+      - type: object
+        mapping: $.

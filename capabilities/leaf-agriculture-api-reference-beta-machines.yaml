@@ -1,0 +1,359 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Machines
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Machines. 6 operations. Lead operation: Leaf Agriculture
+    Get all Machines. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Machines
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-machines
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Machines business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: services-beta-api-users-leaf_user_id-machines
+      path: /services/beta/api/users/{leaf_user_id}/machines
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all Machines
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create Machine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-beta-api-users-leaf_user_id-machines-machine_id
+      path: /services/beta/api/users/{leaf_user_id}/machines/{machine_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get specific Machine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: machine_id
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: Leaf Agriculture Update Machine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: machine_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete Machine
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: machine_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-users-leaf_user_id-machines-machine_id-files
+      path: /services/beta/api/users/{leaf_user_id}/machines/{machine_id}/files
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all Machine Files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: machine_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-machines-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Machines. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/api/users/{leaf-user-id}/machines
+      name: services-beta-api-users-leaf-user-id-machines
+      description: REST surface for services-beta-api-users-leaf_user_id-machines.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all Machines
+        call: leaf-agriculture-api-reference-beta-machines.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create Machine
+        call: leaf-agriculture-api-reference-beta-machines.post
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/users/{leaf-user-id}/machines/{machine-id}
+      name: services-beta-api-users-leaf-user-id-machines-machine-id
+      description: REST surface for services-beta-api-users-leaf_user_id-machines-machine_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get specific Machine
+        call: leaf-agriculture-api-reference-beta-machines.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          machine_id: rest.machine_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: Leaf Agriculture Update Machine
+        call: leaf-agriculture-api-reference-beta-machines.patch
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          machine_id: rest.machine_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete Machine
+        call: leaf-agriculture-api-reference-beta-machines.delete
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          machine_id: rest.machine_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/users/{leaf-user-id}/machines/{machine-id}/files
+      name: services-beta-api-users-leaf-user-id-machines-machine-id-files
+      description: REST surface for services-beta-api-users-leaf_user_id-machines-machine_id-files.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all Machine Files
+        call: leaf-agriculture-api-reference-beta-machines.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+          machine_id: rest.machine_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-machines-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Machines. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-machines
+      description: Leaf Agriculture Get all Machines
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-machines.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-machine
+      description: Leaf Agriculture Create Machine
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-beta-machines.post
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-specific-machine
+      description: Leaf Agriculture Get specific Machine
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-machines.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        machine_id: tools.machine_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-machine
+      description: Leaf Agriculture Update Machine
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-machines.patch
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        machine_id: tools.machine_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-machine
+      description: Leaf Agriculture Delete Machine
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-machines.delete
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        machine_id: tools.machine_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-all-machine
+      description: Leaf Agriculture Get all Machine Files
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-machines.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+        machine_id: tools.machine_id
+      outputParameters:
+      - type: object
+        mapping: $.

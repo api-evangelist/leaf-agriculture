@@ -1,0 +1,193 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Magic Link > Magic Link with Leaf User Creation
+  description: 'Leaf Agriculture Leaf API — API Reference > Magic Link > Magic Link with Leaf User Creation. 3 operations.
+    Lead operation: Leaf Agriculture Create a Authentication Magic Link. Self-contained Naftiko capability covering one Leaf
+    Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Magic Link > Magic Link with Leaf User Creation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Magic Link > Magic Link with Leaf User Creation business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: services-widgets-api-magic-link-authentication
+      path: /services/widgets/api/magic-link/authentication
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a Authentication Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-widgets-api-magic-link-file-upload
+      path: /services/widgets/api/magic-link/file-upload
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a File Upload Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-widgets-api-magic-link-provider
+      path: /services/widgets/api/magic-link/provider
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a Provider Magic Link
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Magic Link > Magic Link with Leaf User Creation.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/widgets/api/magic-link/authentication
+      name: services-widgets-api-magic-link-authentication
+      description: REST surface for services-widgets-api-magic-link-authentication.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a Authentication Magic Link
+        call: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/widgets/api/magic-link/file-upload
+      name: services-widgets-api-magic-link-file-upload
+      description: REST surface for services-widgets-api-magic-link-file-upload.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a File Upload Magic Link
+        call: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/widgets/api/magic-link/provider
+      name: services-widgets-api-magic-link-provider
+      description: REST surface for services-widgets-api-magic-link-provider.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a Provider Magic Link
+        call: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Magic Link > Magic Link with Leaf User Creation.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-create-authentication-magic
+      description: Leaf Agriculture Create a Authentication Magic Link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-file-upload
+      description: Leaf Agriculture Create a File Upload Magic Link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-provider-magic
+      description: Leaf Agriculture Create a Provider Magic Link
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

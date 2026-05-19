@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf Auth
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf Auth. 1 operations. Lead operation: Leaf Agriculture Get
+    your Leaf Token. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf Auth
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-auth
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf Auth business capability. Self-contained, no shared references.
+    resources:
+    - name: api-authenticate
+      path: /api/authenticate
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Get your Leaf Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-auth-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf Auth. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/api/authenticate
+      name: api-authenticate
+      description: REST surface for api-authenticate.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Get your Leaf Token
+        call: leaf-agriculture-api-reference-leaf-auth.post
+        with:
+          Content-Type: rest.Content-Type
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-auth-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf Auth. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-your-leaf
+      description: Leaf Agriculture Get your Leaf Token
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-auth.post
+      with:
+        Content-Type: tools.Content-Type
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

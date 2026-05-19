@@ -1,0 +1,303 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > John Deere
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > John Deere. 5 operations.
+    Lead operation: Leaf Agriculture Get all John Deere app information. Self-contained Naftiko capability covering one Leaf
+    Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf Link > Provider Applications Info > John Deere
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > John Deere business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: services-usermanagement-api-app-keys-JohnDeere
+      path: /services/usermanagement/api/app-keys/JohnDeere
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all John Deere app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-usermanagement-api-app-keys-JohnDeere-app_name-jd_client_environment
+      path: /services/usermanagement/api/app-keys/JohnDeere/{app_name}/{jd_client_environment}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a John Deere app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: jd_client_environment
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a John Deere app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: jd_client_environment
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: put
+        method: PUT
+        description: Leaf Agriculture Update a John Deere app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: jd_client_environment
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete a John Deere app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: jd_client_environment
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > John
+      Deere. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/usermanagement/api/app-keys/johndeere
+      name: services-usermanagement-api-app-keys-johndeere
+      description: REST surface for services-usermanagement-api-app-keys-JohnDeere.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all John Deere app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/app-keys/johndeere/{app-name}/{jd-client-environment}
+      name: services-usermanagement-api-app-keys-johndeere-app-name-jd-client-environment
+      description: REST surface for services-usermanagement-api-app-keys-JohnDeere-app_name-jd_client_environment.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a John Deere app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          jd_client_environment: rest.jd_client_environment
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a John Deere app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          jd_client_environment: rest.jd_client_environment
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Leaf Agriculture Update a John Deere app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.put
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          jd_client_environment: rest.jd_client_environment
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete a John Deere app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          jd_client_environment: rest.jd_client_environment
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > John
+      Deere. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-john
+      description: Leaf Agriculture Get all John Deere app information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-john-deere
+      description: Leaf Agriculture Get a John Deere app information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        jd_client_environment: tools.jd_client_environment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-john-deere
+      description: Leaf Agriculture Create a John Deere app information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        jd_client_environment: tools.jd_client_environment
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-john-deere
+      description: Leaf Agriculture Update a John Deere app information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.put
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        jd_client_environment: tools.jd_client_environment
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-john-deere
+      description: Leaf Agriculture Delete a John Deere app information
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        jd_client_environment: tools.jd_client_environment
+      outputParameters:
+      - type: object
+        mapping: $.

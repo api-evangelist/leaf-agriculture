@@ -1,0 +1,355 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Products
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Products. 6 operations. Lead operation:
+    Leaf Agriculture Get all products. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Input Database > Products
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-input-database-products
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Products business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-beta-api-products
+      path: /services/beta/api/products
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all products
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+    - name: services-beta-api-products-matching-operations-operation_id
+      path: /services/beta/api/products/matching/operations/{operation_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get matching products from an operation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-products-matching-operations-operation_id-matches-match_id
+      path: /services/beta/api/products/matching/operations/{operation_id}/matches/{match_id}
+      operations:
+      - name: put
+        method: PUT
+        description: Leaf Agriculture Updated product matches
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+        - name: match_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-beta-api-products-matching-operations-operation_id-matches-match_id-his
+      path: /services/beta/api/products/matching/operations/{operation_id}/matches/{match_id}/historical
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get product matches historical
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+        - name: match_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-products-product_id
+      path: /services/beta/api/products/{product_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: product_id
+          in: path
+          type: string
+          required: true
+    - name: services-beta-api-users-leaf_user_id-products-summary
+      path: /services/beta/api/users/{leaf_user_id}/products/summary
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get summarized products
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: Content-Type
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-input-database-products-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Products. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/api/products
+      name: services-beta-api-products
+      description: REST surface for services-beta-api-products.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all products
+        call: leaf-agriculture-api-reference-beta-input-database-products.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/products/matching/operations/{operation-id}
+      name: services-beta-api-products-matching-operations-operation-id
+      description: REST surface for services-beta-api-products-matching-operations-operation_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get matching products from an operation
+        call: leaf-agriculture-api-reference-beta-input-database-products.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/products/matching/operations/{operation-id}/matches/{match-id}
+      name: services-beta-api-products-matching-operations-operation-id-matches-match-id
+      description: REST surface for services-beta-api-products-matching-operations-operation_id-matches-match_id.
+      operations:
+      - method: PUT
+        name: put
+        description: Leaf Agriculture Updated product matches
+        call: leaf-agriculture-api-reference-beta-input-database-products.put
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          operation_id: rest.operation_id
+          match_id: rest.match_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/products/matching/operations/{operation-id}/matches/{match-id}/historical
+      name: services-beta-api-products-matching-operations-operation-id-matches-match-id-his
+      description: REST surface for services-beta-api-products-matching-operations-operation_id-matches-match_id-his.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get product matches historical
+        call: leaf-agriculture-api-reference-beta-input-database-products.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          operation_id: rest.operation_id
+          match_id: rest.match_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/products/{product-id}
+      name: services-beta-api-products-product-id
+      description: REST surface for services-beta-api-products-product_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a product
+        call: leaf-agriculture-api-reference-beta-input-database-products.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          product_id: rest.product_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/beta/api/users/{leaf-user-id}/products/summary
+      name: services-beta-api-users-leaf-user-id-products-summary
+      description: REST surface for services-beta-api-users-leaf_user_id-products-summary.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get summarized products
+        call: leaf-agriculture-api-reference-beta-input-database-products.get
+        with:
+          Authorization: rest.Authorization
+          Content-Type: rest.Content-Type
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-input-database-products-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Input Database > Products. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-products
+      description: Leaf Agriculture Get all products
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-products.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-matching-products
+      description: Leaf Agriculture Get matching products from an operation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-products.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-updated-product-matches
+      description: Leaf Agriculture Updated product matches
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-products.put
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        operation_id: tools.operation_id
+        match_id: tools.match_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-product-matches
+      description: Leaf Agriculture Get product matches historical
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-products.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        operation_id: tools.operation_id
+        match_id: tools.match_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-product
+      description: Leaf Agriculture Get a product
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-products.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        product_id: tools.product_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-summarized-products
+      description: Leaf Agriculture Get summarized products
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-input-database-products.get
+      with:
+        Authorization: tools.Authorization
+        Content-Type: tools.Content-Type
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.

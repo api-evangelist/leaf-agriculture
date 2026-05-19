@@ -1,0 +1,95 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > AgLeader
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Prescription > AgLeader. 1 operations. Lead operation:
+    Leaf Agriculture Upload AgLeader prescription file. Self-contained Naftiko capability covering one Leaf Agriculture business
+    surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Prescription > AgLeader
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-prescription-agleader
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > AgLeader business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-beta-prescription-api-users-leaf_user_id-agLeader
+      path: /services/beta/prescription/api/users/{leaf_user_id}/agLeader
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload AgLeader prescription file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-prescription-agleader-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > AgLeader. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/prescription/api/users/{leaf-user-id}/agleader
+      name: services-beta-prescription-api-users-leaf-user-id-agleader
+      description: REST surface for services-beta-prescription-api-users-leaf_user_id-agLeader.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload AgLeader prescription file
+        call: leaf-agriculture-api-reference-beta-prescription-agleader.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-prescription-agleader-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > AgLeader. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-upload-agleader-prescription
+      description: Leaf Agriculture Upload AgLeader prescription file
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-beta-prescription-agleader.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

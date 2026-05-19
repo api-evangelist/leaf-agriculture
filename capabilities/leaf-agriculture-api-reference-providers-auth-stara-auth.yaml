@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Providers Auth > Stara Auth
+  description: 'Leaf Agriculture Leaf API — API Reference > Providers Auth > Stara Auth. 2 operations. Lead operation: Leaf
+    Agriculture Get Stara API key. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Providers Auth > Stara Auth
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-providers-auth-stara-auth
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Providers Auth > Stara Auth business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: autenticacao
+      path: /autenticacao
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Get Stara API key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: token
+      path: /token
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Get Stara Tokens
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-providers-auth-stara-auth-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Providers Auth > Stara Auth. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/autenticacao
+      name: autenticacao
+      description: REST surface for autenticacao.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Get Stara API key
+        call: leaf-agriculture-api-reference-providers-auth-stara-auth.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/token
+      name: token
+      description: REST surface for token.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Get Stara Tokens
+        call: leaf-agriculture-api-reference-providers-auth-stara-auth.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-providers-auth-stara-auth-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Providers Auth > Stara Auth. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-stara-api
+      description: Leaf Agriculture Get Stara API key
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-providers-auth-stara-auth.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-stara-tokens
+      description: Leaf Agriculture Get Stara Tokens
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-providers-auth-stara-auth.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

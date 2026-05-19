@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > Trimble
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Prescription > Trimble. 1 operations. Lead operation: Leaf
+    Agriculture Upload Trimble prescriptions. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Prescription > Trimble
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-prescription-trimble
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > Trimble business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-beta-prescription-api-users-leaf_user_id-trimble
+      path: /services/beta/prescription/api/users/{leaf_user_id}/trimble
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload Trimble prescriptions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: organizationId
+          in: query
+          type: integer
+          description: fill with your organizationId
+        - name: rateColumn
+          in: query
+          type: string
+          description: fill in the name of the rate column in the file
+        - name: rateUnits
+          in: query
+          type: string
+          description: 'fill with the following values: gal/ac, l/ha, lbs/ac, ton/ac, kg/ha, t/ha, kS/ac, kS/ha, lbs(N)/ac,
+            kg(N)/ha, S/ha or S/ha'
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-prescription-trimble-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > Trimble. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/prescription/api/users/{leaf-user-id}/trimble
+      name: services-beta-prescription-api-users-leaf-user-id-trimble
+      description: REST surface for services-beta-prescription-api-users-leaf_user_id-trimble.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload Trimble prescriptions
+        call: leaf-agriculture-api-reference-beta-prescription-trimble.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          organizationId: rest.organizationId
+          rateColumn: rest.rateColumn
+          rateUnits: rest.rateUnits
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-prescription-trimble-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > Trimble. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-upload-trimble-prescriptions
+      description: Leaf Agriculture Upload Trimble prescriptions
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-beta-prescription-trimble.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        organizationId: tools.organizationId
+        rateColumn: tools.rateColumn
+        rateUnits: tools.rateUnits
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

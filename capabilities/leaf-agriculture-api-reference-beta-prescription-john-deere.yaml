@@ -1,0 +1,151 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > John Deere
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Prescription > John Deere. 2 operations. Lead operation:
+    Leaf Agriculture Upload John Deere prescription files. Self-contained Naftiko capability covering one Leaf Agriculture
+    business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Prescription > John Deere
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-prescription-john-deere
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > John Deere business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-beta-prescription-api-users-leaf_user_id-johnDeere
+      path: /services/beta/prescription/api/users/{leaf_user_id}/johnDeere
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload John Deere prescription files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: organizationId
+          in: query
+          type: string
+          description: The id of the organization at JohnDeere
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: get
+        method: GET
+        description: Leaf Agriculture Download prescription from John Deere
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: organizationId
+          in: query
+          type: string
+          description: The id of the organization at JohnDeere
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-prescription-john-deere-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > John Deere. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/prescription/api/users/{leaf-user-id}/johndeere
+      name: services-beta-prescription-api-users-leaf-user-id-johndeere
+      description: REST surface for services-beta-prescription-api-users-leaf_user_id-johnDeere.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload John Deere prescription files
+        call: leaf-agriculture-api-reference-beta-prescription-john-deere.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          organizationId: rest.organizationId
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Leaf Agriculture Download prescription from John Deere
+        call: leaf-agriculture-api-reference-beta-prescription-john-deere.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          organizationId: rest.organizationId
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-prescription-john-deere-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > John Deere. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-upload-john-deere
+      description: Leaf Agriculture Upload John Deere prescription files
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-beta-prescription-john-deere.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        organizationId: tools.organizationId
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-download-prescription-john
+      description: Leaf Agriculture Download prescription from John Deere
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-prescription-john-deere.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        organizationId: tools.organizationId
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,444 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Crop Monitoring
+  description: 'Leaf Agriculture Leaf API — API Reference > Crop Monitoring. 8 operations. Lead operation: Leaf Agriculture
+    Get all satellite fields. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Crop Monitoring
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-crop-monitoring
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Crop Monitoring business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: services-satellite-api-fields
+      path: /services/satellite/api/fields
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all satellite fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a satellite field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-satellite-api-fields-sat_external_id
+      path: /services/satellite/api/fields/{sat_external_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a satellite field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sat_external_id
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete a satellite field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sat_external_id
+          in: path
+          type: string
+          required: true
+    - name: services-satellite-api-fields-sat_external_id-processes
+      path: /services/satellite/api/fields/{sat_external_id}/processes
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get images of satellite field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sat_external_id
+          in: path
+          type: string
+          required: true
+    - name: services-satellite-api-fields-sat_external_id-processes-process_id
+      path: /services/satellite/api/fields/{sat_external_id}/processes/{process_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an image of satellite field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sat_external_id
+          in: path
+          type: string
+          required: true
+        - name: process_id
+          in: path
+          type: string
+          required: true
+    - name: services-satellite-api-fields-sat_external_id-processes-process_id-reprocess
+      path: /services/satellite/api/fields/{sat_external_id}/processes/{process_id}/reprocess
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Reprocess satellite images
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sat_external_id
+          in: path
+          type: string
+          required: true
+        - name: process_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-satellite-api-fields-sat_external_id-subscription
+      path: /services/satellite/api/fields/{sat_external_id}/subscription
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get subscription for Planet
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: sat_external_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-crop-monitoring-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Crop Monitoring. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/satellite/api/fields
+      name: services-satellite-api-fields
+      description: REST surface for services-satellite-api-fields.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all satellite fields
+        call: leaf-agriculture-api-reference-crop-monitoring.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a satellite field
+        call: leaf-agriculture-api-reference-crop-monitoring.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/satellite/api/fields/{sat-external-id}
+      name: services-satellite-api-fields-sat-external-id
+      description: REST surface for services-satellite-api-fields-sat_external_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a satellite field
+        call: leaf-agriculture-api-reference-crop-monitoring.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sat_external_id: rest.sat_external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete a satellite field
+        call: leaf-agriculture-api-reference-crop-monitoring.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sat_external_id: rest.sat_external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/satellite/api/fields/{sat-external-id}/processes
+      name: services-satellite-api-fields-sat-external-id-processes
+      description: REST surface for services-satellite-api-fields-sat_external_id-processes.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get images of satellite field
+        call: leaf-agriculture-api-reference-crop-monitoring.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sat_external_id: rest.sat_external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/satellite/api/fields/{sat-external-id}/processes/{process-id}
+      name: services-satellite-api-fields-sat-external-id-processes-process-id
+      description: REST surface for services-satellite-api-fields-sat_external_id-processes-process_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an image of satellite field
+        call: leaf-agriculture-api-reference-crop-monitoring.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sat_external_id: rest.sat_external_id
+          process_id: rest.process_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/satellite/api/fields/{sat-external-id}/processes/{process-id}/reprocess
+      name: services-satellite-api-fields-sat-external-id-processes-process-id-reprocess
+      description: REST surface for services-satellite-api-fields-sat_external_id-processes-process_id-reprocess.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Reprocess satellite images
+        call: leaf-agriculture-api-reference-crop-monitoring.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sat_external_id: rest.sat_external_id
+          process_id: rest.process_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/satellite/api/fields/{sat-external-id}/subscription
+      name: services-satellite-api-fields-sat-external-id-subscription
+      description: REST surface for services-satellite-api-fields-sat_external_id-subscription.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get subscription for Planet
+        call: leaf-agriculture-api-reference-crop-monitoring.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          sat_external_id: rest.sat_external_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-crop-monitoring-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Crop Monitoring. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-satellite
+      description: Leaf Agriculture Get all satellite fields
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-crop-monitoring.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-satellite-field
+      description: Leaf Agriculture Create a satellite field
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-crop-monitoring.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-satellite-field
+      description: Leaf Agriculture Get a satellite field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-crop-monitoring.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sat_external_id: tools.sat_external_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-satellite-field
+      description: Leaf Agriculture Delete a satellite field
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-crop-monitoring.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sat_external_id: tools.sat_external_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-images-satellite
+      description: Leaf Agriculture Get images of satellite field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-crop-monitoring.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sat_external_id: tools.sat_external_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-image-satellite
+      description: Leaf Agriculture Get an image of satellite field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-crop-monitoring.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sat_external_id: tools.sat_external_id
+        process_id: tools.process_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-reprocess-satellite-images
+      description: Leaf Agriculture Reprocess satellite images
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-crop-monitoring.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sat_external_id: tools.sat_external_id
+        process_id: tools.process_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-subscription-planet
+      description: Leaf Agriculture Get subscription for Planet
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-crop-monitoring.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        sat_external_id: tools.sat_external_id
+      outputParameters:
+      - type: object
+        mapping: $.

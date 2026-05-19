@@ -1,0 +1,584 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Machine File Conversion
+  description: 'Leaf Agriculture Leaf API — API Reference > Machine File Conversion. 11 operations. Lead operation: Leaf Agriculture
+    Upload operation file. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Machine File Conversion
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-machine-file-conversion
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Machine File Conversion business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-operations-api-batch
+      path: /services/operations/api/batch
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload operation file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: leafUserId
+          in: query
+          type: string
+        - name: provider
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all batches
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-operations-api-batch-batch_id
+      path: /services/operations/api/batch/{batch_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get batch by id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: batch_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-files
+      path: /services/operations/api/files
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-operations-api-files-merge
+      path: /services/operations/api/files/merge
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Merge operation files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-operations-api-files-uncoveredFiles
+      path: /services/operations/api/files/uncoveredFiles
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all uncovered files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leafUserId
+          in: query
+          type: string
+    - name: services-operations-api-files-file_id
+      path: /services/operations/api/files/{file_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get specific file by id
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: file_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-files-file_id-images
+      path: /services/operations/api/files/{file_id}/images
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get file images
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: file_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-files-file_id-status
+      path: /services/operations/api/files/{file_id}/status
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get file status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: file_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-files-file_id-summary
+      path: /services/operations/api/files/{file_id}/summary
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get file summary
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: file_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-files-file_id-units
+      path: /services/operations/api/files/{file_id}/units
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get file units
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: file_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-machine-file-conversion-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Machine File Conversion. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/operations/api/batch
+      name: services-operations-api-batch
+      description: REST surface for services-operations-api-batch.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload operation file
+        call: leaf-agriculture-api-reference-machine-file-conversion.post
+        with:
+          Authorization: rest.Authorization
+          leafUserId: rest.leafUserId
+          provider: rest.provider
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all batches
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/batch/{batch-id}
+      name: services-operations-api-batch-batch-id
+      description: REST surface for services-operations-api-batch-batch_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get batch by id
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          batch_id: rest.batch_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files
+      name: services-operations-api-files
+      description: REST surface for services-operations-api-files.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all files
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/merge
+      name: services-operations-api-files-merge
+      description: REST surface for services-operations-api-files-merge.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Merge operation files
+        call: leaf-agriculture-api-reference-machine-file-conversion.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/uncoveredfiles
+      name: services-operations-api-files-uncoveredfiles
+      description: REST surface for services-operations-api-files-uncoveredFiles.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all uncovered files
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leafUserId: rest.leafUserId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/{file-id}
+      name: services-operations-api-files-file-id
+      description: REST surface for services-operations-api-files-file_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get specific file by id
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          file_id: rest.file_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/{file-id}/images
+      name: services-operations-api-files-file-id-images
+      description: REST surface for services-operations-api-files-file_id-images.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get file images
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          file_id: rest.file_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/{file-id}/status
+      name: services-operations-api-files-file-id-status
+      description: REST surface for services-operations-api-files-file_id-status.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get file status
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          file_id: rest.file_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/{file-id}/summary
+      name: services-operations-api-files-file-id-summary
+      description: REST surface for services-operations-api-files-file_id-summary.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get file summary
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          file_id: rest.file_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/files/{file-id}/units
+      name: services-operations-api-files-file-id-units
+      description: REST surface for services-operations-api-files-file_id-units.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get file units
+        call: leaf-agriculture-api-reference-machine-file-conversion.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          file_id: rest.file_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-machine-file-conversion-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Machine File Conversion. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-upload-operation-file
+      description: Leaf Agriculture Upload operation file
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-machine-file-conversion.post
+      with:
+        Authorization: tools.Authorization
+        leafUserId: tools.leafUserId
+        provider: tools.provider
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-all-batches
+      description: Leaf Agriculture Get all batches
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-batch-id
+      description: Leaf Agriculture Get batch by id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        batch_id: tools.batch_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-all-files
+      description: Leaf Agriculture Get all files
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-merge-operation-files
+      description: Leaf Agriculture Merge operation files
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-machine-file-conversion.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-all-uncovered
+      description: Leaf Agriculture Get all uncovered files
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leafUserId: tools.leafUserId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-specific-file
+      description: Leaf Agriculture Get specific file by id
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        file_id: tools.file_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-file-images
+      description: Leaf Agriculture Get file images
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        file_id: tools.file_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-file-status
+      description: Leaf Agriculture Get file status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        file_id: tools.file_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-file-summary
+      description: Leaf Agriculture Get file summary
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        file_id: tools.file_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-file-units
+      description: Leaf Agriculture Get file units
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-machine-file-conversion.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        file_id: tools.file_id
+      outputParameters:
+      - type: object
+        mapping: $.

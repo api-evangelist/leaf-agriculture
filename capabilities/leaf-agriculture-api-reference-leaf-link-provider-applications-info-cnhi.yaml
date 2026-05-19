@@ -1,0 +1,303 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > CNHi
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > CNHi. 5 operations. Lead
+    operation: Leaf Agriculture Get all CNHi app information. Self-contained Naftiko capability covering one Leaf Agriculture
+    business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf Link > Provider Applications Info > CNHi
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > CNHi business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: services-usermanagement-api-app-keys-CNHI
+      path: /services/usermanagement/api/app-keys/CNHI
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all CNHi app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-usermanagement-api-app-keys-CNHI-app_name-cnhi_client_environment
+      path: /services/usermanagement/api/app-keys/CNHI/{app_name}/{cnhi_client_environment}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a CNHi app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: cnhi_client_environment
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a CNHi app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: cnhi_client_environment
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: put
+        method: PUT
+        description: Leaf Agriculture Update a CNHi app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: cnhi_client_environment
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete a CNHi app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: cnhi_client_environment
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > CNHi.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/usermanagement/api/app-keys/cnhi
+      name: services-usermanagement-api-app-keys-cnhi
+      description: REST surface for services-usermanagement-api-app-keys-CNHI.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all CNHi app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/app-keys/cnhi/{app-name}/{cnhi-client-environment}
+      name: services-usermanagement-api-app-keys-cnhi-app-name-cnhi-client-environment
+      description: REST surface for services-usermanagement-api-app-keys-CNHI-app_name-cnhi_client_environment.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a CNHi app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          cnhi_client_environment: rest.cnhi_client_environment
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a CNHi app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          cnhi_client_environment: rest.cnhi_client_environment
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Leaf Agriculture Update a CNHi app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.put
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          cnhi_client_environment: rest.cnhi_client_environment
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete a CNHi app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          cnhi_client_environment: rest.cnhi_client_environment
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > CNHi.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-cnhi
+      description: Leaf Agriculture Get all CNHi app information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-cnhi-app
+      description: Leaf Agriculture Get a CNHi app information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        cnhi_client_environment: tools.cnhi_client_environment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-cnhi-app
+      description: Leaf Agriculture Create a CNHi app information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        cnhi_client_environment: tools.cnhi_client_environment
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-cnhi-app
+      description: Leaf Agriculture Update a CNHi app information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.put
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        cnhi_client_environment: tools.cnhi_client_environment
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-cnhi-app
+      description: Leaf Agriculture Delete a CNHi app information
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        cnhi_client_environment: tools.cnhi_client_environment
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,148 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > CNHi
+  description: 'Leaf Agriculture Leaf API — API Reference > Beta > Prescription > CNHi. 2 operations. Lead operation: Leaf
+    Agriculture Get CNHi prescriptions. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Beta > Prescription > CNHi
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-beta-prescription-cnhi
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Beta > Prescription > CNHi business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-beta-prescription-api-users-leaf_user_id-cnhi
+      path: /services/beta/prescription/api/users/{leaf_user_id}/cnhi
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get CNHi prescriptions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: companyId
+          in: query
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: Leaf Agriculture Upload prescription to CNHi
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: companyId
+          in: query
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-beta-prescription-cnhi-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > CNHi. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/beta/prescription/api/users/{leaf-user-id}/cnhi
+      name: services-beta-prescription-api-users-leaf-user-id-cnhi
+      description: REST surface for services-beta-prescription-api-users-leaf_user_id-cnhi.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get CNHi prescriptions
+        call: leaf-agriculture-api-reference-beta-prescription-cnhi.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          companyId: rest.companyId
+          leaf_user_id: rest.leaf_user_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Upload prescription to CNHi
+        call: leaf-agriculture-api-reference-beta-prescription-cnhi.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          companyId: rest.companyId
+          leaf_user_id: rest.leaf_user_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-beta-prescription-cnhi-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Beta > Prescription > CNHi. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-cnhi-prescriptions
+      description: Leaf Agriculture Get CNHi prescriptions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-beta-prescription-cnhi.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        companyId: tools.companyId
+        leaf_user_id: tools.leaf_user_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-upload-prescription-cnhi
+      description: Leaf Agriculture Upload prescription to CNHi
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-beta-prescription-cnhi.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        companyId: tools.companyId
+        leaf_user_id: tools.leaf_user_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

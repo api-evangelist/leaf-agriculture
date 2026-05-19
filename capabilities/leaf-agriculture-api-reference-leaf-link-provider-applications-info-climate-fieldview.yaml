@@ -1,0 +1,279 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > Climate FieldView
+  description: 'Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > Climate FieldView. 5
+    operations. Lead operation: Leaf Agriculture Get all ClimateFieldView app information. Self-contained Naftiko capability
+    covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > Climate FieldView business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: services-usermanagement-api-app-keys-ClimateFieldView
+      path: /services/usermanagement/api/app-keys/ClimateFieldView
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all ClimateFieldView app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-usermanagement-api-app-keys-ClimateFieldView-app_name
+      path: /services/usermanagement/api/app-keys/ClimateFieldView/{app_name}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a ClimateFieldView app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: Leaf Agriculture Create a ClimateFieldView app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: put
+        method: PUT
+        description: Leaf Agriculture Update a ClimateFieldView app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: delete
+        method: DELETE
+        description: Leaf Agriculture Delete a ClimateFieldView app information
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: app_name
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > Climate
+      FieldView. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/usermanagement/api/app-keys/climatefieldview
+      name: services-usermanagement-api-app-keys-climatefieldview
+      description: REST surface for services-usermanagement-api-app-keys-ClimateFieldView.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all ClimateFieldView app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/usermanagement/api/app-keys/climatefieldview/{app-name}
+      name: services-usermanagement-api-app-keys-climatefieldview-app-name
+      description: REST surface for services-usermanagement-api-app-keys-ClimateFieldView-app_name.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a ClimateFieldView app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Leaf Agriculture Create a ClimateFieldView app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.post
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Leaf Agriculture Update a ClimateFieldView app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.put
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Leaf Agriculture Delete a ClimateFieldView app information
+        call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.delete
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          app_name: rest.app_name
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Leaf Link > Provider Applications Info > Climate
+      FieldView. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-climatefieldview
+      description: Leaf Agriculture Get all ClimateFieldView app information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-climatefieldview-app
+      description: Leaf Agriculture Get a ClimateFieldView app information
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-create-climatefieldview-app
+      description: Leaf Agriculture Create a ClimateFieldView app information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.post
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-climatefieldview-app
+      description: Leaf Agriculture Update a ClimateFieldView app information
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.put
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-delete-climatefieldview-app
+      description: Leaf Agriculture Delete a ClimateFieldView app information
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview.delete
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        app_name: tools.app_name
+      outputParameters:
+      - type: object
+        mapping: $.

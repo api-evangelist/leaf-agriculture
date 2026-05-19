@@ -1,0 +1,584 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Field Operations
+  description: 'Leaf Agriculture Leaf API — API Reference > Field Operations. 11 operations. Lead operation: Leaf Agriculture
+    Get all operations. Self-contained Naftiko capability covering one Leaf Agriculture business surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Field Operations
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-field-operations
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Field Operations business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: services-operations-api-operations
+      path: /services/operations/api/operations
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all operations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+    - name: services-operations-api-operations-CropOperationByField
+      path: /services/operations/api/operations/CropOperationByField
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Crop operation by field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Authorization
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-operations-api-operations-file_id-units
+      path: /services/operations/api/operations/{file_id}/units
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation's units
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: file_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id
+      path: /services/operations/api/operations/{operation_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id-filteredGeojson
+      path: /services/operations/api/operations/{operation_id}/filteredGeojson
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation filteredGeojson
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id-geotiffImages
+      path: /services/operations/api/operations/{operation_id}/geotiffImages
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation's geotiff images
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id-images
+      path: /services/operations/api/operations/{operation_id}/images
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation's images
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id-imagesV2
+      path: /services/operations/api/operations/{operation_id}/imagesV2
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation's images v2
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id-reprocess
+      path: /services/operations/api/operations/{operation_id}/reprocess
+      operations:
+      - name: post
+        method: POST
+        description: Leaf Agriculture Reprocess an operation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: services-operations-api-operations-operation_id-standardGeojson
+      path: /services/operations/api/operations/{operation_id}/standardGeojson
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation standardGeojson
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+    - name: services-operations-api-operations-operation_id-summary
+      path: /services/operations/api/operations/{operation_id}/summary
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get an operation summary
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: operation_id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-field-operations-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Field Operations. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/operations/api/operations
+      name: services-operations-api-operations
+      description: REST surface for services-operations-api-operations.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all operations
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/cropoperationbyfield
+      name: services-operations-api-operations-cropoperationbyfield
+      description: REST surface for services-operations-api-operations-CropOperationByField.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Crop operation by field
+        call: leaf-agriculture-api-reference-field-operations.post
+        with:
+          Authorization: rest.Authorization
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{file-id}/units
+      name: services-operations-api-operations-file-id-units
+      description: REST surface for services-operations-api-operations-file_id-units.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation's units
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          file_id: rest.file_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}
+      name: services-operations-api-operations-operation-id
+      description: REST surface for services-operations-api-operations-operation_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/filteredgeojson
+      name: services-operations-api-operations-operation-id-filteredgeojson
+      description: REST surface for services-operations-api-operations-operation_id-filteredGeojson.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation filteredGeojson
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/geotiffimages
+      name: services-operations-api-operations-operation-id-geotiffimages
+      description: REST surface for services-operations-api-operations-operation_id-geotiffImages.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation's geotiff images
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/images
+      name: services-operations-api-operations-operation-id-images
+      description: REST surface for services-operations-api-operations-operation_id-images.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation's images
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/imagesv2
+      name: services-operations-api-operations-operation-id-imagesv2
+      description: REST surface for services-operations-api-operations-operation_id-imagesV2.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation's images v2
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/reprocess
+      name: services-operations-api-operations-operation-id-reprocess
+      description: REST surface for services-operations-api-operations-operation_id-reprocess.
+      operations:
+      - method: POST
+        name: post
+        description: Leaf Agriculture Reprocess an operation
+        call: leaf-agriculture-api-reference-field-operations.post
+        with:
+          operation_id: rest.operation_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/standardgeojson
+      name: services-operations-api-operations-operation-id-standardgeojson
+      description: REST surface for services-operations-api-operations-operation_id-standardGeojson.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation standardGeojson
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/operations/api/operations/{operation-id}/summary
+      name: services-operations-api-operations-operation-id-summary
+      description: REST surface for services-operations-api-operations-operation_id-summary.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get an operation summary
+        call: leaf-agriculture-api-reference-field-operations.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          operation_id: rest.operation_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-field-operations-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Field Operations. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-operations
+      description: Leaf Agriculture Get all operations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-crop-operation-field
+      description: Leaf Agriculture Crop operation by field
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-operations.post
+      with:
+        Authorization: tools.Authorization
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-s-units
+      description: Leaf Agriculture Get an operation's units
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        file_id: tools.file_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation
+      description: Leaf Agriculture Get an operation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-filteredgeojson
+      description: Leaf Agriculture Get an operation filteredGeojson
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-s-geotiff
+      description: Leaf Agriculture Get an operation's geotiff images
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-s-images
+      description: Leaf Agriculture Get an operation's images
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-s-images-2
+      description: Leaf Agriculture Get an operation's images v2
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-reprocess-operation
+      description: Leaf Agriculture Reprocess an operation
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: leaf-agriculture-api-reference-field-operations.post
+      with:
+        operation_id: tools.operation_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-standardgeojson
+      description: Leaf Agriculture Get an operation standardGeojson
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-operation-summary
+      description: Leaf Agriculture Get an operation summary
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-operations.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        operation_id: tools.operation_id
+      outputParameters:
+      - type: object
+        mapping: $.

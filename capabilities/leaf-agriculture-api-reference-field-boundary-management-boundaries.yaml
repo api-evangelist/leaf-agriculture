@@ -1,0 +1,271 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Boundaries
+  description: 'Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Boundaries. 4 operations. Lead operation:
+    Leaf Agriculture Get all boundaries of a field. Self-contained Naftiko capability covering one Leaf Agriculture business
+    surface.'
+  tags:
+  - Leaf Agriculture
+  - API Reference > Field Boundary Management > Boundaries
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LEAF_AGRICULTURE_API_KEY: LEAF_AGRICULTURE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: leaf-agriculture-api-reference-field-boundary-management-boundaries
+    baseUri: ''
+    description: Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Boundaries business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: services-fields-api-users-leaf_user_id-fields-field_id-boundaries
+      path: /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundaries
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get all boundaries of a field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+    - name: services-fields-api-users-leaf_user_id-fields-field_id-boundaries-boundary_id
+      path: /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundaries/{boundary_id}
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get a boundary of a field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+        - name: boundary_id
+          in: path
+          type: string
+          required: true
+    - name: services-fields-api-users-leaf_user_id-fields-field_id-boundary
+      path: /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundary
+      operations:
+      - name: get
+        method: GET
+        description: Leaf Agriculture Get active boundary of a field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+      - name: put
+        method: PUT
+        description: Leaf Agriculture Update active boundary
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: Content-Type
+          in: header
+          type: string
+        - name: Authorization
+          in: header
+          type: string
+        - name: leaf_user_id
+          in: path
+          type: string
+          required: true
+        - name: field_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: leaf-agriculture-api-reference-field-boundary-management-boundaries-rest
+    port: 8080
+    description: REST adapter for Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Boundaries. One
+      Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields/{field-id}/boundaries
+      name: services-fields-api-users-leaf-user-id-fields-field-id-boundaries
+      description: REST surface for services-fields-api-users-leaf_user_id-fields-field_id-boundaries.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get all boundaries of a field
+        call: leaf-agriculture-api-reference-field-boundary-management-boundaries.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields/{field-id}/boundaries/{boundary-id}
+      name: services-fields-api-users-leaf-user-id-fields-field-id-boundaries-boundary-id
+      description: REST surface for services-fields-api-users-leaf_user_id-fields-field_id-boundaries-boundary_id.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get a boundary of a field
+        call: leaf-agriculture-api-reference-field-boundary-management-boundaries.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+          boundary_id: rest.boundary_id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/services/fields/api/users/{leaf-user-id}/fields/{field-id}/boundary
+      name: services-fields-api-users-leaf-user-id-fields-field-id-boundary
+      description: REST surface for services-fields-api-users-leaf_user_id-fields-field_id-boundary.
+      operations:
+      - method: GET
+        name: get
+        description: Leaf Agriculture Get active boundary of a field
+        call: leaf-agriculture-api-reference-field-boundary-management-boundaries.get
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: Leaf Agriculture Update active boundary
+        call: leaf-agriculture-api-reference-field-boundary-management-boundaries.put
+        with:
+          Content-Type: rest.Content-Type
+          Authorization: rest.Authorization
+          leaf_user_id: rest.leaf_user_id
+          field_id: rest.field_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: leaf-agriculture-api-reference-field-boundary-management-boundaries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Leaf Agriculture Leaf API — API Reference > Field Boundary Management > Boundaries. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: leaf-agriculture-get-all-boundaries
+      description: Leaf Agriculture Get all boundaries of a field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-boundaries.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-boundary-field
+      description: Leaf Agriculture Get a boundary of a field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-boundaries.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+        boundary_id: tools.boundary_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-get-active-boundary
+      description: Leaf Agriculture Get active boundary of a field
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-boundaries.get
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: leaf-agriculture-update-active-boundary
+      description: Leaf Agriculture Update active boundary
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: leaf-agriculture-api-reference-field-boundary-management-boundaries.put
+      with:
+        Content-Type: tools.Content-Type
+        Authorization: tools.Authorization
+        leaf_user_id: tools.leaf_user_id
+        field_id: tools.field_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
