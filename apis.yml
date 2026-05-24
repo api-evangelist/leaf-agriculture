@@ -170,6 +170,8 @@ common:
   url: https://docs.withleaf.io/
 - type: GitHubOrganization
   url: https://github.com/Leaf-Agriculture
+- type: LLMsTxt
+  url: https://docs.withleaf.io/llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
