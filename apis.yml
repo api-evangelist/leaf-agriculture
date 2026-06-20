@@ -7,7 +7,7 @@ description: >-
   provider integrations (John Deere, CNHi, Climate FieldView, Trimble), webhooks for real-time notifications, and Leaf
   Lake for SQL-based analysis of normalized farm data.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Agriculture
   - Farm Data
