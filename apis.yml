@@ -55,7 +55,7 @@ common:
     url: https://docs.withleaf.io/
   - type: GitHubOrganization
     url: https://github.com/Leaf-Agriculture
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.withleaf.io/llms.txt
 maintainers:
   - FN: Kin Lane
