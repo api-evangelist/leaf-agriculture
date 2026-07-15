@@ -47,6 +47,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/openapi/leaf-agriculture-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/leaf-agriculture-agentic-access.yml
   - type: DomainSecurity
     url: security/leaf-agriculture-domain-security.yml
   - type: LinkedIn
