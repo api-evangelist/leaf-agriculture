@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Auth API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Leaf Auth
+paths:
+  /api/authenticate:
+    post:
+      tags:
+      - API Reference > Leaf Auth
+      summary: Leaf Agriculture Get your Leaf Token
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"username\": \"{{leaf_email}}\",\n  \"password\": \"{{leaf_pass}}\",\n  \"rememberMe\": true\n}\n// if rememberMe = \"true\", your Leaf Token lasts 30 days. If \"false\", your Leaf Token lasts 24h."'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Input Database > Varieties API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Input Database > Varieties
+paths:
+  /services/beta/api/products/search:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Varieties
+      summary: Leaf Agriculture Search for varieties
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/varieties:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Varieties
+      summary: Leaf Agriculture Get all varieties
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/varieties/{variety_id}:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Varieties
+      summary: Leaf Agriculture Get a variety
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: variety_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/users/{leaf_user_id}/varieties/summary:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Varieties
+      summary: Leaf Agriculture Get summarized varieties
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

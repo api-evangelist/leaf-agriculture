@@ -1,0 +1,150 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Boundaries API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Field Boundary Management > Boundaries
+paths:
+  /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundaries:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Boundaries
+      summary: Leaf Agriculture Get all boundaries of a field
+      security:
+      - noauthAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundaries/{boundary_id}:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Boundaries
+      summary: Leaf Agriculture Get a boundary of a field
+      security:
+      - noauthAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: boundary_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundary:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Boundaries
+      summary: Leaf Agriculture Get active boundary of a field
+      security:
+      - noauthAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+      - API Reference > Field Boundary Management > Boundaries
+      summary: Leaf Agriculture Update active boundary
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"geometry\": {\n    \"coordinates\": \n    [[[\n        [-89.84392762184143,39.72439389620628],\n        [-89.84388470649719,39.71943436012731],\n        [-89.83928203582764,39.71951688444436],\n        [-89.83936786651611,39.725392361998416],\n        [-89.84392762184143,39.72439389620628]\n    ]]],\n    \"type\": \"MultiPolygon\"\n  }\n}"'
+      security:
+      - noauthAuth: []
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

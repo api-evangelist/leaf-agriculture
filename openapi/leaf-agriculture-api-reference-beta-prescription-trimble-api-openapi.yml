@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Prescription > Trimble API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Prescription > Trimble
+paths:
+  /services/beta/prescription/api/users/{leaf_user_id}/trimble:
+    post:
+      tags:
+      - API Reference > Beta > Prescription > Trimble
+      summary: Leaf Agriculture Upload Trimble prescriptions
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: organizationId
+        in: query
+        schema:
+          type: integer
+        description: fill with your organizationId
+        example: '123456'
+      - name: rateColumn
+        in: query
+        schema:
+          type: string
+        description: fill in the name of the rate column in the file
+        example: columnRateName
+      - name: rateUnits
+        in: query
+        schema:
+          type: string
+        description: 'fill with the following values: gal/ac, l/ha, lbs/ac, ton/ac, kg/ha, t/ha, kS/ac, kS/ha, lbs(N)/ac, kg(N)/ha, S/ha or S/ha'
+        example: gal/ac
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

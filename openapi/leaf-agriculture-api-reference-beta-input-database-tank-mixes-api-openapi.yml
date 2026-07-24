@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Input Database > Tank Mixes API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Input Database > Tank Mixes
+paths:
+  /services/beta/api/tankMixes:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Tank Mixes
+      summary: Leaf Agriculture Get all tank mixes
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/tankMixes/search:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Tank Mixes
+      summary: Leaf Agriculture Search for tank mixes
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

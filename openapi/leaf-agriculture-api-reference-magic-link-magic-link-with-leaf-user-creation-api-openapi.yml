@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Magic Link > Magic Link with Leaf User Creation API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Magic Link > Magic Link with Leaf User Creation
+paths:
+  /services/widgets/api/magic-link/provider:
+    post:
+      tags:
+      - API Reference > Magic Link > Magic Link with Leaf User Creation
+      summary: Leaf Agriculture Create a Provider Magic Link
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"user_name\",\n  \"email\": \"user_email\",\n  \"externalId\": \"external_id\",\n  \"expiresIn\": 900,\n  \"allowedProviders\": [\n    \"All\"\n  ],\n  \"settings\": {\n    \"backgroundColor\": \"#F5F5F5\",\n    \"headerImage\": \"URL\",\n    \"companyLogo\": \"URL\",\n    \"companyName\": \"companyName\",\n    \"showLeafUserName\": \"false\",\n    \"disconnectEnabled\": \"false\"\n  }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/widgets/api/magic-link/authentication:
+    post:
+      tags:
+      - API Reference > Magic Link > Magic Link with Leaf User Creation
+      summary: Leaf Agriculture Create a Authentication Magic Link
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"user_name\",\n  \"email\": \"user_email\",\n  \"externalId\": \"external_id\",\n  \"expiresIn\": 900,\n  \"provider\": \"provider_name\",\n  \"settings\": {\n    \"backgroundColor\": \"#F5F5F5\",\n    \"headerImage\": \"URL\",\n    \"companyLogo\": \"URL\",\n    \"companyName\": \"companyName\",\n    \"showLeafUserName\": \"false\",\n    \"disconnectEnabled\": \"false\"\n  }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/widgets/api/magic-link/file-upload:
+    post:
+      tags:
+      - API Reference > Magic Link > Magic Link with Leaf User Creation
+      summary: Leaf Agriculture Create a File Upload Magic Link
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"user_name\",\n  \"email\": \"user_email\",\n  \"externalId\": \"external_id\",\n  \"expiresIn\": 900,\n  \"settings\": {\n    \"backgroundColor\": \"#F5F5F5\",\n    \"headerImage\": \"URL\",\n    \"companyLogo\": \"URL\",\n    \"companyName\": \"companyName\",\n    \"showLeafUserName\": \"false\",\n    \"disconnectEnabled\": \"false\"\n  }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -1,0 +1,328 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Connect API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Leaf Connect
+paths:
+  /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}:
+    get:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Get API Owner sharing relation
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: sharing_relation_role
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/status:
+    get:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Get API Owner sharing relation status
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: sharing_relation_role
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: target_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/api-owners/sharing-relation/receiver:
+    post:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Create an API Owner Sharing relation
+      description: 'Register the URL of your webhook, specifying which events do you want to be alerted about.
+
+
+        The id of the resource created is returned in the Location header.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"receiverApiOwner\": {{receiver_api_owner}}\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}:
+    patch:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Update an API Owner sharing relation status
+      description: 'Register the URL of your webhook, specifying which events do you want to be alerted about.
+
+
+        The id of the resource created is returned in the Location header.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"status\": {{sharing_relation_status}}\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: sharing_relation_role
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: target_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  ? /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/users-permissions/{leaf_user_id}
+  : get:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Get LeafUser permissions
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: sharing_relation_role
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: target_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Delete LeafUser permissions
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: sharing_relation_role
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: target_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver_api_owner}/users-permissions/{leaf_user_id}:
+    post:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Create a LeafUser permissions
+      description: 'Register the URL of your webhook, specifying which events do you want to be alerted about.
+
+
+        The id of the resource created is returned in the Location header.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"permissions\": {\n        \"FIELDS\": {\n            \"actions\": [\n                \"READ\"\n            ]\n        },\n        \"OPERATIONS\": {\n            \"actions\": [\n                \"READ\"\n            ],\n            \"types\": [\n                \"PLANTED\"\n            ]\n        }\n    }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: receiver_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  ? /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver_api_owner}/users-permissions/{leaf_user_id}/{sharing_relation_resource}
+  : patch:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Update LeafUser permissions
+      description: 'Register the URL of your webhook, specifying which events do you want to be alerted about.
+
+
+        The id of the resource created is returned in the Location header.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"actions\": [\n        \"READ\"\n    ],\n    \"types\": [\n        \"PLANTED\",\n        \"HARVESTED\"\n    ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: receiver_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: sharing_relation_resource
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/invalidate-tokens:
+    post:
+      tags:
+      - API Reference > Leaf Connect
+      summary: Leaf Agriculture Invalidate receiver's tokens
+      requestBody:
+        content: {}
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: sharing_relation_role
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: target_api_owner
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

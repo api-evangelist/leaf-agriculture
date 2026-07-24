@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Fields > Upload Field File API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Field Boundary Management > Fields > Upload Field File
+paths:
+  /services/uploadservice/api/upload:
+    post:
+      tags:
+      - API Reference > Field Boundary Management > Fields > Upload Field File
+      summary: Leaf Agriculture Upload a field file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+        example: '{{leaf_user_id}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Fields > Upload Field File
+      summary: Leaf Agriculture Get all uploads
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/uploadservice/api/upload/{upload_field_id}:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Fields > Upload Field File
+      summary: Leaf Agriculture Get an upload
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: upload_field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/uploadservice/api/upload/{upload_field_id}/entries:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Fields > Upload Field File
+      summary: Leaf Agriculture Get the upload entries
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: upload_field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

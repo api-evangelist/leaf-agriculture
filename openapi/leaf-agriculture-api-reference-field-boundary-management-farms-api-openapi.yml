@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Farms API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Field Boundary Management > Farms
+paths:
+  /services/fields/api/farms:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Farms
+      summary: Leaf Agriculture Get all farms
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/farms/{farm_id}:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Farms
+      summary: Leaf Agriculture Get a farm
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: farm_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+      - API Reference > Field Boundary Management > Farms
+      summary: Leaf Agriculture Update a farm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Farm 01
+                growerId: 123
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: farm_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/farms:
+    post:
+      tags:
+      - API Reference > Field Boundary Management > Farms
+      summary: Leaf Agriculture Create a farm
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Farm 01
+                growerId: 123
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

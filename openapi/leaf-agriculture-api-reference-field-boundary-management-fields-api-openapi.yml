@@ -1,0 +1,274 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Fields API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Field Boundary Management > Fields
+paths:
+  /services/fields/api/fields:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Get all fields
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+        description: your Leaf User id
+        example: '{{leaf_user_id}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/fields/{field_id}:
+    get:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Get a field
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Delete a field
+      description: 'This will request to delete the field which its id is holded by variable `field-1-id`. You can specify a different
+
+        field by replacing `{{field-1-id}}` in the URL below.'
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Patch a field
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Sample Updated Name
+                farmId: 1
+                geometry:
+                  coordinates:
+                  - - - - -89.84392762184143
+                        - 39.72439389620629
+                      - - -89.84388470649719
+                        - 39.71943436012731
+                      - - -89.83928203582764
+                        - 39.71951688444436
+                      - - -89.83936786651611
+                        - 39.725392361998416
+                      - - -89.84392762184143
+                        - 39.72439389620629
+                  type: MultiPolygon
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/fields:
+    post:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Create a Field
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                geometry:
+                  coordinates:
+                  - - - - -89.84392762184143
+                        - 39.72439389620628
+                      - - -89.84388470649719
+                        - 39.71943436012731
+                      - - -89.83928203582764
+                        - 39.71951688444436
+                      - - -89.83936786651611
+                        - 39.725392361998416
+                      - - -89.84392762184143
+                        - 39.72439389620628
+                  type: MultiPolygon
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/fields/{field_id}/integration/{provider_name}:
+    post:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Upload Field to Provider
+      requestBody:
+        content: {}
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: provider_name
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/fields/query/intersects:
+    post:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Get Fields by geometry
+      description: If there are fields that intersect with the given geometry, they will be returned.
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n   \"geometry\":\n   {\n     \"type\": \"MultiPolygon\",\n     \"coordinates\": [[[\n        [-89.84392762184143,39.72439389620628],\n        [-89.84388470649719,39.71943436012731],\n        [-89.83928203582764,39.71951688444436],\n        [-89.83936786651611,39.725392361998416],\n        [-89.84392762184143,39.72439389620628]\n    ]]]\n   }\n }\n"'
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/fields/api/users/{leaf_user_id}/fields/intersect:
+    post:
+      tags:
+      - API Reference > Field Boundary Management > Fields
+      summary: Leaf Agriculture Get intersection of fields
+      description: If there are fields that intersect with the given geometry, they will be returned.
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"[\"{{field_id}}\", \"{{field_id}}\"]\n\n// [\"field1 id\", \"field2 id\", \"fieldN id\"]\n\n"'
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

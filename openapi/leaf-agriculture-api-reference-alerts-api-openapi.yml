@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Alerts
+paths:
+  /services/alerts/api/alerts/webhooks:
+    post:
+      tags:
+      - API Reference > Alerts
+      summary: Leaf Agriculture Register a webhook
+      description: 'Register the URL of your webhook, specifying which events do you want to be alerted about.
+
+
+        The id of the resource created is returned in the Location header.'
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"listener of uploaded files\",\n  \"url\": \"https://webhook.site/cf446e16-79ee-434d-9f59-cd64f2ae82ff\",\n  \"secret\": \"<your secret, for auth>\",\n  \"events\": [\n    \"fieldCreated\"\n  ]\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+      - API Reference > Alerts
+      summary: Leaf Agriculture Get all webhooks
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/alerts/api/alerts/webhooks/{webhook_id}:
+    get:
+      tags:
+      - API Reference > Alerts
+      summary: Leaf Agriculture Get a webhook
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: webhook_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - API Reference > Alerts
+      summary: Leaf Agriculture Delete a webhook
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: webhook_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

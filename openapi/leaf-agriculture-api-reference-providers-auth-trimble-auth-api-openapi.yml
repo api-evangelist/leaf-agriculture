@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Providers Auth > Trimble Auth API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Providers Auth > Trimble Auth
+paths:
+  /get_url:
+    post:
+      tags:
+      - API Reference > Providers Auth > Trimble Auth
+      summary: Leaf Agriculture Get Trimble auth URL
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                application_name: '{{trimble_app_name}}'
+                client_id: '{{trimble_client_id}}'
+                client_redirect_url: '{{trimble_redirect_url}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /get_token:
+    post:
+      tags:
+      - API Reference > Providers Auth > Trimble Auth
+      summary: Leaf Agriculture Get Trimble Token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                client_id: '{{trimble_client_id}}'
+                redirect_url: '{{trimble_redirect_url}}'
+                client_secret: '{{trimble_client_secret}}'
+                code: '{{trimble_code}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

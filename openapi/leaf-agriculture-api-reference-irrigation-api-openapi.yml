@@ -1,0 +1,148 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Irrigation API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Irrigation
+paths:
+  /services/irrigation/api/users/{leaf_user_id}/irrigation-equipment/:
+    get:
+      tags:
+      - API Reference > Irrigation
+      summary: Leaf Agriculture Get all irrigation equipment
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/irrigation/api/users/{leaf_user_id}/irrigation-equipment/{equipment_id}:
+    get:
+      tags:
+      - API Reference > Irrigation
+      summary: Leaf Agriculture Get an irrigation equipment
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: equipment_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/irrigation/api/users/{leaf_user_id}/irrigation/applied-irrigation:
+    get:
+      tags:
+      - API Reference > Irrigation
+      summary: Leaf Agriculture Get as-applied irrigation
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/irrigation/api/users/{leaf_user_id}/irrigation/fields:
+    get:
+      tags:
+      - API Reference > Irrigation
+      summary: Leaf Agriculture Get all irrigated fields
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/irrigation/api/users/{leaf_user_id}/irrigation/fields/{field_id}:
+    get:
+      tags:
+      - API Reference > Irrigation
+      summary: Leaf Agriculture Get an irrigated field
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

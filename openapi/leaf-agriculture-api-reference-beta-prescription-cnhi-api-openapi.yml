@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Prescription > CNHi API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Prescription > CNHi
+paths:
+  /services/beta/prescription/api/users/{leaf_user_id}/cnhi:
+    get:
+      tags:
+      - API Reference > Beta > Prescription > CNHi
+      summary: Leaf Agriculture Get CNHi prescriptions
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: companyId
+        in: query
+        schema:
+          type: string
+        example: '{{cnhi_company_id}}'
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+      - API Reference > Beta > Prescription > CNHi
+      summary: Leaf Agriculture Upload prescription to CNHi
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: companyId
+        in: query
+        schema:
+          type: string
+        example: '{{cnhi_company_id}}'
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

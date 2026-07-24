@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Prescription > ClimateFieldView API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Prescription > ClimateFieldView
+paths:
+  /services/beta/prescription/api/users/{leaf_user_id}/climateFieldView:
+    post:
+      tags:
+      - API Reference > Beta > Prescription > ClimateFieldView
+      summary: Leaf Agriculture Upload ClimateFieldView prescription file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: Select your prescription file (zip file)
+                  format: binary
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: multipart/form-data
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

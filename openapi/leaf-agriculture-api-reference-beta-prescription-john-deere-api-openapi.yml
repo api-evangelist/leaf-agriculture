@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Prescription > John Deere API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Prescription > John Deere
+paths:
+  /services/beta/prescription/api/users/{leaf_user_id}/johnDeere:
+    post:
+      tags:
+      - API Reference > Beta > Prescription > John Deere
+      summary: Leaf Agriculture Upload John Deere prescription files
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: Select your prescription file (zip file)
+                  format: binary
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: multipart/form-data
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+        description: The id of the organization at JohnDeere
+        example: '{{jd_organization_id}}'
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+      - API Reference > Beta > Prescription > John Deere
+      summary: Leaf Agriculture Download prescription from John Deere
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+        description: The id of the organization at JohnDeere
+        example: '{{jd_organization_id}}'
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

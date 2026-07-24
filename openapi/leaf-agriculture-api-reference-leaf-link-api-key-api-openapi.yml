@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Link > API Key API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Leaf Link > API Key
+paths:
+  /services/usermanagement/api/api-keys:
+    get:
+      tags:
+      - API Reference > Leaf Link > API Key
+      summary: Leaf Agriculture Get all Leaf User API keys
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+        example: '{{leaf_user_id}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+      - API Reference > Leaf Link > API Key
+      summary: Leaf Agriculture Create a Leaf User API key
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"leafUserId\": \"{{leaf_user_id}}\",\n  \"expiresIn\": 900,\n  \"description\": \"string\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/api-keys/{api_key_id}:
+    delete:
+      tags:
+      - API Reference > Leaf Link > API Key
+      summary: Leaf Agriculture Revoke a Leaf User API key
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: api_key_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

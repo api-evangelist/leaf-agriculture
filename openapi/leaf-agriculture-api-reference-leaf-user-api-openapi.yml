@@ -1,0 +1,132 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf User API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Leaf User
+paths:
+  /services/usermanagement/api/users/:
+    get:
+      tags:
+      - API Reference > Leaf User
+      summary: Leaf Agriculture Get all Leaf Users
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+      - API Reference > Leaf User
+      summary: Leaf Agriculture Update Leaf User
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"id\": \"{{leaf_user_id}}\",\n  \"name\": \"abc{{random_number}}\",\n  \"email\": \"abc{{random_number}}@sharklasers.com\",\n  \"address\": \"New York, NY 10004, US\",\n  \"phone\": \"123-456-7890\",\n  \"climateFieldViewCredentials\": {\n  \t\"id\":\"{{cfv_credentials_id}}\"\n  },\n  \"johnDeereCredentials\": {\n  \t\"id\": \"{{jd_credentials_id}}\"\n  },\n  \"cnhiCredentials\": {\n  \t\"id\": \"{{cnhi_credentials_id}}\"\n  }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+      - API Reference > Leaf User
+      summary: Leaf Agriculture Create Leaf User
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"Ada Lovelace{{random_number}}\",\n  \"email\": \"AdaLovelace{{random_number}}@sharklasers.com\",\n  \"address\": \"New York, NY 10004, US\",\n  \"phone\": \"123-456-7890\"\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/usermanagement/api/users/{leaf_user_id}:
+    get:
+      tags:
+      - API Reference > Leaf User
+      summary: Leaf Agriculture Get specific Leaf User
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - API Reference > Leaf User
+      summary: Leaf Agriculture Delete Leaf User
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

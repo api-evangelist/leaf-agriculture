@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Providers Auth > Stara Auth API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Providers Auth > Stara Auth
+paths:
+  /autenticacao:
+    post:
+      tags:
+      - API Reference > Providers Auth > Stara Auth
+      summary: Leaf Agriculture Get Stara API key
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                  example: '{{stara_username}}'
+                pwd:
+                  type: string
+                  example: '{{stara_password}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /token:
+    post:
+      tags:
+      - API Reference > Providers Auth > Stara Auth
+      summary: Leaf Agriculture Get Stara Tokens
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessTokenClient:
+                  type: string
+                  example: '{{stara_access_token_client}}'
+                apiKey:
+                  type: string
+                  example: '{{stara_api_key}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

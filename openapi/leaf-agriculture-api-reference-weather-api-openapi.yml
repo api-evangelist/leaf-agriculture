@@ -1,0 +1,256 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Weather API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Weather
+paths:
+  /services/weather/api/users/{leaf_user_id}/weather/forecast/field/{field_id}/daily:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Daily Forecast
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/users/{leaf_user_id}/weather/forecast/field/{field_id}/hourly:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Hourly Forecast
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/weather/forecast/daily/{lat},{lon}:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Daily Forecast for lat/lon
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: lat
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: lon
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/weather/forecast/hourly/{lat},{lon}:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Hourly Forecast for lat/lon
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: lat
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: lon
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/users/{leaf_user_id}/weather/historical/field/{field_id}/daily:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Daily Historical
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/users/{leaf_user_id}/weather/historical/field/{field_id}/hourly:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Hourly Historical
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: field_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/weather/historical/daily/{lat},{lon}:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Daily Historical for lat/lon
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: lat
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: lon
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/weather/api/weather/historical/hourly/{lat},{lon}:
+    get:
+      tags:
+      - API Reference > Weather
+      summary: Leaf Agriculture Get Hourly Historical for lat/lon
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: lat
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: lon
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

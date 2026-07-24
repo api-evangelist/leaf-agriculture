@@ -1,0 +1,193 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Machines API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Machines
+paths:
+  /services/beta/api/users/{leaf_user_id}/machines:
+    get:
+      tags:
+      - API Reference > Beta > Machines
+      summary: Leaf Agriculture Get all Machines
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+      - API Reference > Beta > Machines
+      summary: Leaf Agriculture Create Machine
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"string\"\n}"'
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/users/{leaf_user_id}/machines/{machine_id}:
+    get:
+      tags:
+      - API Reference > Beta > Machines
+      summary: Leaf Agriculture Get specific Machine
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: machine_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+      - API Reference > Beta > Machines
+      summary: Leaf Agriculture Update Machine
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"name\": \"string\"\n}"'
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: machine_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - API Reference > Beta > Machines
+      summary: Leaf Agriculture Delete Machine
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: machine_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/users/{leaf_user_id}/machines/{machine_id}/files:
+    get:
+      tags:
+      - API Reference > Beta > Machines
+      summary: Leaf Agriculture Get all Machine Files
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: machine_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

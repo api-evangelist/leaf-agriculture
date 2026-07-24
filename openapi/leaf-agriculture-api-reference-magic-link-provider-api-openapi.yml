@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Magic Link > Provider API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Magic Link > Provider
+paths:
+  /services/widgets/api/magic-link/provider:
+    get:
+      tags:
+      - API Reference > Magic Link > Provider
+      summary: Leaf Agriculture Get All Provider Magic Link
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/widgets/api/magic-link/provider/{magic_link_id}:
+    get:
+      tags:
+      - API Reference > Magic Link > Provider
+      summary: Leaf Agriculture Get a Provider Magic Link
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: magic_link_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+      - API Reference > Magic Link > Provider
+      summary: Leaf Agriculture Delete a Provider Magic Link
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: magic_link_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/widgets/api/magic-link/users/{leaf_user_id}/provider:
+    post:
+      tags:
+      - API Reference > Magic Link > Provider
+      summary: Leaf Agriculture Create a Provider Magic Link
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n  \"expiresIn\": 900,\n  \"allowedProviders\": [\n    \"All\"\n  ],\n  \"settings\": {\n    \"backgroundColor\": \"#F5F5F5\",\n    \"headerImage\": \"URL\",\n    \"companyLogo\": \"URL\",\n    \"companyName\": \"companyName\",\n    \"showLeafUserName\": \"false\",\n    \"disconnectEnabled\": \"false\"\n  }\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

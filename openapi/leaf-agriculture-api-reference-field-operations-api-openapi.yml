@@ -1,0 +1,278 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Operations API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Field Operations
+paths:
+  /services/operations/api/operations:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get all operations
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/summary:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation summary
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/filteredGeojson:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation filteredGeojson
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/standardGeojson:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation standardGeojson
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/images:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation's images
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/imagesV2:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation's images v2
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/geotiffImages:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation's geotiff images
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{file_id}/units:
+    get:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Get an operation's units
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: file_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/{operation_id}/reprocess:
+    post:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Reprocess an operation
+      requestBody:
+        content: {}
+      parameters:
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/operations/api/operations/CropOperationByField:
+    post:
+      tags:
+      - API Reference > Field Operations
+      summary: Leaf Agriculture Crop operation by field
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                id: operationId
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

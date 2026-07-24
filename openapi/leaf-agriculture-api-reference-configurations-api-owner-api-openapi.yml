@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Configurations > Api Owner API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Configurations > Api Owner
+paths:
+  /services/config/api/configs:
+    get:
+      tags:
+      - API Reference > Configurations > Api Owner
+      summary: Leaf Agriculture Get default config
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+      - API Reference > Configurations > Api Owner
+      summary: Leaf Agriculture Update default config
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"operationsImageCreation\": false,\n    \"geoimagesResolution\": 0.00001,\n    \"geoimagesShape\": \"SQUARE\",\n    \"geoimagesProjection\": \"EPSG:3857\",\n    \"geoimagesColorRamp\": {\n        \"0%\"  : [200,   0, 0],\n        \"35%\" : [255,  40, 0],\n        \"45%\" : [255, 150, 0],\n        \"55%\" : [255, 240, 0],\n        \"65%\" : [  0, 230, 0],\n        \"75%\" : [  0, 190, 0],\n        \"100%\": [  0, 130, 0],\n        \"nv\"  : [  0,   0, 0, 0]\n    },\n    \"fieldsAutoSync\": true,\n    \"fieldsAttachIntersection\": 0.01,\n    \"fieldsMergeIntersection\": 0.01\n}"'
+      parameters:
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

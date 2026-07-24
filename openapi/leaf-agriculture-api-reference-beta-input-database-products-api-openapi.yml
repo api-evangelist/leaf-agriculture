@@ -1,0 +1,175 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Input Database > Products API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Beta > Input Database > Products
+paths:
+  /services/beta/api/products:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Products
+      summary: Leaf Agriculture Get all products
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/users/{leaf_user_id}/products/summary:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Products
+      summary: Leaf Agriculture Get summarized products
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: leaf_user_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/products/{product_id}:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Products
+      summary: Leaf Agriculture Get a product
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: product_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/products/matching/operations/{operation_id}:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Products
+      summary: Leaf Agriculture Get matching products from an operation
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/products/matching/operations/{operation_id}/matches/{match_id}:
+    put:
+      tags:
+      - API Reference > Beta > Input Database > Products
+      summary: Leaf Agriculture Updated product matches
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+              example: '"{\n    \"status\": \"VALIDATED\"\n}"'
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: match_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /services/beta/api/products/matching/operations/{operation_id}/matches/{match_id}/historical:
+    get:
+      tags:
+      - API Reference > Beta > Input Database > Products
+      summary: Leaf Agriculture Get product matches historical
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        example: Bearer {{leaf_token}}
+      - name: Content-Type
+        in: header
+        schema:
+          type: string
+        example: application/json
+      - name: operation_id
+        in: path
+        schema:
+          type: string
+        required: true
+      - name: match_id
+        in: path
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

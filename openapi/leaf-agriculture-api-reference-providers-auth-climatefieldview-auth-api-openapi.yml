@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Providers Auth > ClimateFieldView Auth API
+  description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
+  version: 1.0.0
+tags:
+- name: API Reference > Providers Auth > ClimateFieldView Auth
+paths:
+  /url:
+    post:
+      tags:
+      - API Reference > Providers Auth > ClimateFieldView Auth
+      summary: Leaf Agriculture 1. Get CFV auth URL
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                client_id: '{{cfv_client_id}}'
+                redirect_uri: '{{cfv_redirect_url}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/oauth/token:
+    post:
+      tags:
+      - API Reference > Providers Auth > ClimateFieldView Auth
+      summary: Leaf Agriculture 2. Get CFV Tokens
+      description: Access token (and refresh token) request as detailed on step 4 of the medium post
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: get code from redirect url and put here
+                  example: '{{cfv_code}}'
+                redirect_uri:
+                  type: string
+                  description: 'same as when on the url you sent to user '
+                  example: '{{cfv_redirect_url}}'
+                grant_type:
+                  type: string
+                  example: authorization_code
+      security:
+      - noauthAuth: []
+      parameters:
+      - name: Authorization
+        in: header
+        schema:
+          type: string
+        description: Basic base64(clientId:clientSecret)
+        example: '{{cfv_auth_header}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
