@@ -32,7 +32,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/apis.yml
 created: '2024-07-11'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: leaf-agriculture:leaf-agriculture-api-reference-alerts-api
   name: Leaf Agriculture API Reference > Alerts API
