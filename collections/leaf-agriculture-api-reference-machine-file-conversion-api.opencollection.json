@@ -1,0 +1,320 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Machine File Conversion API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Machine File Conversion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all files"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get specific file by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files/:file_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get specific file by id"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get file summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files/:file_id/summary",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get file summary"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get file images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files/:file_id/images",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get file images"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get file units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files/:file_id/units",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get file units"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get file status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files/:file_id/status",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get file status"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all uncovered files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/files/uncoveredFiles",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leafUserId",
+                "value": "{{leaf_user_id}}",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all uncovered files"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all batches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/batch",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all batches"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Upload operation file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/operations/api/batch",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leafUserId",
+                "value": "{{leaf_user_id}}",
+                "type": "query"
+              },
+              {
+                "name": "provider",
+                "value": "Other",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Leaf Agriculture Upload operation file"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get batch by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/batch/:batch_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "batch_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get batch by id"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Merge operation files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/operations/api/files/merge",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Make sure you are merging operations of the \n- same operationType (PLANTED, HARVESTED or APPLIED)\n- same Leaf User"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1204 @@
+{
+  "item": [
+    {
+      "id": "9436298b-0960-433e-ac23-592f7fbb0b37",
+      "name": "API Reference > Leaf Connect",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67179a78-01f6-4c4b-9a73-8db2abd4b557",
+          "name": "Leaf Agriculture Get API Owner sharing relation",
+          "request": {
+            "name": "Leaf Agriculture Get API Owner sharing relation",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                ":sharing_relation_role"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_role",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1c1ef60-9cb2-4a75-aa1e-9a95f35733fc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    ":sharing_relation_role"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_role",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ba5f5be8-34f4-418f-8cb8-41ca0ec66f34",
+          "name": "Leaf Agriculture Get API Owner sharing relation status",
+          "request": {
+            "name": "Leaf Agriculture Get API Owner sharing relation status",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                ":sharing_relation_role",
+                ":target_api_owner",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_role",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "target_api_owner",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "70a64907-1149-42fd-8365-d7fe60fc2941",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    ":sharing_relation_role",
+                    ":target_api_owner",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_role",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "target_api_owner",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ba5953c-b9e7-4f91-96aa-1fbb20b1a1d9",
+          "name": "Leaf Agriculture Create an API Owner Sharing relation",
+          "request": {
+            "name": "Leaf Agriculture Create an API Owner Sharing relation",
+            "description": {
+              "content": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                "receiver"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "619f53a4-f80f-4129-9e6a-e461b8e40da6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    "receiver"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"receiverApiOwner\\\": {{receiver_api_owner}}\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb866f12-fdb6-4b49-abb0-7c0c4b6fe330",
+          "name": "Leaf Agriculture Update an API Owner sharing relation status",
+          "request": {
+            "name": "Leaf Agriculture Update an API Owner sharing relation status",
+            "description": {
+              "content": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                ":sharing_relation_role",
+                ":target_api_owner"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_role",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "target_api_owner",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "52061e22-1fb5-4e68-9299-2d80f2db3744",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    ":sharing_relation_role",
+                    ":target_api_owner"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_role",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "target_api_owner",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"status\\\": {{sharing_relation_status}}\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67fb0f25-b3a5-4171-b3c8-de873d92cb30",
+          "name": "Leaf Agriculture Get LeafUser permissions",
+          "request": {
+            "name": "Leaf Agriculture Get LeafUser permissions",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                ":sharing_relation_role",
+                ":target_api_owner",
+                "users-permissions",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_role",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "target_api_owner",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a0b3055-708d-44b4-9788-27ab723b07e1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    ":sharing_relation_role",
+                    ":target_api_owner",
+                    "users-permissions",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_role",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "target_api_owner",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74aa51b1-2f17-4156-927e-5b28a9c66dcc",
+          "name": "Leaf Agriculture Delete LeafUser permissions",
+          "request": {
+            "name": "Leaf Agriculture Delete LeafUser permissions",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                ":sharing_relation_role",
+                ":target_api_owner",
+                "users-permissions",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_role",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "target_api_owner",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d22d3f74-055d-429c-9243-154a8576d8cb",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    ":sharing_relation_role",
+                    ":target_api_owner",
+                    "users-permissions",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_role",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "target_api_owner",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fa15cca-2815-4d2c-9d0d-b57a32f4e8e4",
+          "name": "Leaf Agriculture Create a LeafUser permissions",
+          "request": {
+            "name": "Leaf Agriculture Create a LeafUser permissions",
+            "description": {
+              "content": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                "receiver",
+                ":receiver_api_owner",
+                "users-permissions",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receiver_api_owner",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "736ec59f-5981-4c09-8ba7-a63454ce8e58",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    "receiver",
+                    ":receiver_api_owner",
+                    "users-permissions",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receiver_api_owner",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"permissions\\\": {\\n        \\\"FIELDS\\\": {\\n            \\\"actions\\\": [\\n                \\\"READ\\\"\\n            ]\\n        },\\n        \\\"OPERATIONS\\\": {\\n            \\\"actions\\\": [\\n                \\\"READ\\\"\\n            ],\\n            \\\"types\\\": [\\n                \\\"PLANTED\\\"\\n            ]\\n        }\\n    }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f30f4c10-71d6-49f5-8dd7-0a63c9caf07e",
+          "name": "Leaf Agriculture Update LeafUser permissions",
+          "request": {
+            "name": "Leaf Agriculture Update LeafUser permissions",
+            "description": {
+              "content": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                "receiver",
+                ":receiver_api_owner",
+                "users-permissions",
+                ":leaf_user_id",
+                ":sharing_relation_resource"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receiver_api_owner",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_resource",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "6f9b8f42-22b8-42d3-82ed-7b9868b98002",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    "receiver",
+                    ":receiver_api_owner",
+                    "users-permissions",
+                    ":leaf_user_id",
+                    ":sharing_relation_resource"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receiver_api_owner",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_resource",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"actions\\\": [\\n        \\\"READ\\\"\\n    ],\\n    \\\"types\\\": [\\n        \\\"PLANTED\\\",\\n        \\\"HARVESTED\\\"\\n    ]\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa5e180f-d07d-49db-bd4d-10c3cb6b43fd",
+          "name": "Leaf Agriculture Invalidate receiver's tokens",
+          "request": {
+            "name": "Leaf Agriculture Invalidate receiver's tokens",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "api-owners",
+                "sharing-relation",
+                ":sharing_relation_role",
+                ":target_api_owner",
+                "invalidate-tokens"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sharing_relation_role",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "target_api_owner",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "id": "29bffb56-c205-4a78-9921-17f506ae3d04",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "api-owners",
+                    "sharing-relation",
+                    ":sharing_relation_role",
+                    ":target_api_owner",
+                    "invalidate-tokens"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sharing_relation_role",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "target_api_owner",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "21b68979-81ae-4164-8f11-0d122fcc445d",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Connect API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

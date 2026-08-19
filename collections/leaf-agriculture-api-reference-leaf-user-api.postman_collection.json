@@ -1,0 +1,521 @@
+{
+  "item": [
+    {
+      "id": "2b1c11c9-57ee-45be-8917-d6ae85a2009a",
+      "name": "API Reference > Leaf User",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60c4db39-bcf2-4646-a18b-00d68c24f1ac",
+          "name": "Leaf Agriculture Get all Leaf Users",
+          "request": {
+            "name": "Leaf Agriculture Get all Leaf Users",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "users",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2063ef8-4c32-438a-9692-cb67350ef613",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "users",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b7ab179-9057-4d34-8f4f-caaba18ea677",
+          "name": "Leaf Agriculture Update Leaf User",
+          "request": {
+            "name": "Leaf Agriculture Update Leaf User",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "users",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "37971312-8530-4666-bc51-e5c5ddb6d0ad",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "users",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"id\\\": \\\"{{leaf_user_id}}\\\",\\n  \\\"name\\\": \\\"abc{{random_number}}\\\",\\n  \\\"email\\\": \\\"abc{{random_number}}@sharklasers.com\\\",\\n  \\\"address\\\": \\\"New York, NY 10004, US\\\",\\n  \\\"phone\\\": \\\"123-456-7890\\\",\\n  \\\"climateFieldViewCredentials\\\": {\\n  \\t\\\"id\\\":\\\"{{cfv_credentials_id}}\\\"\\n  },\\n  \\\"johnDeereCredentials\\\": {\\n  \\t\\\"id\\\": \\\"{{jd_credentials_id}}\\\"\\n  },\\n  \\\"cnhiCredentials\\\": {\\n  \\t\\\"id\\\": \\\"{{cnhi_credentials_id}}\\\"\\n  }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53b43853-2b26-4bd8-a651-8d04cb13ec99",
+          "name": "Leaf Agriculture Create Leaf User",
+          "request": {
+            "name": "Leaf Agriculture Create Leaf User",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "users",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "9077dc70-b939-47e9-ba60-d239a58e1689",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "users",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"name\\\": \\\"Ada Lovelace{{random_number}}\\\",\\n  \\\"email\\\": \\\"AdaLovelace{{random_number}}@sharklasers.com\\\",\\n  \\\"address\\\": \\\"New York, NY 10004, US\\\",\\n  \\\"phone\\\": \\\"123-456-7890\\\"\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcc7f967-9bd6-4310-a38f-731f9cbb1e75",
+          "name": "Leaf Agriculture Get specific Leaf User",
+          "request": {
+            "name": "Leaf Agriculture Get specific Leaf User",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "users",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "776e9de5-86ea-4a67-a5f6-8b260820ec2c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "users",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25d916b5-415f-4847-a532-1d7bfaf122ca",
+          "name": "Leaf Agriculture Delete Leaf User",
+          "request": {
+            "name": "Leaf Agriculture Delete Leaf User",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "usermanagement",
+                "api",
+                "users",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27c95111-43e5-4d78-869f-f5a303fca495",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "usermanagement",
+                    "api",
+                    "users",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7f06fb1e-2fc0-41bc-b6fb-6d1fb437d7a8",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

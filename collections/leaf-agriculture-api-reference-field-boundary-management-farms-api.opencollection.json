@@ -1,0 +1,129 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Farms API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Field Boundary Management > Farms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all farms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/fields/api/farms",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all farms"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get a farm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/farms/:farm_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "farm_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get a farm"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Update a farm",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/farms/:farm_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "farm_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Leaf Agriculture Update a farm"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create a farm",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/farms",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Leaf Agriculture Create a farm"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

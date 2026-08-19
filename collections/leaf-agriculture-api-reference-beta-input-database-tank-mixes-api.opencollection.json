@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Input Database > Tank Mixes API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Beta > Input Database > Tank Mixes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all tank mixes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/beta/api/tankMixes",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all tank mixes"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Search for tank mixes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/beta/api/tankMixes/search",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Search for tank mixes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

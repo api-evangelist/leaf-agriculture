@@ -1,0 +1,207 @@
+{
+  "item": [
+    {
+      "id": "bbeaafe7-5db4-4798-aec0-4c3655ec825f",
+      "name": "API Reference > Configurations > Api Owner",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "400b2247-564f-4906-b128-e02d58d456cd",
+          "name": "Leaf Agriculture Get default config",
+          "request": {
+            "name": "Leaf Agriculture Get default config",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "config",
+                "api",
+                "configs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50e559c8-4404-4f93-9b0c-6c8944c63afe",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "config",
+                    "api",
+                    "configs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb8ad811-6205-43d2-81f5-fd7b02fb63c2",
+          "name": "Leaf Agriculture Update default config",
+          "request": {
+            "name": "Leaf Agriculture Update default config",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "config",
+                "api",
+                "configs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "14d4d1f5-8394-4e57-8a9e-49df84cc320d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "config",
+                    "api",
+                    "configs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"operationsImageCreation\\\": false,\\n    \\\"geoimagesResolution\\\": 0.00001,\\n    \\\"geoimagesShape\\\": \\\"SQUARE\\\",\\n    \\\"geoimagesProjection\\\": \\\"EPSG:3857\\\",\\n    \\\"geoimagesColorRamp\\\": {\\n        \\\"0%\\\"  : [200,   0, 0],\\n        \\\"35%\\\" : [255,  40, 0],\\n        \\\"45%\\\" : [255, 150, 0],\\n        \\\"55%\\\" : [255, 240, 0],\\n        \\\"65%\\\" : [  0, 230, 0],\\n        \\\"75%\\\" : [  0, 190, 0],\\n        \\\"100%\\\": [  0, 130, 0],\\n        \\\"nv\\\"  : [  0,   0, 0, 0]\\n    },\\n    \\\"fieldsAutoSync\\\": true,\\n    \\\"fieldsAttachIntersection\\\": 0.01,\\n    \\\"fieldsMergeIntersection\\\": 0.01\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a691ce1e-a84b-479b-8e56-9fe155ff3224",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Configurations > Api Owner API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

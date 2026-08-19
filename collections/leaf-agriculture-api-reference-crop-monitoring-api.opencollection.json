@@ -1,0 +1,238 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Crop Monitoring API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Crop Monitoring",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all satellite fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/satellite/api/fields",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all satellite fields"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create a satellite field",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/satellite/api/fields",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Create a satellite field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get images of satellite field",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/satellite/api/fields/:sat_external_id/processes",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sat_external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get images of satellite field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get a satellite field",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/satellite/api/fields/:sat_external_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sat_external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get a satellite field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Delete a satellite field",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/services/satellite/api/fields/:sat_external_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sat_external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Delete a satellite field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an image of satellite field",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/satellite/api/fields/:sat_external_id/processes/:process_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sat_external_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "process_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an image of satellite field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get subscription for Planet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/satellite/api/fields/:sat_external_id/subscription",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sat_external_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get subscription for Planet"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Reprocess satellite images",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/satellite/api/fields/:sat_external_id/processes/:process_id/reprocess",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sat_external_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "process_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Reprocess satellite images"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

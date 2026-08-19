@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Layers API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Beta > Layers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all layers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/layers",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all layers"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Upload a layer to Climate Field View",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/layers/climateFieldView",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "uploadType",
+                "value": "RGB",
+                "type": "query",
+                "description": "only true color image (RGB) files are supported"
+              },
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Leaf Agriculture Upload a layer to Climate Field View"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

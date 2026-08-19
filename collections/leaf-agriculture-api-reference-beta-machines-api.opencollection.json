@@ -1,0 +1,206 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Machines API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Beta > Machines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all Machines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/machines",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all Machines"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/machines",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Create Machine"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get specific Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/machines/:machine_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "machine_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get specific Machine"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Update Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/machines/:machine_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "machine_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Update Machine"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Delete Machine",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/machines/:machine_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "machine_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Delete Machine"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all Machine Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/beta/api/users/:leaf_user_id/machines/:machine_id/files",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "machine_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all Machine Files"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

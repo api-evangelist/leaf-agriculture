@@ -1,0 +1,137 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf User API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Leaf User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all Leaf Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/usermanagement/api/users/",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all Leaf Users"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create Leaf User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/usermanagement/api/users/",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Create Leaf User"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Update Leaf User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/services/usermanagement/api/users/",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Update Leaf User"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get specific Leaf User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/usermanagement/api/users/:leaf_user_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get specific Leaf User"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Delete Leaf User",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/services/usermanagement/api/users/:leaf_user_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Delete Leaf User"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,302 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Operations API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Field Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all operations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all operations"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/summary",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation summary"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation filteredGeojson",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/filteredGeojson",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation filteredGeojson"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation standardGeojson",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/standardGeojson",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation standardGeojson"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation's images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/images",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation's images"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation's images v2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/imagesV2",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation's images v2"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation's geotiff images",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/geotiffImages",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation's geotiff images"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get an operation's units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/operations/api/operations/:file_id/units",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "file_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get an operation's units"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Reprocess an operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/operations/api/operations/:operation_id/reprocess",
+            "params": [
+              {
+                "name": "operation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Reprocess an operation"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Crop operation by field",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/operations/api/operations/CropOperationByField",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Leaf Agriculture Crop operation by field"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,253 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Fields API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Field Boundary Management > Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get all fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/fields/api/fields",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leafUserId",
+                "value": "{{leaf_user_id}}",
+                "type": "query",
+                "description": "your Leaf User id"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get all fields"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get a field",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/fields/:field_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "field_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get a field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Patch a field",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/fields/:field_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "field_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Leaf Agriculture Patch a field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Delete a field",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/fields/:field_id",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "field_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This will request to delete the field which its id is holded by variable `field-1-id`. You can specify a different\nfield by replacing `{{field-1-id}}` in the URL below."
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create a Field",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/fields",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Leaf Agriculture Create a Field"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Upload Field to Provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/fields/:field_id/integration/:provider_name",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "field_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "provider_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Upload Field to Provider"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get Fields by geometry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/fields/api/fields/query/intersects",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "docs": "If there are fields that intersect with the given geometry, they will be returned."
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get intersection of fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/fields/api/users/:leaf_user_id/fields/intersect",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "params": [
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "If there are fields that intersect with the given geometry, they will be returned."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

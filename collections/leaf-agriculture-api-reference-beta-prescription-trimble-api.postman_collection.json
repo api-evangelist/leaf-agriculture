@@ -1,0 +1,198 @@
+{
+  "item": [
+    {
+      "id": "b1096160-aaa8-4ed5-bd13-a713b49942fd",
+      "name": "API Reference > Beta > Prescription > Trimble",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "caf9726f-6650-453f-887d-059499b1cebf",
+          "name": "Leaf Agriculture Upload Trimble prescriptions",
+          "request": {
+            "name": "Leaf Agriculture Upload Trimble prescriptions",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "beta",
+                "prescription",
+                "api",
+                "users",
+                ":leaf_user_id",
+                "trimble"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "organizationId",
+                  "value": "<integer>",
+                  "description": "fill with your organizationId"
+                },
+                {
+                  "disabled": false,
+                  "key": "rateColumn",
+                  "value": "<string>",
+                  "description": "fill in the name of the rate column in the file"
+                },
+                {
+                  "disabled": false,
+                  "key": "rateUnits",
+                  "value": "<string>",
+                  "description": "fill with the following values: gal/ac, l/ha, lbs/ac, ton/ac, kg/ha, t/ha, kS/ac, kS/ha, lbs(N)/ac, kg(N)/ha, S/ha or S/ha"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cf7d7d9d-eea7-4fb5-aec2-579ab69d8b41",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "beta",
+                    "prescription",
+                    "api",
+                    "users",
+                    ":leaf_user_id",
+                    "trimble"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "organizationId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "rateColumn",
+                      "value": "columnRateName"
+                    },
+                    {
+                      "key": "rateUnits",
+                      "value": "gal/ac"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2e4d596c-0cb3-497f-b555-53253bfd4da8",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Prescription > Trimble API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

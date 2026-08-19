@@ -1,0 +1,119 @@
+# Leaf Documentation
+
+## Docs
+
+- [Leaf Documentation](https://docs.withleaf.io/index.md): Access clean, standardized, and aggregated farm data from all major agricultural sources.
+- [Welcome to Leaf](https://docs.withleaf.io/getting-started/welcome.md): Build with standardized agricultural data from John Deere, Climate FieldView, CNHi, CNHI FieldOps, Trimble, AgLeader, and other providers using Leaf.
+- [Quickstart](https://docs.withleaf.io/getting-started/quickstart.md): Get data flowing through the Leaf API in 15 minutes. Create an account, authenticate, connect a provider or upload a file, and retrieve field operations.
+- [Core Concepts](https://docs.withleaf.io/getting-started/core-concepts.md): How data flows from providers through machine file conversion into standardized field operations, and the key terminology used throughout the Leaf API.
+- [Authentication](https://docs.withleaf.io/getting-started/authentication.md): Authenticate with the Leaf API using JWT tokens. Get a token, understand expiration and renewal, and see example requests in cURL, Python, and JavaScript.
+- [Configurations](https://docs.withleaf.io/configuration/overview.md): Control how Leaf syncs, processes, and outputs field boundaries, machine files, operations, images, and irrigation at the API owner and Leaf user level.
+- [Configuration Reference](https://docs.withleaf.io/configuration/reference.md): Reference for every Leaf configuration option with defaults, allowed values, and behavior for data sync, boundaries, file conversion, operations, and images.
+- [Alerts Overview](https://docs.withleaf.io/alerts/overview.md): Set up webhook-based alerts to receive real-time notifications when Leaf processes new data, credentials change, or satellite images become available.
+- [Alert Events](https://docs.withleaf.io/alerts/events.md): Reference for current Leaf webhook event names, with representative JSON payload examples for common event families.
+- [Alert Authentication](https://docs.withleaf.io/alerts/authentication.md): Verify that incoming webhook requests are genuinely from Leaf by validating the HMAC SHA-256 signature in the X-Leaf-Signature header.
+- [Leaf Users](https://docs.withleaf.io/leaf-users/overview.md): Leaf users are the central organizing concept in the API. Each holds provider credentials, and all fields, machine files, and field operations belong to one.
+- [Provider Authentication](https://docs.withleaf.io/providers/overview.md): Connect to providers like John Deere Operations Center, Climate FieldView, CNHi, CNHI FieldOps, and Trimble through Leaf's unified credentials API.
+- [John Deere](https://docs.withleaf.io/providers/john-deere.md): Connect to John Deere Operations Center to pull field boundaries, machine files, and field operations through Leaf's provider credentials API.
+- [Climate FieldView](https://docs.withleaf.io/providers/climate-fieldview.md): Connect to Climate FieldView to pull field boundaries, machine files, and field operations through Leaf's provider credentials API.
+- [CLAAS](https://docs.withleaf.io/providers/claas.md): Connect to CLAAS to pull machine files and field operations through Leaf's provider credentials API.
+- [CNHi (AFS Connect)](https://docs.withleaf.io/providers/cnhi.md): Connect to CNHi (Case IH, New Holland) to pull field boundaries, machine files, and field operations through Leaf's provider credentials API.
+- [CNHI FieldOps](https://docs.withleaf.io/providers/cnhi-fieldops.md): Connect to CNHI FieldOps (Case IH, New Holland) to pull field boundaries, machine files, and field operations through Leaf's provider credentials API.
+- [Trimble](https://docs.withleaf.io/providers/trimble.md): Connect to Trimble Agriculture to pull field boundaries, machine files, and field operations through Leaf's provider credentials API.
+- [AgLeader](https://docs.withleaf.io/providers/agleader.md): Connect to AgLeader AgFiniti to pull machine files and field operations through Leaf's provider credentials API.
+- [Raven](https://docs.withleaf.io/providers/raven.md): Connect to Raven using OAuth 2.0 to pull grower, farm, and field data through Leaf's provider credentials API.
+- [Raven Slingshot](https://docs.withleaf.io/providers/raven-slingshot.md): Connect to Raven Slingshot to pull machine file data through Leaf's provider credentials API using API key authentication.
+- [Stara](https://docs.withleaf.io/providers/stara.md): Connect to Stara Telemetry to pull machine files and field operations through Leaf's provider credentials API.
+- [Sentera](https://docs.withleaf.io/providers/sentera.md): Connect to Sentera to pull field boundary data through Leaf's provider credentials API using username and password authentication.
+- [Agvance](https://docs.withleaf.io/providers/agvance.md): Connect to SSI Agvance to pull field boundaries, grower data, and farm structure through Leaf's provider credentials API.
+- [Precision Planting Panorama](https://docs.withleaf.io/providers/panorama.md): Connect to Precision Planting Panorama to pull field boundaries, machine files, and field operations through Leaf's provider credentials API.
+- [Lindsay](https://docs.withleaf.io/providers/lindsay.md): Connect to Lindsay FieldNET to pull irrigation activity data through Leaf's provider credentials API.
+- [Valley](https://docs.withleaf.io/providers/valley.md): Connect to Valley irrigation systems to pull irrigation activity data through Leaf's provider credentials API.
+- [Fields Overview](https://docs.withleaf.io/fields/overview.md): How Leaf organizes field data using the Grower/Farm/Field hierarchy, how boundaries work, and how fields sync from John Deere, Climate FieldView, and CNHi.
+- [Provider Organizations](https://docs.withleaf.io/providers/organizations.md): Review connected provider organizations and control which John Deere Operations Center organizations sync data for each Leaf user.
+- [Growers](https://docs.withleaf.io/fields/growers.md): How Leaf manages growers in the Grower/Farm/Field hierarchy, including provider sync from John Deere, manual creation, and the grower-farm-field relationship.
+- [Managing Fields](https://docs.withleaf.io/fields/managing-fields.md): List, create, update, delete, and sync fields through the Leaf API, including boundaries, GeoJSON, provider sync, preview mode, and intersection queries.
+- [Uploading Boundaries](https://docs.withleaf.io/fields/uploading-boundaries.md): Upload field boundaries in bulk using shapefiles, GeoJSON, or KML/KMZ files. Covers supported formats, file requirements, and tracking upload status.
+- [Machine Data Overview](https://docs.withleaf.io/machine-data/overview.md): How Leaf processes raw machine data into standardized files and merged field operations: ingestion, conversion, cleanup, and allocation to field boundaries.
+- [Uploading Files](https://docs.withleaf.io/machine-data/uploading-files.md): Upload machine files to Leaf using the batch API. Covers supported formats, ZIP requirements, and folder structure rules by equipment manufacturer.
+- [File Conversion](https://docs.withleaf.io/machine-data/file-conversion.md): How Leaf converts raw machine files into standard GeoJSON or GeoParquet, including pipeline stages, status tracking, summaries, and cleanup rules.
+- [Field Operations](https://docs.withleaf.io/machine-data/field-operations.md): How Leaf merges converted machine files into field operations: the auto-merge process, operation structure, summaries, filtered GeoJSON, and operation images.
+- [Sample Output](https://docs.withleaf.io/machine-data/sample-output.md): Example API responses for machine files, file summaries, field operations, operation summaries, images, and units for planted, harvested, applied, and tillage.
+- [Units](https://docs.withleaf.io/machine-data/units.md): Unit reference for numeric properties in Leaf machine files and field operations, organized by measurement system and operation type.
+- [Satellite Imagery Overview](https://docs.withleaf.io/satellite/overview.md): Register a field for satellite monitoring and receive processed NDVI, NDRE, and RGB images from Sentinel-2 and PlanetScope on every pass.
+- [Sentinel-2](https://docs.withleaf.io/satellite/sentinel.md): Sentinel-2 imagery through Leaf's crop monitoring: 25 images per pass, band resolutions from 10m to 60m, NDVI and NDRE output, and cloud masking.
+- [PlanetScope](https://docs.withleaf.io/satellite/planet.md): PlanetScope imagery through Leaf's crop monitoring service: available asset types, subscription handling, and Planet-specific geometry requirements.
+- [Weather Overview](https://docs.withleaf.io/weather/overview.md): Historical and forecast weather data at the field level. Covers models like GFS, ICON, and IFS, reanalysis data from ERA5, and queries by field or coordinates.
+- [Soil Sampling Overview](https://docs.withleaf.io/soil/overview.md): Upload soil samples in 30+ formats and receive normalized output with standardized analyte values, units, and extraction methods as GeoJSON or JSON.
+- [Supported Soil Formats](https://docs.withleaf.io/soil/supported-formats.md): Catalog of soil data formats accepted by Leaf Soil Sampling: shapefiles, CSVs, XML lab reports, and proprietary formats from SST, Veris, and others.
+- [Leaf Lake Overview](https://docs.withleaf.io/leaf-lake/overview.md): SQL-queryable data lake for normalized agronomic data. Query planting, harvest, application, and tillage operations alongside USDA soil data using standard SQL.
+- [Querying Leaf Lake](https://docs.withleaf.io/leaf-lake/querying.md): Schema reference and example queries for Leaf Lake: the points table for all operation types, SSURGO soil data, and state/county boundaries.
+- [Leaf Link](https://docs.withleaf.io/components/leaf-link.md): Embed Leaf Link widgets so growers can connect John Deere, Climate FieldView, CNHi, CNHI FieldOps, AgLeader, Trimble, and other accounts.
+- [Magic Link](https://docs.withleaf.io/components/magic-link.md): Generate shareable URLs that let growers connect their provider accounts or upload machine files without building a custom authentication UI.
+- [MCP Server](https://docs.withleaf.io/mcp/overview.md): Connect AI coding assistants like Cursor and Claude Code to the Leaf API using the MCP server. Query fields, operations, weather, and billing data.
+- [MCP Tools Reference](https://docs.withleaf.io/mcp/tools-reference.md): Reference for all Leaf MCP server tools in Cursor, Claude Code, and other AI assistants. Covers fields, operations, machine files, weather, billing, and users.
+- [Irrigation Overview](https://docs.withleaf.io/irrigation/overview.md): Pull irrigation data from Lindsay and Valley through the Leaf API: as-applied activities, irrigated field summaries, and equipment like pivots and sensors.
+- [Beta Features](https://docs.withleaf.io/beta/overview.md): Leaf beta features available for use but subject to change: asset management, prescription maps, custom layers, input validation, and operations planning.
+- [Assets](https://docs.withleaf.io/beta/assets.md): Manage machines, implements, and operators for a Leaf user. Track equipment from John Deere, CNHi, Trimble, and Stara, or create your own records.
+- [Prescriptions](https://docs.withleaf.io/beta/prescriptions.md): Upload prescription maps through Leaf and use provider-specific list or download endpoints where available.
+- [Layers](https://docs.withleaf.io/beta/layers.md): Retrieve imagery layers from Sentera including tassel count, stand count, NDVI, and RGB. Upload RGB layers to Climate FieldView through the Leaf API.
+- [Input Validator](https://docs.withleaf.io/beta/input-validator.md): Look up products, varieties, and tank mixes from standardized databases. Match names from machine files against known products in Agrian, CDMS, and John Deere.
+- [Operations Planning](https://docs.withleaf.io/beta/operations-planning.md): Plan and schedule field operations before they are executed. This feature is in early development and not yet available for general use.
+- [Usage Tracking](https://docs.withleaf.io/billing/overview.md): Track your Leaf API usage across field boundaries, machine file processing, field operations, and satellite imagery using contracts and consumption endpoints.
+- [Managed Service Provider](https://docs.withleaf.io/guides/by-use-case/managed-service-provider.md): Configure Leaf for managed service providers (MSPs) building agricultural data solutions for multiple client organizations with isolated data and billing.
+- [Farm Management (FMIS)](https://docs.withleaf.io/guides/by-use-case/fmis.md): Configure Leaf for farm management information systems (FMIS): field boundary syncing, operations, satellite imagery, and weather from connected providers.
+- [Crop Insurance](https://docs.withleaf.io/guides/by-use-case/crop-insurance.md): Configure Leaf for crop insurance: acreage reporting, production data validation, and claims workflows using planting and harvest field operations.
+- [Connect Leaf's MCP Server in Cursor](https://docs.withleaf.io/guides/tutorials/cursor-mcp.md): Connect Leaf's MCP server to Cursor IDE to query field data, pull harvest operations, and explore the Leaf API using natural language and tool calls.
+- [Connect Leaf's MCP Server in Claude Code](https://docs.withleaf.io/guides/tutorials/claude-code-mcp.md): Connect Leaf's MCP server to Claude Code to query Leaf users, fields, operations, and weather data from the terminal using natural language.
+- [Connect to Climate FieldView API](https://docs.withleaf.io/guides/tutorials/connect-climate-fieldview.md): Connect Climate FieldView to Leaf: register as a developer, complete the OAuth flow, and attach credentials to a Leaf user.
+- [Connect to Stara Telemetry API](https://docs.withleaf.io/guides/tutorials/connect-stara.md): Connect Stara Telemetry to Leaf. Get API credentials, obtain tokens, and attach them to a Leaf user for standardized field data.
+- [Connect to John Deere Operations Center API](https://docs.withleaf.io/guides/tutorials/connect-john-deere.md): Connect John Deere Operations Center to Leaf. Create a developer app, complete the OAuth flow, and attach credentials to a Leaf user.
+- [Connect to CNHi API (AFS Connect)](https://docs.withleaf.io/guides/tutorials/connect-cnhi.md): Connect CNHi (Case IH, New Holland) data to Leaf. Create a developer application, complete the OAuth flow, and attach credentials to a Leaf user.
+- [Connect to CNHI FieldOps API](https://docs.withleaf.io/guides/tutorials/connect-cnhi-fieldops.md): Connect CNHI FieldOps (Case IH, New Holland) data to Leaf. Create a developer application, complete the OAuth flow, and attach credentials to a Leaf user.
+- [Migrate from CNHI AFS Connect to CNHI FieldOps](https://docs.withleaf.io/guides/tutorials/migrate-cnhi-to-fieldops.md): Move your existing CNHI (AFS Connect) integration to CNHI FieldOps. Covers what changed, new credentials setup, and running both providers in parallel.
+- [Connect to AgLeader AgFiniti API](https://docs.withleaf.io/guides/tutorials/connect-agleader.md): Connect AgLeader AgFiniti to Leaf: get developer credentials, complete the OAuth flow, and attach credentials to a Leaf user.
+- [Connect to Trimble API](https://docs.withleaf.io/guides/tutorials/connect-trimble.md): Connect Trimble Agriculture data to Leaf. Register a developer application, complete the OAuth flow, and attach credentials to a Leaf user.
+- [Planning Your Integration](https://docs.withleaf.io/guides/planning/integration-planning.md): Plan your Leaf API integration: account structure, data needs, processing rules, and sync configuration decisions to make before writing code.
+- [Field Operations Quickstart](https://docs.withleaf.io/guides/tutorials/field-operations-quickstart.md): Create a Leaf user, connect a data provider, and retrieve standardized field operation data from planting, harvest, application, and tillage activities.
+- [Preparing Files for Upload](https://docs.withleaf.io/guides/planning/file-preparation.md): Prepare machine files for manual upload to Leaf. Covers folder structure, supported formats, and shapefile exports organized by equipment manufacturer.
+- [Upload and Process Machine Files](https://docs.withleaf.io/guides/tutorials/manual-file-upload.md): Upload machine files to Leaf's batch API for conversion to standardized field operations. Supports .dat, .cn1, ISOXML, .agt, .shp, and more.
+- [Get Satellite Imagery for Your Fields](https://docs.withleaf.io/guides/tutorials/satellite-imagery.md): Use Leaf's crop monitoring API to get satellite imagery for your fields. Create fields, retrieve NDVI, NDRE, and RGB images from Sentinel-2 and Planet.
+- [Integrate Leaf Data with ArcGIS](https://docs.withleaf.io/guides/tutorials/arcgis-integration.md): Use Leaf agricultural data in ArcGIS Pro and ArcGIS Enterprise. Consume field boundaries, satellite imagery, and field operation data as GIS layers.
+- [Customizing Data Sync](https://docs.withleaf.io/guides/planning/data-sync-customization.md): Control which boundaries, files, and operations Leaf syncs from providers, including organization filtering, custom data sync, and processing range options.
+- [Why Yield Values Differ Between Platforms](https://docs.withleaf.io/guides/planning/yield-differences.md): Why yield values differ between platforms even from the same harvest data, and what drives those differences in Leaf's processing pipeline.
+- [Authentication](https://docs.withleaf.io/api-reference/authentication.md): Authenticate with the Leaf API by exchanging your API owner credentials for a JWT token, then include it as a Bearer token on all subsequent requests.
+- [Configurations](https://docs.withleaf.io/api-reference/configurations.md): Manage API owner and Leaf user configurations that control provider data syncing, field operations processing, machine file conversion, and output formats.
+- [Leaf Users](https://docs.withleaf.io/api-reference/users.md): Create and manage grower accounts (Leaf users) that connect to agricultural data providers and store field, operation, and machine data through the Leaf API.
+- [Alerts API](https://docs.withleaf.io/api-reference/alerts.md): Manage webhooks for real-time notifications about field boundary changes, file processing, field operations, credential expiration, and satellite images.
+- [Provider Credentials](https://docs.withleaf.io/api-reference/providers.md): Provider credential endpoints to connect Leaf users to John Deere, Climate FieldView, CLAAS, CNHi, Trimble, AgLeader, Stara, Raven, and other providers.
+- [Sync Summary](https://docs.withleaf.io/api-reference/integrations.md): Check how many growers, farms, and fields Leaf has synced from each provider for a Leaf user. Verify connections are working and expected data came through.
+- [Provider Organizations](https://docs.withleaf.io/api-reference/organizations.md): Reference for provider organization list and sync-management endpoints on the Leaf user management API (John Deere and Trimble).
+- [Fields, Boundaries & Farms](https://docs.withleaf.io/api-reference/fields.md): Create, read, and update fields, boundaries, and farms. Run intersection queries, trigger provider syncs, and look up machine files by field.
+- [Growers](https://docs.withleaf.io/api-reference/growers.md): Create and manage grower accounts that organize farms and fields. Growers are the top-level entity grouping farm and field data for a farming operation.
+- [Field Boundary Upload](https://docs.withleaf.io/api-reference/field-upload.md): Upload field boundary files (shapefiles, GeoJSON, KML/KMZ) and track the status of each upload and its entries.
+- [Machine Files & Upload](https://docs.withleaf.io/api-reference/files.md): List, retrieve, and upload machine files from equipment monitors. Manage batch uploads and track processing status through Leaf's conversion pipeline.
+- [Field Operations](https://docs.withleaf.io/api-reference/operations.md): List and retrieve standardized field operations (planting, harvest, application, tillage) and their GeoJSON, summary, and image outputs through the Leaf API.
+- [Satellite & Crop Monitoring](https://docs.withleaf.io/api-reference/satellite.md): Register fields for satellite monitoring, retrieve NDVI, NDRE, and RGB imagery from Sentinel-2 and PlanetScope, and manage monitoring subscriptions.
+- [Weather API](https://docs.withleaf.io/api-reference/weather.md): Retrieve daily and hourly forecast and historical weather for fields or coordinates, including temperature, precipitation, wind, humidity, and solar radiation.
+- [Soil Sampling](https://docs.withleaf.io/api-reference/soil.md): Upload soil sample files, check batch status, and retrieve normalized result URLs, including GeoJSON and canonical JSON, through the Soil Sampling API.
+- [Leaf Lake](https://docs.withleaf.io/api-reference/leaf-lake.md): Execute SQL queries against your normalized agronomic data, USDA soil survey data, and state/county boundaries through the Leaf Lake query endpoint.
+- [Leaf Link](https://docs.withleaf.io/api-reference/leaf-link.md): Configure API keys and register provider applications for Leaf Link, the embeddable widget that lets growers connect their agricultural data accounts.
+- [Magic Link](https://docs.withleaf.io/api-reference/magic-link.md): Create shareable URLs that let growers authenticate with John Deere, Climate FieldView, CNHi, CNHI FieldOps, and other providers or upload machine files.
+- [MCP Tools](https://docs.withleaf.io/api-reference/mcp-tools.md): Give AI coding assistants access to Leaf users, fields, operations, machine files, weather, and billing data through the Leaf MCP server.
+- [Irrigation](https://docs.withleaf.io/api-reference/irrigation.md): Retrieve irrigation equipment, applied irrigation records, and field irrigation data from Lindsay and Valley systems through the Leaf API.
+- [Usage Monitoring endpoints](https://docs.withleaf.io/api-reference/billing.md): Monitor your usage with contracts and consumption endpoints.
+- [Beta Assets](https://docs.withleaf.io/api-reference/beta-assets.md): Manage machines, implements, and operators for a Leaf user, including provider-synced and manually created assets from John Deere, CNHi, Stara, and Trimble.
+- [Beta Prescriptions](https://docs.withleaf.io/api-reference/beta-prescriptions.md): Upload prescriptions across providers and use list or download endpoints where supported.
+- [Beta Layers](https://docs.withleaf.io/api-reference/beta-layers.md): Retrieve aerial imagery layers (tassel count, stand count, NDVI, RGB) from the Sentera integration and upload layers to Climate FieldView.
+- [Beta Input](https://docs.withleaf.io/api-reference/beta-input.md): Look up products, varieties, and tank mixes from provider databases like John Deere, Agrian, and CDMS. Match and validate inputs for field operations.
+- [Glossary](https://docs.withleaf.io/resources/glossary.md): Key terms used in the Leaf API: API owner, Leaf user, machine file, field operation, provider credentials, and other Leaf-specific terminology.
+- [Crop Reference Table](https://docs.withleaf.io/resources/crops-table.md): Reference of common crop names and standard moisture values used in Leaf harvest output.
+- [Troubleshooting](https://docs.withleaf.io/resources/troubleshooting.md): Common issues and fixes for Leaf API integrations: authentication errors, provider connection problems, file processing failures, missing data, and webhooks.
+
+## OpenAPI Specs
+
+- [openapi](https://docs.withleaf.io/openapi.yaml)
+
+## Optional
+
+- [About Us](https://withleaf.io/company)

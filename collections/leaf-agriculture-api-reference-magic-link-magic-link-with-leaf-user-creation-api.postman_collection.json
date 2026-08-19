@@ -1,0 +1,326 @@
+{
+  "item": [
+    {
+      "id": "73f510ef-0d87-41c9-bf0f-ff70e2f55b72",
+      "name": "API Reference > Magic Link > Magic Link with Leaf User Creation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9932bc4e-b3db-40d3-a539-307396d44eb6",
+          "name": "Leaf Agriculture Create a Provider Magic Link",
+          "request": {
+            "name": "Leaf Agriculture Create a Provider Magic Link",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "widgets",
+                "api",
+                "magic-link",
+                "provider"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "58360ab2-2be3-488d-961b-34a444bbaa6a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "widgets",
+                    "api",
+                    "magic-link",
+                    "provider"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"name\\\": \\\"user_name\\\",\\n  \\\"email\\\": \\\"user_email\\\",\\n  \\\"externalId\\\": \\\"external_id\\\",\\n  \\\"expiresIn\\\": 900,\\n  \\\"allowedProviders\\\": [\\n    \\\"All\\\"\\n  ],\\n  \\\"settings\\\": {\\n    \\\"backgroundColor\\\": \\\"#F5F5F5\\\",\\n    \\\"headerImage\\\": \\\"URL\\\",\\n    \\\"companyLogo\\\": \\\"URL\\\",\\n    \\\"companyName\\\": \\\"companyName\\\",\\n    \\\"showLeafUserName\\\": \\\"false\\\",\\n    \\\"disconnectEnabled\\\": \\\"false\\\"\\n  }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad3428d6-c348-4fa6-9235-497da0b0d155",
+          "name": "Leaf Agriculture Create a Authentication Magic Link",
+          "request": {
+            "name": "Leaf Agriculture Create a Authentication Magic Link",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "widgets",
+                "api",
+                "magic-link",
+                "authentication"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "11b21afb-d74e-4db6-89c0-80e16a562132",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "widgets",
+                    "api",
+                    "magic-link",
+                    "authentication"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"name\\\": \\\"user_name\\\",\\n  \\\"email\\\": \\\"user_email\\\",\\n  \\\"externalId\\\": \\\"external_id\\\",\\n  \\\"expiresIn\\\": 900,\\n  \\\"provider\\\": \\\"provider_name\\\",\\n  \\\"settings\\\": {\\n    \\\"backgroundColor\\\": \\\"#F5F5F5\\\",\\n    \\\"headerImage\\\": \\\"URL\\\",\\n    \\\"companyLogo\\\": \\\"URL\\\",\\n    \\\"companyName\\\": \\\"companyName\\\",\\n    \\\"showLeafUserName\\\": \\\"false\\\",\\n    \\\"disconnectEnabled\\\": \\\"false\\\"\\n  }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42b8e20c-3806-4fe5-9426-6405cc61760a",
+          "name": "Leaf Agriculture Create a File Upload Magic Link",
+          "request": {
+            "name": "Leaf Agriculture Create a File Upload Magic Link",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "widgets",
+                "api",
+                "magic-link",
+                "file-upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "46c92309-a13e-4016-af52-86936d5cd696",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "widgets",
+                    "api",
+                    "magic-link",
+                    "file-upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"name\\\": \\\"user_name\\\",\\n  \\\"email\\\": \\\"user_email\\\",\\n  \\\"externalId\\\": \\\"external_id\\\",\\n  \\\"expiresIn\\\": 900,\\n  \\\"settings\\\": {\\n    \\\"backgroundColor\\\": \\\"#F5F5F5\\\",\\n    \\\"headerImage\\\": \\\"URL\\\",\\n    \\\"companyLogo\\\": \\\"URL\\\",\\n    \\\"companyName\\\": \\\"companyName\\\",\\n    \\\"showLeafUserName\\\": \\\"false\\\",\\n    \\\"disconnectEnabled\\\": \\\"false\\\"\\n  }\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c44e4fd8-ca35-4b03-9781-3d04ffc94b95",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Magic Link > Magic Link with Leaf User Creation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

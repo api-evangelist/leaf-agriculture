@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Prescription > Trimble API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Beta > Prescription > Trimble",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Upload Trimble prescriptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/beta/prescription/api/users/:leaf_user_id/trimble",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "123456",
+                "type": "query",
+                "description": "fill with your organizationId"
+              },
+              {
+                "name": "rateColumn",
+                "value": "columnRateName",
+                "type": "query",
+                "description": "fill in the name of the rate column in the file"
+              },
+              {
+                "name": "rateUnits",
+                "value": "gal/ac",
+                "type": "query",
+                "description": "fill with the following values: gal/ac, l/ha, lbs/ac, ton/ac, kg/ha, t/ha, kS/ac, kS/ha, lbs(N)/ac, kg(N)/ha, S/ha or S/ha"
+              },
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Leaf Agriculture Upload Trimble prescriptions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

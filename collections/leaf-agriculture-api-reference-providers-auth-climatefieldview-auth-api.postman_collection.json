@@ -1,0 +1,252 @@
+{
+  "item": [
+    {
+      "id": "874d1be8-d7c3-4386-9d3e-3909d23c2826",
+      "name": "API Reference > Providers Auth > ClimateFieldView Auth",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8863a348-c741-413b-94dd-8743c1564241",
+          "name": "Leaf Agriculture 1. Get CFV auth URL",
+          "request": {
+            "name": "Leaf Agriculture 1. Get CFV auth URL",
+            "description": {},
+            "url": {
+              "path": [
+                "url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f842f596-8410-40d5-b70b-bf51c93d8b76",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"client_id\": \"{{cfv_client_id}}\",\n  \"redirect_uri\": \"{{cfv_redirect_url}}\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60e9a4f6-e0fd-49c6-87b9-2803a0996b81",
+          "name": "Leaf Agriculture 2. Get CFV Tokens",
+          "request": {
+            "name": "Leaf Agriculture 2. Get CFV Tokens",
+            "description": {
+              "content": "Access token (and refresh token) request as detailed on step 4 of the medium post",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "oauth",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "get code from redirect url and put here"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<string>",
+                  "description": "same as when on the url you sent to user "
+                },
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "31d65756-90ff-4760-b5a1-086d85b3256e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "oauth",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Basic base64(clientId:clientSecret)",
+                    "key": "Authorization",
+                    "value": "{{cfv_auth_header}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "get code from redirect url and put here",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "{{cfv_code}}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "same as when on the url you sent to user ",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "{{cfv_redirect_url}}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bee0c757-a21c-4cec-bbf2-2c06e7e69847",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Providers Auth > ClimateFieldView Auth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

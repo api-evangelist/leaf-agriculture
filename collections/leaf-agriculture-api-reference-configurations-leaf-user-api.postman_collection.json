@@ -1,0 +1,466 @@
+{
+  "item": [
+    {
+      "id": "dda2b6eb-d777-4077-ab1a-fd782c1c7362",
+      "name": "API Reference > Configurations > Leaf User",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e8422c94-cb26-4176-b53f-b7eb22de5259",
+          "name": "Leaf Agriculture Get leaf user config",
+          "request": {
+            "name": "Leaf Agriculture Get leaf user config",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "config",
+                "api",
+                "configs",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f5433b30-7634-4434-9495-61c6b0246297",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "config",
+                    "api",
+                    "configs",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbae05c3-b976-4ff4-9903-9ac4d48ecc07",
+          "name": "Leaf Agriculture Create leaf user config",
+          "request": {
+            "name": "Leaf Agriculture Create leaf user config",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "config",
+                "api",
+                "configs",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "4bafc3f3-fe3d-4e09-879f-a61aa0df57d4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "config",
+                    "api",
+                    "configs",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"operationsImageCreation\\\": false,\\n    \\\"geoimagesResolution\\\": 0.00001,\\n    \\\"geoimagesShape\\\": \\\"SQUARE\\\",\\n    \\\"geoimagesProjection\\\": \\\"EPSG:3857\\\",\\n    \\\"geoimagesColorRamp\\\": {\\n        \\\"0%\\\"  : [200,   0, 0],\\n        \\\"35%\\\" : [255,  40, 0],\\n        \\\"45%\\\" : [255, 150, 0],\\n        \\\"55%\\\" : [255, 240, 0],\\n        \\\"65%\\\" : [  0, 230, 0],\\n        \\\"75%\\\" : [  0, 190, 0],\\n        \\\"100%\\\": [  0, 130, 0],\\n        \\\"nv\\\"  : [  0,   0, 0, 0]\\n    },\\n    \\\"fieldsAutoSync\\\": true,\\n    \\\"fieldsAttachIntersection\\\": 0.01,\\n    \\\"fieldsMergeIntersection\\\": 0.01\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44b9deb8-69a0-497d-832c-3cbfff1e7b35",
+          "name": "Leaf Agriculture Update leaf user config",
+          "request": {
+            "name": "Leaf Agriculture Update leaf user config",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "config",
+                "api",
+                "configs",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "78f79af2-f8e9-4ef4-be1a-471a0ad0449c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "config",
+                    "api",
+                    "configs",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n    \\\"operationsImageCreation\\\": false,\\n    \\\"geoimagesResolution\\\": 0.00001,\\n    \\\"geoimagesShape\\\": \\\"ROUND\\\",\\n    \\\"geoimagesProjection\\\": \\\"EPSG:3857\\\",\\n    \\\"geoimagesColorRamp\\\": {\\n        \\\"0%\\\"  : [200,   0, 0],\\n        \\\"35%\\\" : [255,  40, 0],\\n        \\\"45%\\\" : [255, 150, 0],\\n        \\\"55%\\\" : [255, 240, 0],\\n        \\\"65%\\\" : [  0, 230, 0],\\n        \\\"75%\\\" : [  0, 190, 0],\\n        \\\"100%\\\": [  0, 130, 0],\\n        \\\"nv\\\"  : [  0,   0, 0, 0]\\n    },\\n    \\\"fieldsAutoSync\\\": true,\\n    \\\"fieldsAttachIntersection\\\": 0.01,\\n    \\\"fieldsMergeIntersection\\\": 0.01\\n}\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d204e9e1-db56-44d0-9a32-afbc3898e8fd",
+          "name": "Leaf Agriculture Delete leaf user config",
+          "request": {
+            "name": "Leaf Agriculture Delete leaf user config",
+            "description": {},
+            "url": {
+              "path": [
+                "services",
+                "config",
+                "api",
+                "configs",
+                ":leaf_user_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "leaf_user_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "076c473c-eb7f-4594-b812-df3559a75fe6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "services",
+                    "config",
+                    "api",
+                    "configs",
+                    ":leaf_user_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "leaf_user_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Authorization",
+                    "value": "Bearer {{leaf_token}}",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9fcfb28c-d996-47eb-9233-842be6b5409a",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Configurations > Leaf User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

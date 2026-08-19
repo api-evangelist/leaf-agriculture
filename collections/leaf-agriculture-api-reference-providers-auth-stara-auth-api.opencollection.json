@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Providers Auth > Stara Auth API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Providers Auth > Stara Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get Stara API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/autenticacao",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "user",
+                  "value": ""
+                },
+                {
+                  "name": "pwd",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Leaf Agriculture Get Stara API key"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get Stara Tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "accessTokenClient",
+                  "value": ""
+                },
+                {
+                  "name": "apiKey",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Leaf Agriculture Get Stara Tokens"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

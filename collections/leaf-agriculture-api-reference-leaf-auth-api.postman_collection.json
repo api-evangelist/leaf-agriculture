@@ -1,0 +1,118 @@
+{
+  "item": [
+    {
+      "id": "0c6cc91d-a185-4eb0-a40f-ae0fd295f903",
+      "name": "API Reference > Leaf Auth",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7473d308-1428-4984-a6d5-adff2d8f052c",
+          "name": "Leaf Agriculture Get your Leaf Token",
+          "request": {
+            "name": "Leaf Agriculture Get your Leaf Token",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "authenticate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "*/*"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "dbcfcff9-bf12-4b5d-81a5-68962cc54955",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "authenticate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "\"{\\n  \\\"username\\\": \\\"{{leaf_email}}\\\",\\n  \\\"password\\\": \\\"{{leaf_pass}}\\\",\\n  \\\"rememberMe\\\": true\\n}\\n// if rememberMe = \\\"true\\\", your Leaf Token lasts 30 days. If \\\"false\\\", your Leaf Token lasts 24h.\""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "47a5d9aa-f9d7-4922-8b5c-1ea91bae77c6",
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Auth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Connect API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "API Reference > Leaf Connect",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Leaf Agriculture Get API Owner sharing relation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/:sharing_relation_role",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sharing_relation_role",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get API Owner sharing relation"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get API Owner sharing relation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/:sharing_relation_role/:target_api_owner/status",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sharing_relation_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "target_api_owner",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get API Owner sharing relation status"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create an API Owner Sharing relation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/receiver",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ]
+          },
+          "docs": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header."
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Update an API Owner sharing relation status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/:sharing_relation_role/:target_api_owner",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sharing_relation_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "target_api_owner",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header."
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Get LeafUser permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/:sharing_relation_role/:target_api_owner/users-permissions/:leaf_user_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sharing_relation_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "target_api_owner",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Get LeafUser permissions"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Delete LeafUser permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/:sharing_relation_role/:target_api_owner/users-permissions/:leaf_user_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sharing_relation_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "target_api_owner",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Delete LeafUser permissions"
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Create a LeafUser permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/receiver/:receiver_api_owner/users-permissions/:leaf_user_id",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "receiver_api_owner",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header."
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Update LeafUser permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/receiver/:receiver_api_owner/users-permissions/:leaf_user_id/:sharing_relation_resource",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "receiver_api_owner",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "leaf_user_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sharing_relation_resource",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Register the URL of your webhook, specifying which events do you want to be alerted about.\n\nThe id of the resource created is returned in the Location header."
+        },
+        {
+          "info": {
+            "name": "Leaf Agriculture Invalidate receiver's tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/services/usermanagement/api/api-owners/sharing-relation/:sharing_relation_role/:target_api_owner/invalidate-tokens",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer {{leaf_token}}"
+              }
+            ],
+            "params": [
+              {
+                "name": "sharing_relation_role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "target_api_owner",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Leaf Agriculture Invalidate receiver's tokens"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
