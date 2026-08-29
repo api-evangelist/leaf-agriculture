@@ -1,0 +1,167 @@
+slug: leaf-agriculture
+provider: Leaf Agriculture
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Agriculture & Food Production
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 16
+edges:
+- tag: API Reference > Crop Monitoring
+  spec_file: leaf-agriculture-api-reference-crop-monitoring-api-openapi.yml
+  capability_id: BC-3500.70
+  capability_id_l1: BC-3500
+  capability_name: Crop Monitoring and Scouting
+  confidence: 0.9
+  evidence: '"Get images of satellite field", "Reprocess satellite images", "Create a satellite field"'
+  reason: Satellite imagery over field boundaries for crop observation is field-level crop monitoring
+    using remote sensing.
+- tag: API Reference > Field Boundary Management > Boundaries
+  spec_file: leaf-agriculture-api-reference-field-boundary-management-boundaries-api-openapi.yml
+  capability_id: BC-3540.20
+  capability_id_l1: BC-3540
+  capability_name: Field and Parcel Management
+  confidence: 0.9
+  evidence: GET /services/fields/api/users/{leaf_user_id}/fields/{field_id}/boundaries — "Get all boundaries
+    of a field"; "Update active boundary"
+  reason: Operations read and update field boundary geometry records, which is exactly field/parcel boundary
+    record management within farm land & asset management.
+- tag: API Reference > Field Boundary Management > Fields
+  spec_file: leaf-agriculture-api-reference-field-boundary-management-fields-api-openapi.yml
+  capability_id: BC-3540.20
+  capability_id_l1: BC-3540
+  capability_name: Field and Parcel Management
+  confidence: 0.9
+  evidence: '"Create a Field", "Get Fields by geometry", "Get intersection of fields"'
+  reason: Field record lifecycle and spatial field queries — field and parcel management, the core of
+    on-farm land asset records.
+- tag: API Reference > Alerts
+  spec_file: leaf-agriculture-api-reference-alerts-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.88
+  evidence: POST /services/alerts/api/alerts/webhooks Register a webhook ... DELETE /services/alerts/api/alerts/webhooks/{webhook_id}
+  reason: Despite the business-sounding tag 'Alerts', every operation manages outbound webhook subscriptions
+    for the platform's API consumers — webhook and event subscription lifecycle, a developer-platform
+    capability.
+- tag: API Reference > Beta > Machines
+  spec_file: leaf-agriculture-api-reference-beta-machines-api-openapi.yml
+  capability_id: BC-3540.30
+  capability_id_l1: BC-3540
+  capability_name: Farm Equipment Management
+  confidence: 0.85
+  evidence: '"Create Machine", "Get specific Machine", "Get all Machine Files"'
+  reason: CRUD over farm machines and their machine data files is on-farm equipment/machinery inventory
+    and telemetry management, matching Farm Equipment Management.
+- tag: API Reference > Beta > Implements
+  spec_file: leaf-agriculture-api-reference-beta-implements-api-openapi.yml
+  capability_id: BC-3540.30
+  capability_id_l1: BC-3540
+  capability_name: Farm Equipment Management
+  confidence: 0.78
+  evidence: GET /services/beta/api/users/{leaf_user_id}/implements Get All Implements
+  reason: Leaf normalises machine data from John Deere, CNHi, Climate FieldView etc.; 'implements' here
+    are on-farm machinery attachments retrieved per farm user, matching Farm Equipment Management (equipment
+    inventory and machinery telemetry).
+- tag: API Reference > Beta > Input Database > Products
+  spec_file: leaf-agriculture-api-reference-beta-input-database-products-api-openapi.yml
+  capability_id: BC-3550
+  capability_id_l1: BC-3550
+  capability_name: Agricultural Inputs Management
+  confidence: 0.7
+  evidence: Input Database > Products ... Get matching products from an operation / Get summarized products
+  reason: An agricultural Input Database exposing input products and matching them to recorded field operations
+    (application, planting). Clearly Agricultural Inputs Management at L1, but the surface does not distinguish
+    fertilizer, crop-protection or seed inputs, so no L2 is asserted.
+- tag: API Reference > Beta > Input Database > Varieties
+  spec_file: leaf-agriculture-api-reference-beta-input-database-varieties-api-openapi.yml
+  capability_id: BC-3550.10
+  capability_id_l1: BC-3550
+  capability_name: Seed and Genetic Material Management
+  confidence: 0.7
+  evidence: GET /services/beta/api/varieties Get all varieties ... Search for varieties
+  reason: Catalogue and per-user summary of crop seed varieties within Leaf's input database, matching
+    Seed and Genetic Material Management (variety/trait tracking). No advisory or recommendation logic
+    is present, so BC-3530.40 is excluded.
+- tag: API Reference > Beta > Prescription > AgLeader
+  spec_file: leaf-agriculture-api-reference-beta-prescription-agleader-api-openapi.yml
+  capability_id: BC-3530
+  capability_id_l1: BC-3530
+  capability_name: Agronomy & Farm Advisory Management
+  confidence: 0.7
+  evidence: '"Upload AgLeader prescription file"'
+  reason: Prescription files are variable-rate application prescriptions delivered to machine controllers,
+    i.e. agronomic prescription generation/distribution; the operation does not state whether the prescription
+    is nutrient, seed, or crop-protection, so no L2.
+- tag: API Reference > Beta > Prescription > CNHi
+  spec_file: leaf-agriculture-api-reference-beta-prescription-cnhi-api-openapi.yml
+  capability_id: BC-3530
+  capability_id_l1: BC-3530
+  capability_name: Agronomy & Farm Advisory Management
+  confidence: 0.7
+  evidence: '"Get CNHi prescriptions", "Upload prescription to CNHi"'
+  reason: Exchange of variable-rate field prescriptions with an FMIS/machine platform sits under agronomy
+    prescription planning; prescription type unspecified so L2 withheld.
+- tag: API Reference > Beta > Prescription > ClimateFieldView
+  spec_file: leaf-agriculture-api-reference-beta-prescription-climatefieldview-api-openapi.yml
+  capability_id: BC-3530
+  capability_id_l1: BC-3530
+  capability_name: Agronomy & Farm Advisory Management
+  confidence: 0.7
+  evidence: '"Upload ClimateFieldView prescription file"'
+  reason: Uploading variable-rate prescription files to a farm platform realises agronomic prescription
+    management; specific input type not stated.
+- tag: API Reference > Beta > Prescription > John Deere
+  spec_file: leaf-agriculture-api-reference-beta-prescription-john-deere-api-openapi.yml
+  capability_id: BC-3530
+  capability_id_l1: BC-3530
+  capability_name: Agronomy & Farm Advisory Management
+  confidence: 0.7
+  evidence: '"Upload John Deere prescription files", "Download prescription from John Deere"'
+  reason: Bidirectional exchange of field prescriptions with a machinery platform is agronomic prescription
+    generation/distribution; L2 withheld as nutrient vs crop-protection is unspecified.
+- tag: API Reference > Beta > Prescription > RavenSlingshot
+  spec_file: leaf-agriculture-api-reference-beta-prescription-ravenslingshot-api-openapi.yml
+  capability_id: BC-3530
+  capability_id_l1: BC-3530
+  capability_name: Agronomy & Farm Advisory Management
+  confidence: 0.7
+  evidence: '"Get RavenSlingshot prescription", "Upload RavenSlingshot prescription file"'
+  reason: Prescription file exchange with an application-controller platform is agronomic prescription
+    management; prescription type unspecified.
+- tag: API Reference > Beta > Prescription > Trimble
+  spec_file: leaf-agriculture-api-reference-beta-prescription-trimble-api-openapi.yml
+  capability_id: BC-3530
+  capability_id_l1: BC-3530
+  capability_name: Agronomy & Farm Advisory Management
+  confidence: 0.7
+  evidence: '"Upload Trimble prescriptions"'
+  reason: Upload of variable-rate prescriptions to precision-ag hardware platform is agronomic prescription
+    management; L2 not determinable.
+- tag: API Reference > Field Operations
+  spec_file: leaf-agriculture-api-reference-field-operations-api-openapi.yml
+  capability_id: BC-3500
+  capability_id_l1: BC-3500
+  capability_name: Crop Production Management
+  confidence: 0.7
+  evidence: '"Get an operation summary", "Get an operation''s geotiff images", "Crop operation by field"
+    — vendor description: "machine operations (planting, harvest, application, tillage)"'
+  reason: Standardised records of in-field machine operations across planting, application, tillage and
+    harvest — crop production operations data. Because it spans planting, nutrition/protection application
+    and harvest, no single L2 is named.
+- tag: API Reference > Irrigation
+  spec_file: leaf-agriculture-api-reference-irrigation-api-openapi.yml
+  capability_id: BC-3500.60
+  capability_id_l1: BC-3500
+  capability_name: Irrigation Operations
+  confidence: 0.7
+  evidence: '"Get as-applied irrigation", "Get all irrigated fields", "Get all irrigation equipment"'
+  reason: Exposes as-applied irrigation records and irrigated field status, i.e. irrigation application
+    operations; some overlap with irrigation infrastructure (equipment inventory) lowers confidence.

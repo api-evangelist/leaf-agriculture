@@ -1145,6 +1145,9 @@ apis:
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
 common:
+  - type: CapabilityMap
+    url: capabilities/leaf-agriculture-capability-edges.yml
+    name: Leaf Agriculture Business Capability Map
   - type: AgenticAccess
     url: agentic-access/leaf-agriculture-agentic-access.yml
   - type: DomainSecurity
