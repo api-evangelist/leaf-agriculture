@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Link > Provider Applications Info > Climate FieldView API
+  title: Leaf Agriculture Leaf API Reference > Leaf Link > Provider…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -27,6 +27,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiAppKeysClimateFieldView
+      x-operation-id-source: derived
   /services/usermanagement/api/app-keys/ClimateFieldView/{app_name}:
     get:
       tags:
@@ -53,6 +55,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiAppKeysClimateFieldViewByAppName
+      x-operation-id-source: derived
     post:
       tags:
       - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
@@ -87,6 +91,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiAppKeysClimateFieldViewByAppName
+      x-operation-id-source: derived
     put:
       tags:
       - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
@@ -121,6 +127,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: putServicesUsermanagementApiAppKeysClimateFieldViewByAppName
+      x-operation-id-source: derived
     delete:
       tags:
       - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
@@ -146,3 +154,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: deleteServicesUsermanagementApiAppKeysClimateFieldViewByAppName
+      x-operation-id-source: derived

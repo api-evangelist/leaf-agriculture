@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Link > API Key API
+  title: Leaf Agriculture Leaf API Reference > Leaf Link > API Key…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -32,6 +32,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiApiKeys
+      x-operation-id-source: derived
     post:
       tags:
       - API Reference > Leaf Link > API Key
@@ -58,6 +60,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiApiKeys
+      x-operation-id-source: derived
   /services/usermanagement/api/api-keys/{api_key_id}:
     delete:
       tags:
@@ -84,3 +88,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: deleteServicesUsermanagementApiApiKeysByApiKeyId
+      x-operation-id-source: derived

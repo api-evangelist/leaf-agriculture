@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Machine File Conversion API
+  title: Leaf Agriculture Leaf API Reference > Machine File…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -27,6 +27,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFiles
+      x-operation-id-source: derived
   /services/operations/api/files/{file_id}:
     get:
       tags:
@@ -53,6 +55,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFilesByFileId
+      x-operation-id-source: derived
   /services/operations/api/files/{file_id}/summary:
     get:
       tags:
@@ -79,6 +83,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFilesByFileIdSummary
+      x-operation-id-source: derived
   /services/operations/api/files/{file_id}/images:
     get:
       tags:
@@ -105,6 +111,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFilesByFileIdImages
+      x-operation-id-source: derived
   /services/operations/api/files/{file_id}/units:
     get:
       tags:
@@ -131,6 +139,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFilesByFileIdUnits
+      x-operation-id-source: derived
   /services/operations/api/files/{file_id}/status:
     get:
       tags:
@@ -157,6 +167,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFilesByFileIdStatus
+      x-operation-id-source: derived
   /services/operations/api/files/uncoveredFiles:
     get:
       tags:
@@ -183,6 +195,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiFilesUncoveredFiles
+      x-operation-id-source: derived
   /services/operations/api/batch:
     post:
       tags:
@@ -219,6 +233,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesOperationsApiBatch
+      x-operation-id-source: derived
     get:
       tags:
       - API Reference > Machine File Conversion
@@ -239,6 +255,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiBatch
+      x-operation-id-source: derived
   /services/operations/api/batch/{batch_id}:
     get:
       tags:
@@ -265,12 +283,18 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiBatchByBatchId
+      x-operation-id-source: derived
   /services/operations/api/files/merge:
     post:
       tags:
       - API Reference > Machine File Conversion
       summary: Leaf Agriculture Merge operation files
-      description: "Make sure you are merging operations of the \n- same operationType (PLANTED, HARVESTED or APPLIED)\n- same Leaf User"
+      description: 'Make sure you are merging operations of the
+
+        - same operationType (PLANTED, HARVESTED or APPLIED)
+
+        - same Leaf User'
       requestBody:
         content:
           application/json:
@@ -296,3 +320,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesOperationsApiFilesMerge
+      x-operation-id-source: derived

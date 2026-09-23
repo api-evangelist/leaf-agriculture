@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf User API
+  title: Leaf Agriculture Leaf API Reference > Leaf User API
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -27,6 +27,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiUsers
+      x-operation-id-source: derived
     put:
       tags:
       - API Reference > Leaf User
@@ -53,6 +55,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: putServicesUsermanagementApiUsers
+      x-operation-id-source: derived
     post:
       tags:
       - API Reference > Leaf User
@@ -79,6 +83,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiUsers
+      x-operation-id-source: derived
   /services/usermanagement/api/users/{leaf_user_id}:
     get:
       tags:
@@ -105,6 +111,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiUsersByLeafUserId
+      x-operation-id-source: derived
     delete:
       tags:
       - API Reference > Leaf User
@@ -130,3 +138,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: deleteServicesUsermanagementApiUsersByLeafUserId
+      x-operation-id-source: derived

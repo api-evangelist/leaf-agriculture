@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Irrigation API
+  title: Leaf Agriculture Leaf API Reference > Irrigation API
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -32,6 +32,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesIrrigationApiUsersByLeafUserIdIrrigationEquipment
+      x-operation-id-source: derived
   /services/irrigation/api/users/{leaf_user_id}/irrigation-equipment/{equipment_id}:
     get:
       tags:
@@ -63,6 +65,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesIrrigationApiUsersByLeafUserIdIrrigationEquipmentByEquipmentId
+      x-operation-id-source: derived
   /services/irrigation/api/users/{leaf_user_id}/irrigation/applied-irrigation:
     get:
       tags:
@@ -89,6 +93,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesIrrigationApiUsersByLeafUserIdIrrigationAppliedIrrigation
+      x-operation-id-source: derived
   /services/irrigation/api/users/{leaf_user_id}/irrigation/fields:
     get:
       tags:
@@ -115,6 +121,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesIrrigationApiUsersByLeafUserIdIrrigationFields
+      x-operation-id-source: derived
   /services/irrigation/api/users/{leaf_user_id}/irrigation/fields/{field_id}:
     get:
       tags:
@@ -146,3 +154,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesIrrigationApiUsersByLeafUserIdIrrigationFieldsByFieldId
+      x-operation-id-source: derived

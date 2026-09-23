@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Connect API
+  title: Leaf Agriculture Leaf API Reference > Leaf Connect API
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -32,6 +32,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiApiOwnersSharingRelationBySharingRelationRole
+      x-operation-id-source: derived
   /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/status:
     get:
       tags:
@@ -63,6 +65,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiApiOwnersSharingRelationBySharingRelationRoleByTargetApiOwnerStatus
+      x-operation-id-source: derived
   /services/usermanagement/api/api-owners/sharing-relation/receiver:
     post:
       tags:
@@ -94,6 +98,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiApiOwnersSharingRelationReceiver
+      x-operation-id-source: derived
   /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}:
     patch:
       tags:
@@ -135,6 +141,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: patchServicesUsermanagementApiApiOwnersSharingRelationBySharingRelationRoleByTargetApiOwner
+      x-operation-id-source: derived
   ? /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/users-permissions/{leaf_user_id}
   : get:
       tags:
@@ -171,6 +179,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiApiOwnersSharingRelationBySharingRelationRoleByTargetApiOwnerUsersPermissionsByLeafUserId
+      x-operation-id-source: derived
     delete:
       tags:
       - API Reference > Leaf Connect
@@ -206,6 +216,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: deleteServicesUsermanagementApiApiOwnersSharingRelationBySharingRelationRoleByTargetApiOwnerUsersPermissionsByLeafUserId
+      x-operation-id-source: derived
   /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver_api_owner}/users-permissions/{leaf_user_id}:
     post:
       tags:
@@ -247,6 +259,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiApiOwnersSharingRelationReceiverByReceiverApiOwnerUsersPermissionsByLeafUserId
+      x-operation-id-source: derived
   ? /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiver_api_owner}/users-permissions/{leaf_user_id}/{sharing_relation_resource}
   : patch:
       tags:
@@ -293,6 +307,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: patchServicesUsermanagementApiApiOwnersSharingRelationReceiverByReceiverApiOwnerUsersPermissionsByLeafUserIdBySharingRelationResource
+      x-operation-id-source: derived
   /services/usermanagement/api/api-owners/sharing-relation/{sharing_relation_role}/{target_api_owner}/invalidate-tokens:
     post:
       tags:
@@ -326,3 +342,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiApiOwnersSharingRelationBySharingRelationRoleByTargetApiOwnerInvalidateTokens
+      x-operation-id-source: derived

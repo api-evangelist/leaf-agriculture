@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Providers Auth > ClimateFieldView Auth API
+  title: Leaf Agriculture Leaf API Reference > Providers Auth >…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -24,6 +24,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postUrl
+      x-operation-id-source: derived
   /api/oauth/token:
     post:
       tags:
@@ -61,3 +63,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postApiOauthToken
+      x-operation-id-source: derived

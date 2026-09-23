@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Leaf Link > Provider Applications Info > CNHi API
+  title: Leaf Agriculture Leaf API Reference > Leaf Link > Provider…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -27,6 +27,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiAppKeysCNHI
+      x-operation-id-source: derived
   /services/usermanagement/api/app-keys/CNHI/{app_name}/{cnhi_client_environment}:
     get:
       tags:
@@ -58,6 +60,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUsermanagementApiAppKeysCNHIByAppNameByCnhiClientEnvironment
+      x-operation-id-source: derived
     post:
       tags:
       - API Reference > Leaf Link > Provider Applications Info > CNHi
@@ -97,6 +101,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUsermanagementApiAppKeysCNHIByAppNameByCnhiClientEnvironment
+      x-operation-id-source: derived
     put:
       tags:
       - API Reference > Leaf Link > Provider Applications Info > CNHi
@@ -136,6 +142,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: putServicesUsermanagementApiAppKeysCNHIByAppNameByCnhiClientEnvironment
+      x-operation-id-source: derived
     delete:
       tags:
       - API Reference > Leaf Link > Provider Applications Info > CNHi
@@ -166,3 +174,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: deleteServicesUsermanagementApiAppKeysCNHIByAppNameByCnhiClientEnvironment
+      x-operation-id-source: derived

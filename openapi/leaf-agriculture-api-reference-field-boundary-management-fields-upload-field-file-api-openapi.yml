@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Boundary Management > Fields > Upload Field File API
+  title: Leaf Agriculture Leaf API Reference > Field Boundary…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -36,6 +36,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesUploadserviceApiUpload
+      x-operation-id-source: derived
     get:
       tags:
       - API Reference > Field Boundary Management > Fields > Upload Field File
@@ -56,6 +58,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUploadserviceApiUpload
+      x-operation-id-source: derived
   /services/uploadservice/api/upload/{upload_field_id}:
     get:
       tags:
@@ -82,6 +86,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUploadserviceApiUploadByUploadFieldId
+      x-operation-id-source: derived
   /services/uploadservice/api/upload/{upload_field_id}/entries:
     get:
       tags:
@@ -108,3 +114,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesUploadserviceApiUploadByUploadFieldIdEntries
+      x-operation-id-source: derived

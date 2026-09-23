@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Field Operations API
+  title: Leaf Agriculture Leaf API Reference > Field Operations API
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -27,6 +27,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperations
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}:
     get:
       tags:
@@ -53,6 +55,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationId
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/summary:
     get:
       tags:
@@ -79,6 +83,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationIdSummary
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/filteredGeojson:
     get:
       tags:
@@ -105,6 +111,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationIdFilteredGeojson
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/standardGeojson:
     get:
       tags:
@@ -131,6 +139,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationIdStandardGeojson
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/images:
     get:
       tags:
@@ -157,6 +167,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationIdImages
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/imagesV2:
     get:
       tags:
@@ -183,6 +195,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationIdImagesV2
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/geotiffImages:
     get:
       tags:
@@ -209,6 +223,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByOperationIdGeotiffImages
+      x-operation-id-source: derived
   /services/operations/api/operations/{file_id}/units:
     get:
       tags:
@@ -235,6 +251,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesOperationsApiOperationsByFileIdUnits
+      x-operation-id-source: derived
   /services/operations/api/operations/{operation_id}/reprocess:
     post:
       tags:
@@ -253,6 +271,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesOperationsApiOperationsByOperationIdReprocess
+      x-operation-id-source: derived
   /services/operations/api/operations/CropOperationByField:
     post:
       tags:
@@ -276,3 +296,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: postServicesOperationsApiOperationsCropOperationByField
+      x-operation-id-source: derived

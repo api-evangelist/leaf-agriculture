@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: Leaf Agriculture Leaf API Reference > Alerts API Reference > Beta > Input Database > Products API
+  title: Leaf Agriculture Leaf API Reference > Beta > Input Database…
   description: We are Leaf Agriculture, provider of a unified farm data API. After experiencing the difficulty of building applications in food and agriculture first hand as software developers, and hearing similar stories of frustration with existing tools and often insurmountable technical barriers from other companies, we decided to tackle the problem at hand.
   version: 1.0.0
 tags:
@@ -27,6 +27,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesBetaApiProducts
+      x-operation-id-source: derived
   /services/beta/api/users/{leaf_user_id}/products/summary:
     get:
       tags:
@@ -53,6 +55,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesBetaApiUsersByLeafUserIdProductsSummary
+      x-operation-id-source: derived
   /services/beta/api/products/{product_id}:
     get:
       tags:
@@ -79,6 +83,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesBetaApiProductsByProductId
+      x-operation-id-source: derived
   /services/beta/api/products/matching/operations/{operation_id}:
     get:
       tags:
@@ -105,6 +111,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesBetaApiProductsMatchingOperationsByOperationId
+      x-operation-id-source: derived
   /services/beta/api/products/matching/operations/{operation_id}/matches/{match_id}:
     put:
       tags:
@@ -142,6 +150,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: putServicesBetaApiProductsMatchingOperationsByOperationIdMatchesByMatchId
+      x-operation-id-source: derived
   /services/beta/api/products/matching/operations/{operation_id}/matches/{match_id}/historical:
     get:
       tags:
@@ -173,3 +183,5 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      operationId: getServicesBetaApiProductsMatchingOperationsByOperationIdMatchesByMatchIdHistorical
+      x-operation-id-source: derived
