@@ -37,9 +37,10 @@ tags:
   - Field Boundaries
   - Machine Operations
   - Provider Integrations
-  - Unified-API
+  - Unified API
   - Weather
   - Webhook
+  - AgTech
 tags_raw:
   - Agriculture
   - Farm Data
@@ -49,6 +50,8 @@ tags_raw:
   - Unified API
   - Weather
   - Webhooks
+  - Unified-API
+  - AgTech
 url: https://raw.githubusercontent.com/api-evangelist/leaf-agriculture/refs/heads/main/apis.yml
 created: '2024-07-11'
 modified: '2026-05-19'
