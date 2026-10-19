@@ -1,0 +1,99 @@
+openapi: 3.2.0
+info:
+  title: Leaf Link > AgLeader App Keys API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Link > AgLeader App Keys
+paths:
+  /services/usermanagement/api/app-keys/AgLeader:
+    get:
+      operationId: getAllAgLeaderAppKeys
+      summary: Get all AgLeader app keys
+      tags:
+      - Leaf Link > AgLeader App Keys
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createAgLeaderAppKey
+      summary: Create AgLeader app key
+      tags:
+      - Leaf Link > AgLeader App Keys
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/app-keys/AgLeader/{appName}:
+    get:
+      operationId: getAgLeaderAppKey
+      summary: Get an AgLeader app key
+      tags:
+      - Leaf Link > AgLeader App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      operationId: updateAgLeaderAppKey
+      summary: Update AgLeader app key
+      tags:
+      - Leaf Link > AgLeader App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteAgLeaderAppKey
+      summary: Delete AgLeader app key
+      tags:
+      - Leaf Link > AgLeader App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

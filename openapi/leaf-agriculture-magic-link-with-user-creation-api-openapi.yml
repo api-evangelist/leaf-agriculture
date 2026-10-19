@@ -1,0 +1,107 @@
+openapi: 3.2.0
+info:
+  title: Leaf Magic Link > With User Creation API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Magic Link > With User Creation
+paths:
+  /services/widgets/api/magic-link/provider:
+    post:
+      operationId: createProviderMagicLinkWithUser
+      summary: Create provider magic link with user creation
+      tags:
+      - Magic Link > With User Creation
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                externalId:
+                  type: string
+                expiresIn:
+                  type: integer
+                allowedProviders:
+                  type: array
+                  items:
+                    type: string
+                settings:
+                  type: object
+      responses:
+        '201':
+          description: Created
+  /services/widgets/api/magic-link/authentication:
+    post:
+      operationId: createAuthMagicLinkWithUser
+      summary: Create auth magic link with user creation
+      tags:
+      - Magic Link > With User Creation
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                externalId:
+                  type: string
+                expiresIn:
+                  type: integer
+                provider:
+                  type: string
+                settings:
+                  type: object
+      responses:
+        '201':
+          description: Created
+  /services/widgets/api/magic-link/file-upload:
+    post:
+      operationId: createFileUploadMagicLinkWithUser
+      summary: Create file upload magic link with user creation
+      tags:
+      - Magic Link > With User Creation
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                externalId:
+                  type: string
+                expiresIn:
+                  type: integer
+                settings:
+                  type: object
+      responses:
+        '201':
+          description: Created
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

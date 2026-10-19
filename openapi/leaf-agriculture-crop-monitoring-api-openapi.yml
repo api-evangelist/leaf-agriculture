@@ -1,0 +1,219 @@
+openapi: 3.2.0
+info:
+  title: Leaf Crop Monitoring API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Crop Monitoring
+paths:
+  /services/satellite/api/fields:
+    get:
+      tags:
+      - Crop Monitoring
+      summary: Get all satellite fields
+      operationId: getAllSatelliteFields
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Crop Monitoring
+      summary: Create a satellite field
+      operationId: createSatelliteField
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assetTypes:
+                  type: array
+                  items:
+                    type: string
+                externalId:
+                  type: string
+                daysBefore:
+                  type: integer
+                geometry:
+                  type: object
+                providers:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Created
+  /services/satellite/api/fields/{externalId}:
+    get:
+      tags:
+      - Crop Monitoring
+      summary: Get a satellite field
+      operationId: getSatelliteField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: externalId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Crop Monitoring
+      summary: Delete a satellite field
+      operationId: deleteSatelliteField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: externalId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+  /services/satellite/api/fields/{externalId}/processes:
+    get:
+      tags:
+      - Crop Monitoring
+      summary: Get satellite images
+      operationId: getSatelliteImages
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: externalId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: endDate
+        in: query
+        schema:
+          type: string
+      - name: endProcessedTimestamp
+        in: query
+        schema:
+          type: string
+      - name: maxClouds
+        in: query
+        schema:
+          type: number
+      - name: minCoverage
+        in: query
+        schema:
+          type: number
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/satellite/api/fields/{externalId}/processes/{processId}:
+    get:
+      tags:
+      - Crop Monitoring
+      summary: Get a satellite image
+      operationId: getSatelliteImage
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: externalId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: processId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/satellite/api/fields/{externalId}/subscription:
+    get:
+      tags:
+      - Crop Monitoring
+      summary: Get Planet subscription
+      operationId: getPlanetSubscription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: externalId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/satellite/api/fields/{externalId}/processes/{processId}/reprocess:
+    post:
+      tags:
+      - Crop Monitoring
+      summary: Reprocess satellite images
+      operationId: reprocessSatelliteImages
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: externalId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: processId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

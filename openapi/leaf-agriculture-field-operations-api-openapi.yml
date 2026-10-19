@@ -1,0 +1,108 @@
+openapi: 3.2.0
+info:
+  title: Leaf Field Operations API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Field Operations
+paths:
+  /services/fields/api/users/{leafUserId}/fields/{fieldId}/operations/{fileId}:
+    get:
+      tags:
+      - Field Operations
+      summary: Get an operation of a field
+      operationId: getFieldOperation
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/fields/api/users/{leafUserId}/fields/{fieldId}/operations:
+    get:
+      tags:
+      - Field Operations
+      summary: Get all operations of a field
+      operationId: getAllFieldOperations
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: origin
+        in: query
+        schema:
+          type: string
+      - name: operationType
+        in: query
+        schema:
+          type: string
+      - name: operationCrop
+        in: query
+        schema:
+          type: string
+      - name: operationProvider
+        in: query
+        schema:
+          type: string
+      - name: operationStartTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: operationEndTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

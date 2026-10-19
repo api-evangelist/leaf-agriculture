@@ -1,0 +1,73 @@
+openapi: 3.2.0
+info:
+  title: Leaf Link > API Keys API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Link > API Keys
+paths:
+  /services/usermanagement/api/api-keys:
+    get:
+      operationId: getAllApiKeys
+      summary: Get all API keys
+      tags:
+      - Leaf Link > API Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createApiKey
+      summary: Create an API key
+      tags:
+      - Leaf Link > API Keys
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                leafUserId:
+                  type: string
+                expiresIn:
+                  type: integer
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/api-keys/{apiKeyId}:
+    delete:
+      operationId: revokeApiKey
+      summary: Revoke an API key
+      tags:
+      - Leaf Link > API Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: apiKeyId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

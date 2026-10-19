@@ -1,0 +1,63 @@
+openapi: 3.2.0
+info:
+  title: Leaf Authentication > Stara API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Authentication > Stara
+paths:
+  /api/oauth/stara/authenticate:
+    post:
+      tags:
+      - Authentication > Stara
+      summary: Get Stara API key
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: string
+                pwd:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthStaraAuthenticate
+      x-operation-id-source: derived
+  /api/oauth/stara/token:
+    post:
+      tags:
+      - Authentication > Stara
+      summary: Get Stara Tokens
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessTokenClient:
+                  type: string
+                apiKey:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthStaraToken
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

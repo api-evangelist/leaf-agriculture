@@ -1,0 +1,141 @@
+openapi: 3.2.0
+info:
+  title: Leaf Configurations API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Configurations
+paths:
+  /services/config/api/configs/{leafUserId}:
+    get:
+      tags:
+      - Configurations
+      summary: Get leaf user config
+      operationId: getLeafUserConfig
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+    post:
+      tags:
+      - Configurations
+      summary: Create leaf user config
+      operationId: createLeafUserConfig
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                operationsImageCreation:
+                  type: boolean
+                geoimagesResolution:
+                  type: number
+                geoimagesShape:
+                  type: string
+                geoimagesProjection:
+                  type: string
+                geoimagesColorRamp:
+                  type: object
+                fieldsAutoSync:
+                  type: boolean
+      responses:
+        '201':
+          description: Config created
+    patch:
+      tags:
+      - Configurations
+      summary: Update leaf user config
+      operationId: updateLeafUserConfig
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                operationsImageCreation:
+                  type: boolean
+                geoimagesResolution:
+                  type: number
+                geoimagesShape:
+                  type: string
+                geoimagesProjection:
+                  type: string
+                geoimagesColorRamp:
+                  type: object
+                fieldsAutoSync:
+                  type: boolean
+      responses:
+        '200':
+          description: Config updated
+    delete:
+      tags:
+      - Configurations
+      summary: Delete leaf user config
+      operationId: deleteLeafUserConfig
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Config deleted
+  /services/config/api/configs:
+    get:
+      tags:
+      - Configurations
+      summary: Get default config
+      operationId: getDefaultConfig
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+    patch:
+      tags:
+      - Configurations
+      summary: Update default config
+      operationId: updateDefaultConfig
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Config updated
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

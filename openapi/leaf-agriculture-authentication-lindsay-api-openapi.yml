@@ -1,0 +1,73 @@
+openapi: 3.2.0
+info:
+  title: Leaf Authentication > Lindsay API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Authentication > Lindsay
+paths:
+  /api/oauth/lindsay/url:
+    post:
+      tags:
+      - Authentication > Lindsay
+      summary: Get Lindsay auth URL
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientId:
+                  type: string
+                redirectUri:
+                  type: string
+                environment:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthLindsayUrl
+      x-operation-id-source: derived
+  /api/oauth/lindsay/token:
+    post:
+      tags:
+      - Authentication > Lindsay
+      summary: Get Lindsay Token
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientId:
+                  type: string
+                clientSecret:
+                  type: string
+                redirectUri:
+                  type: string
+                responseUrl:
+                  type: string
+                codeVerifier:
+                  type: string
+                environment:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthLindsayToken
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

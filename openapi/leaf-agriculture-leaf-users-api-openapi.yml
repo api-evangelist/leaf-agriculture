@@ -1,0 +1,133 @@
+openapi: 3.2.0
+info:
+  title: Leaf Users API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Users
+paths:
+  /services/usermanagement/api/users/:
+    get:
+      tags:
+      - Leaf Users
+      summary: Get all Leaf Users
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: getServicesUsermanagementApiUsers
+      x-operation-id-source: derived
+    post:
+      tags:
+      - Leaf Users
+      summary: Create a Leaf User
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                address:
+                  type: object
+                phone:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postServicesUsermanagementApiUsers
+      x-operation-id-source: derived
+    put:
+      tags:
+      - Leaf Users
+      summary: Update a Leaf User
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                email:
+                  type: string
+                address:
+                  type: object
+                phone:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: putServicesUsermanagementApiUsers
+      x-operation-id-source: derived
+  /services/usermanagement/api/users/{leafUserId}:
+    get:
+      tags:
+      - Leaf Users
+      summary: Get a Leaf User
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Successful response
+      operationId: getServicesUsermanagementApiUsersByLeafUserId
+      x-operation-id-source: derived
+    delete:
+      tags:
+      - Leaf Users
+      summary: Delete a Leaf User
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Successful response
+      operationId: deleteServicesUsermanagementApiUsersByLeafUserId
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

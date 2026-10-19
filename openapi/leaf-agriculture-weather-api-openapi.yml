@@ -1,0 +1,321 @@
+openapi: 3.2.0
+info:
+  title: Leaf Weather API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Weather
+paths:
+  /services/weather/api/users/{leafUserId}/weather/forecast/field/{fieldId}/daily:
+    get:
+      tags:
+      - Weather
+      summary: Daily forecast by field
+      operationId: getDailyForecastByField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/users/{leafUserId}/weather/forecast/field/{fieldId}/hourly:
+    get:
+      tags:
+      - Weather
+      summary: Hourly forecast by field
+      operationId: getHourlyForecastByField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/weather/forecast/daily/{lat},{lon}:
+    get:
+      tags:
+      - Weather
+      summary: Daily forecast by lat/lon
+      operationId: getDailyForecastByLatLon
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: lat
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: lon
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/weather/forecast/hourly/{lat},{lon}:
+    get:
+      tags:
+      - Weather
+      summary: Hourly forecast by lat/lon
+      operationId: getHourlyForecastByLatLon
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: lat
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: lon
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/users/{leafUserId}/weather/historical/field/{fieldId}/daily:
+    get:
+      tags:
+      - Weather
+      summary: Daily historical by field
+      operationId: getDailyHistoricalByField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/users/{leafUserId}/weather/historical/field/{fieldId}/hourly:
+    get:
+      tags:
+      - Weather
+      summary: Hourly historical by field
+      operationId: getHourlyHistoricalByField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/weather/historical/daily/{lat},{lon}:
+    get:
+      tags:
+      - Weather
+      summary: Daily historical by lat/lon
+      operationId: getDailyHistoricalByLatLon
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: lat
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: lon
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/weather/api/weather/historical/hourly/{lat},{lon}:
+    get:
+      tags:
+      - Weather
+      summary: Hourly historical by lat/lon
+      operationId: getHourlyHistoricalByLatLon
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: lat
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: lon
+        in: path
+        required: true
+        schema:
+          type: number
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: model
+        in: query
+        schema:
+          type: string
+      - name: units
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

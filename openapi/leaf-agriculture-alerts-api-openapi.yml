@@ -1,0 +1,88 @@
+openapi: 3.2.0
+info:
+  title: Leaf Alerts API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Alerts
+paths:
+  /services/alerts/api/alerts/webhooks:
+    post:
+      tags:
+      - Alerts
+      summary: Register a webhook
+      operationId: registerWebhook
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                url:
+                  type: string
+                secret:
+                  type: string
+                events:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Webhook registered
+    get:
+      tags:
+      - Alerts
+      summary: Get all webhooks
+      operationId: getAllWebhooks
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+  /services/alerts/api/alerts/webhooks/{webhookId}:
+    get:
+      tags:
+      - Alerts
+      summary: Get a webhook
+      operationId: getWebhook
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: webhookId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+    delete:
+      tags:
+      - Alerts
+      summary: Delete a webhook
+      operationId: deleteWebhook
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: webhookId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Webhook deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

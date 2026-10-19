@@ -1,0 +1,114 @@
+openapi: 3.2.0
+info:
+  title: Leaf Link > JohnDeere App Keys API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Link > JohnDeere App Keys
+paths:
+  /services/usermanagement/api/app-keys/JohnDeere:
+    get:
+      operationId: getAllJohnDeereAppKeys
+      summary: Get all JohnDeere app keys
+      tags:
+      - Leaf Link > JohnDeere App Keys
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createJohnDeereAppKey
+      summary: Create JohnDeere app key
+      tags:
+      - Leaf Link > JohnDeere App Keys
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/app-keys/JohnDeere/{appName}/{clientEnvironment}:
+    get:
+      operationId: getJohnDeereAppKey
+      summary: Get a JohnDeere app key
+      tags:
+      - Leaf Link > JohnDeere App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientEnvironment
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      operationId: updateJohnDeereAppKey
+      summary: Update JohnDeere app key
+      tags:
+      - Leaf Link > JohnDeere App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientEnvironment
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteJohnDeereAppKey
+      summary: Delete JohnDeere app key
+      tags:
+      - Leaf Link > JohnDeere App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientEnvironment
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

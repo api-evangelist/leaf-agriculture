@@ -1,0 +1,127 @@
+openapi: 3.2.0
+info:
+  title: Leaf Beta > Varieties API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Beta > Varieties
+paths:
+  /services/beta/api/varieties:
+    get:
+      tags:
+      - Beta > Varieties
+      summary: Get all varieties
+      operationId: getAllVarieties
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/varieties/{varietyId}:
+    get:
+      tags:
+      - Beta > Varieties
+      summary: Get a variety
+      operationId: getVariety
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: varietyId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/users/{leafUserId}/varieties/summary:
+    get:
+      tags:
+      - Beta > Varieties
+      summary: Get summarized varieties
+      operationId: getSummarizedVarieties
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: crops
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/varieties/search:
+    get:
+      tags:
+      - Beta > Varieties
+      summary: Search varieties
+      operationId: searchVarieties
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: crop
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

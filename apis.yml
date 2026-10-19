@@ -61,1090 +61,943 @@ created: '2024-07-11'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: leaf-agriculture:leaf-agriculture-api-reference-alerts-api
-  name: Leaf Agriculture API Reference > Alerts API
-  description: >-
-    The API Reference > Alerts API from Leaf Agriculture — 2 operation(s) for api reference > alerts.
+- aid: leaf-agriculture:leaf-agriculture-alerts-api
+  name: Leaf Agriculture Alerts API
+  description: The Alerts API from Leaf Agriculture — 2 operation(s) for alerts.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Alerts
+  - Alerts
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-alerts-api-openapi.yml
+    url: openapi/leaf-agriculture-alerts-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-implements-api
-  name: Leaf Agriculture API Reference > Beta > Implements API
-  description: >-
-    The API Reference > Beta > Implements API from Leaf Agriculture — 2 operation(s) for api reference
-    > beta > implements.
+- aid: leaf-agriculture:leaf-agriculture-authentication-api
+  name: Leaf Agriculture Authentication API
+  description: The Authentication API from Leaf Agriculture — 1 operation(s) for authentication.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Beta > Implements
+  - Authentication
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-implements-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-input-database-products-api
-  name: Leaf Agriculture API Reference > Beta > Input Database > Products API
+- aid: leaf-agriculture:leaf-agriculture-authentication-climatefieldview-api
+  name: Leaf Agriculture Authentication > ClimateFieldView API
   description: >-
-    The API Reference > Beta > Input Database > Products API from Leaf Agriculture — 6 operation(s) for
-    api reference > beta > input database > products.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Input Database > Products
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-input-database-products-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-input-database-tank-mixes-api
-  name: Leaf Agriculture API Reference > Beta > Input Database > Tank Mixes API
-  description: >-
-    The API Reference > Beta > Input Database > Tank Mixes API from Leaf Agriculture — 2 operation(s)
-    for api reference > beta > input database > tank mixes.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Input Database > Tank Mixes
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-input-database-tank-mixes-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-input-database-varieties-api
-  name: Leaf Agriculture API Reference > Beta > Input Database > Varieties API
-  description: >-
-    The API Reference > Beta > Input Database > Varieties API from Leaf Agriculture — 4 operation(s) for
-    api reference > beta > input database > varieties.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Input Database > Varieties
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-input-database-varieties-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-layers-api
-  name: Leaf Agriculture API Reference > Beta > Layers API
-  description: >-
-    The API Reference > Beta > Layers API from Leaf Agriculture — 2 operation(s) for api reference > beta
-    > layers.
+    The Authentication > ClimateFieldView API from Leaf Agriculture — 2 operation(s) for authentication
+    > climatefieldview.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Beta > Layers
+  - Authentication > ClimateFieldView
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-layers-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-climatefieldview-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-machines-api
-  name: Leaf Agriculture API Reference > Beta > Machines API
+- aid: leaf-agriculture:leaf-agriculture-authentication-cnhi-api
+  name: Leaf Agriculture Authentication > CNHi API
   description: >-
-    The API Reference > Beta > Machines API from Leaf Agriculture — 3 operation(s) for api reference >
-    beta > machines.
+    The Authentication > CNHi API from Leaf Agriculture — 2 operation(s) for authentication > cnhi.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Beta > Machines
+  - Authentication > CNHi
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-machines-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-cnhi-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-operators-api
-  name: Leaf Agriculture API Reference > Beta > Operators API
+- aid: leaf-agriculture:leaf-agriculture-authentication-johndeere-api
+  name: Leaf Agriculture Authentication > JohnDeere API
   description: >-
-    The API Reference > Beta > Operators API from Leaf Agriculture — 2 operation(s) for api reference
-    > beta > operators.
+    The Authentication > JohnDeere API from Leaf Agriculture — 2 operation(s) for authentication > johndeere.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Beta > Operators
+  - Authentication > JohnDeere
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-operators-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-johndeere-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-prescription-agleader-api
-  name: Leaf Agriculture API Reference > Beta > Prescription > AgLeader API
+- aid: leaf-agriculture:leaf-agriculture-authentication-lindsay-api
+  name: Leaf Agriculture Authentication > Lindsay API
   description: >-
-    The API Reference > Beta > Prescription > AgLeader API from Leaf Agriculture — 1 operation(s) for
-    api reference > beta > prescription > agleader.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Prescription > AgLeader
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-prescription-agleader-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-prescription-climatefieldview-api
-  name: Leaf Agriculture API Reference > Beta > Prescription > ClimateFieldView API
-  description: >-
-    The API Reference > Beta > Prescription > ClimateFieldView API from Leaf Agriculture — 1 operation(s)
-    for api reference > beta > prescription > climatefieldview.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Prescription > ClimateFieldView
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-beta-prescription-climatefieldview-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-prescription-cnhi-api
-  name: Leaf Agriculture API Reference > Beta > Prescription > CNHi API
-  description: >-
-    The API Reference > Beta > Prescription > CNHi API from Leaf Agriculture — 1 operation(s) for api
-    reference > beta > prescription > cnhi.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Prescription > CNHi
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-prescription-cnhi-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-prescription-john-deere-api
-  name: Leaf Agriculture API Reference > Beta > Prescription > John Deere API
-  description: >-
-    The API Reference > Beta > Prescription > John Deere API from Leaf Agriculture — 1 operation(s) for
-    api reference > beta > prescription > john deere.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Prescription > John Deere
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-prescription-john-deere-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-prescription-ravenslingshot-api
-  name: Leaf Agriculture API Reference > Beta > Prescription > RavenSlingshot API
-  description: >-
-    The API Reference > Beta > Prescription > RavenSlingshot API from Leaf Agriculture — 1 operation(s)
-    for api reference > beta > prescription > ravenslingshot.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Prescription > RavenSlingshot
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-prescription-ravenslingshot-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-beta-prescription-trimble-api
-  name: Leaf Agriculture API Reference > Beta > Prescription > Trimble API
-  description: >-
-    The API Reference > Beta > Prescription > Trimble API from Leaf Agriculture — 1 operation(s) for api
-    reference > beta > prescription > trimble.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Beta > Prescription > Trimble
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-beta-prescription-trimble-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-configurations-api-owner-api
-  name: Leaf Agriculture API Reference > Configurations > Api Owner API
-  description: >-
-    The API Reference > Configurations > Api Owner API from Leaf Agriculture — 1 operation(s) for api
-    reference > configurations > api owner.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Configurations > Api Owner
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-configurations-api-owner-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-configurations-leaf-user-api
-  name: Leaf Agriculture API Reference > Configurations > Leaf User API
-  description: >-
-    The API Reference > Configurations > Leaf User API from Leaf Agriculture — 1 operation(s) for api
-    reference > configurations > leaf user.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Configurations > Leaf User
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-configurations-leaf-user-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-crop-monitoring-api
-  name: Leaf Agriculture API Reference > Crop Monitoring API
-  description: >-
-    The API Reference > Crop Monitoring API from Leaf Agriculture — 6 operation(s) for api reference >
-    crop monitoring.
+    The Authentication > Lindsay API from Leaf Agriculture — 2 operation(s) for authentication > lindsay.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Crop Monitoring
+  - Authentication > Lindsay
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-crop-monitoring-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-lindsay-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-field-boundary-management-boundaries-api
-  name: Leaf Agriculture API Reference > Field Boundary Management > Boundaries API
+- aid: leaf-agriculture:leaf-agriculture-authentication-raven-api
+  name: Leaf Agriculture Authentication > Raven API
   description: >-
-    The API Reference > Field Boundary Management > Boundaries API from Leaf Agriculture — 3 operation(s)
-    for api reference > field boundary management > boundaries.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Field Boundary Management > Boundaries
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-field-boundary-management-boundaries-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-field-boundary-management-farms-api
-  name: Leaf Agriculture API Reference > Field Boundary Management > Farms API
-  description: >-
-    The API Reference > Field Boundary Management > Farms API from Leaf Agriculture — 3 operation(s) for
-    api reference > field boundary management > farms.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Field Boundary Management > Farms
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-field-boundary-management-farms-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-field-boundary-management-fields-api
-  name: Leaf Agriculture API Reference > Field Boundary Management > Fields API
-  description: >-
-    The API Reference > Field Boundary Management > Fields API from Leaf Agriculture — 6 operation(s)
-    for api reference > field boundary management > fields.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Field Boundary Management > Fields
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-field-boundary-management-fields-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file-api
-  name: >-
-    Leaf Agriculture API Reference > Field Boundary Management > Fields > Upload Field File API
-  description: >-
-    The API Reference > Field Boundary Management > Fields > Upload Field File API from Leaf Agriculture
-    — 3 operation(s) for api reference > field boundary management > fields > upload field file.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Field Boundary Management > Fields > Upload Field File
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-field-boundary-management-fields-upload-field-file-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-field-boundary-management-files-api
-  name: Leaf Agriculture API Reference > Field Boundary Management > Files API
-  description: >-
-    The API Reference > Field Boundary Management > Files API from Leaf Agriculture — 2 operation(s) for
-    api reference > field boundary management > files.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Field Boundary Management > Files
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-field-boundary-management-files-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-field-boundary-management-growers-api
-  name: Leaf Agriculture API Reference > Field Boundary Management > Growers API
-  description: >-
-    The API Reference > Field Boundary Management > Growers API from Leaf Agriculture — 4 operation(s)
-    for api reference > field boundary management > growers.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Field Boundary Management > Growers
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-field-boundary-management-growers-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-field-operations-api
-  name: Leaf Agriculture API Reference > Field Operations API
-  description: >-
-    The API Reference > Field Operations API from Leaf Agriculture — 11 operation(s) for api reference
-    > field operations.
+    The Authentication > Raven API from Leaf Agriculture — 2 operation(s) for authentication > raven.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Field Operations
+  - Authentication > Raven
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-field-operations-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-raven-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-integrations-api
-  name: Leaf Agriculture API Reference > Integrations API
+- aid: leaf-agriculture:leaf-agriculture-authentication-stara-api
+  name: Leaf Agriculture Authentication > Stara API
   description: >-
-    The API Reference > Integrations API from Leaf Agriculture — 1 operation(s) for api reference > integrations.
+    The Authentication > Stara API from Leaf Agriculture — 2 operation(s) for authentication > stara.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Integrations
+  - Authentication > Stara
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-integrations-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-stara-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-irrigation-api
-  name: Leaf Agriculture API Reference > Irrigation API
+- aid: leaf-agriculture:leaf-agriculture-authentication-trimble-api
+  name: Leaf Agriculture Authentication > Trimble API
   description: >-
-    The API Reference > Irrigation API from Leaf Agriculture — 5 operation(s) for api reference > irrigation.
+    The Authentication > Trimble API from Leaf Agriculture — 2 operation(s) for authentication > trimble.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Irrigation
+  - Authentication > Trimble
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-irrigation-api-openapi.yml
+    url: openapi/leaf-agriculture-authentication-trimble-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-auth-api
-  name: Leaf Agriculture API Reference > Leaf Auth API
-  description: >-
-    The API Reference > Leaf Auth API from Leaf Agriculture — 1 operation(s) for api reference > leaf
-    auth.
+- aid: leaf-agriculture:leaf-agriculture-beta-implements-api
+  name: Leaf Agriculture Beta > Implements API
+  description: The Beta > Implements API from Leaf Agriculture — 2 operation(s) for beta > implements.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Leaf Auth
+  - Beta > Implements
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-leaf-auth-api-openapi.yml
+    url: openapi/leaf-agriculture-beta-implements-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-connect-api
-  name: Leaf Agriculture API Reference > Leaf Connect API
-  description: >-
-    The API Reference > Leaf Connect API from Leaf Agriculture — 8 operation(s) for api reference > leaf
-    connect.
+- aid: leaf-agriculture:leaf-agriculture-beta-layers-api
+  name: Leaf Agriculture Beta > Layers API
+  description: The Beta > Layers API from Leaf Agriculture — 2 operation(s) for beta > layers.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Leaf Connect
+  - Beta > Layers
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-leaf-connect-api-openapi.yml
+    url: openapi/leaf-agriculture-beta-layers-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-link-api-key-api
-  name: Leaf Agriculture API Reference > Leaf Link > API Key API
-  description: >-
-    The API Reference > Leaf Link > API Key API from Leaf Agriculture — 2 operation(s) for api reference
-    > leaf link > api key.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > API Key
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-leaf-link-api-key-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-link-provider-applications-info-agleader-api
-  name: Leaf Agriculture API Reference > Leaf Link > Provider Applications Info > AgLeader API
-  description: >-
-    The API Reference > Leaf Link > Provider Applications Info > AgLeader API from Leaf Agriculture —
-    2 operation(s) for api reference > leaf link > provider applications info > agleader.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > Provider Applications Info > AgLeader
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-link-provider-applications-info-agleader-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview-api
-  name: >-
-    Leaf Agriculture API Reference > Leaf Link > Provider Applications Info > Climate FieldView API
-  description: >-
-    The API Reference > Leaf Link > Provider Applications Info > Climate FieldView API from Leaf Agriculture
-    — 2 operation(s) for api reference > leaf link > provider applications info > climate fieldview.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > Provider Applications Info > Climate FieldView
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-link-provider-applications-info-climate-fieldview-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi-api
-  name: Leaf Agriculture API Reference > Leaf Link > Provider Applications Info > CNHi API
-  description: >-
-    The API Reference > Leaf Link > Provider Applications Info > CNHi API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf link > provider applications info > cnhi.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > Provider Applications Info > CNHi
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-link-provider-applications-info-cnhi-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere-api
-  name: Leaf Agriculture API Reference > Leaf Link > Provider Applications Info > John Deere API
-  description: >-
-    The API Reference > Leaf Link > Provider Applications Info > John Deere API from Leaf Agriculture
-    — 2 operation(s) for api reference > leaf link > provider applications info > john deere.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > Provider Applications Info > John Deere
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-link-provider-applications-info-john-deere-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-link-provider-applications-info-raven-slingshot-api
-  name: >-
-    Leaf Agriculture API Reference > Leaf Link > Provider Applications Info > Raven Slingshot API
-  description: >-
-    The API Reference > Leaf Link > Provider Applications Info > Raven Slingshot API from Leaf Agriculture
-    — 2 operation(s) for api reference > leaf link > provider applications info > raven slingshot.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > Provider Applications Info > Raven Slingshot
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-link-provider-applications-info-raven-slingshot-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-link-provider-applications-info-trimble-api
-  name: Leaf Agriculture API Reference > Leaf Link > Provider Applications Info > Trimble API
-  description: >-
-    The API Reference > Leaf Link > Provider Applications Info > Trimble API from Leaf Agriculture — 2
-    operation(s) for api reference > leaf link > provider applications info > trimble.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf Link > Provider Applications Info > Trimble
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-link-provider-applications-info-trimble-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-user-api
-  name: Leaf Agriculture API Reference > Leaf User API
-  description: >-
-    The API Reference > Leaf User API from Leaf Agriculture — 2 operation(s) for api reference > leaf
-    user.
+- aid: leaf-agriculture:leaf-agriculture-beta-machines-api
+  name: Leaf Agriculture Beta > Machines API
+  description: The Beta > Machines API from Leaf Agriculture — 3 operation(s) for beta > machines.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Leaf User
+  - Beta > Machines
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-leaf-user-api-openapi.yml
+    url: openapi/leaf-agriculture-beta-machines-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-agleader-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > AgLeader API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > AgLeader API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > agleader.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > AgLeader
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-agleader-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-agvance-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Agvance API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Agvance API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > agvance.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Agvance
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-agvance-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-climatefieldview-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > ClimateFieldView API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > ClimateFieldView API from Leaf Agriculture
-    — 2 operation(s) for api reference > leaf user > provider credentials > climatefieldview.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > ClimateFieldView
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-climatefieldview-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-cnhi-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > CNHi API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > CNHi API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > cnhi.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > CNHi
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-cnhi-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-johndeere-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > JohnDeere API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > JohnDeere API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > johndeere.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > JohnDeere
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-johndeere-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-lindsay-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Lindsay API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Lindsay API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > lindsay.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Lindsay
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-lindsay-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-provider-organizations-list-api
-  name: >-
-    Leaf Agriculture API Reference > Leaf User > Provider Credentials > Provider Organizations List API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Provider Organizations List API from Leaf Agriculture
-    — 2 operation(s) for api reference > leaf user > provider credentials > provider organizations list.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Provider Organizations List
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-provider-organizations-list-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-raven-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Raven API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Raven API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > raven.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Raven
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-raven-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-ravenslingshot-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > RavenSlingshot API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > RavenSlingshot API from Leaf Agriculture —
-    2 operation(s) for api reference > leaf user > provider credentials > ravenslingshot.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > RavenSlingshot
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-ravenslingshot-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-sentera-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Sentera API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Sentera API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > sentera.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Sentera
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-sentera-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-stara-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Stara API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Stara API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > stara.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Stara
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-stara-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-trimble-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Trimble API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Trimble API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > trimble.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Trimble
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-trimble-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-leaf-user-provider-credentials-valley-api
-  name: Leaf Agriculture API Reference > Leaf User > Provider Credentials > Valley API
-  description: >-
-    The API Reference > Leaf User > Provider Credentials > Valley API from Leaf Agriculture — 2 operation(s)
-    for api reference > leaf user > provider credentials > valley.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Leaf User > Provider Credentials > Valley
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-leaf-user-provider-credentials-valley-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-machine-file-conversion-api
-  name: Leaf Agriculture API Reference > Machine File Conversion API
-  description: >-
-    The API Reference > Machine File Conversion API from Leaf Agriculture — 10 operation(s) for api reference
-    > machine file conversion.
+- aid: leaf-agriculture:leaf-agriculture-beta-operators-api
+  name: Leaf Agriculture Beta > Operators API
+  description: The Beta > Operators API from Leaf Agriculture — 2 operation(s) for beta > operators.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Machine File Conversion
+  - Beta > Operators
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-machine-file-conversion-api-openapi.yml
+    url: openapi/leaf-agriculture-beta-operators-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted
     url: https://docs.withleaf.io/docs/welcome
   - type: Authentication
     url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-magic-link-authentication-api
-  name: Leaf Agriculture API Reference > Magic Link > Authentication API
+- aid: leaf-agriculture:leaf-agriculture-beta-prescriptions-api
+  name: Leaf Agriculture Beta > Prescriptions API
   description: >-
-    The API Reference > Magic Link > Authentication API from Leaf Agriculture — 3 operation(s) for api
-    reference > magic link > authentication.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Magic Link > Authentication
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-magic-link-authentication-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-magic-link-file-upload-api
-  name: Leaf Agriculture API Reference > Magic Link > File Upload API
-  description: >-
-    The API Reference > Magic Link > File Upload API from Leaf Agriculture — 3 operation(s) for api reference
-    > magic link > file upload.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Magic Link > File Upload
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-magic-link-file-upload-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: >-
-    leaf-agriculture:leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation-api
-  name: Leaf Agriculture API Reference > Magic Link > Magic Link with Leaf User Creation API
-  description: >-
-    The API Reference > Magic Link > Magic Link with Leaf User Creation API from Leaf Agriculture — 3
-    operation(s) for api reference > magic link > magic link with leaf user creation.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Magic Link > Magic Link with Leaf User Creation
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-magic-link-magic-link-with-leaf-user-creation-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-magic-link-provider-api
-  name: Leaf Agriculture API Reference > Magic Link > Provider API
-  description: >-
-    The API Reference > Magic Link > Provider API from Leaf Agriculture — 3 operation(s) for api reference
-    > magic link > provider.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Magic Link > Provider
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-magic-link-provider-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-providers-auth-climatefieldview-auth-api
-  name: Leaf Agriculture API Reference > Providers Auth > ClimateFieldView Auth API
-  description: >-
-    The API Reference > Providers Auth > ClimateFieldView Auth API from Leaf Agriculture — 2 operation(s)
-    for api reference > providers auth > climatefieldview auth.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Providers Auth > ClimateFieldView Auth
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/leaf-agriculture-api-reference-providers-auth-climatefieldview-auth-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-providers-auth-lindsay-auth-api
-  name: Leaf Agriculture API Reference > Providers Auth > Lindsay Auth API
-  description: >-
-    The API Reference > Providers Auth > Lindsay Auth API from Leaf Agriculture — 2 operation(s) for api
-    reference > providers auth > lindsay auth.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Providers Auth > Lindsay Auth
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-providers-auth-lindsay-auth-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-providers-auth-stara-auth-api
-  name: Leaf Agriculture API Reference > Providers Auth > Stara Auth API
-  description: >-
-    The API Reference > Providers Auth > Stara Auth API from Leaf Agriculture — 2 operation(s) for api
-    reference > providers auth > stara auth.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Providers Auth > Stara Auth
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-providers-auth-stara-auth-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-providers-auth-trimble-auth-api
-  name: Leaf Agriculture API Reference > Providers Auth > Trimble Auth API
-  description: >-
-    The API Reference > Providers Auth > Trimble Auth API from Leaf Agriculture — 2 operation(s) for api
-    reference > providers auth > trimble auth.
-  humanURL: https://withleaf.io
-  tags: []
-  tags_raw:
-  - API Reference > Providers Auth > Trimble Auth
-  properties:
-  - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-providers-auth-trimble-auth-api-openapi.yml
-  - type: Documentation
-    url: https://docs.withleaf.io/
-  - type: GettingStarted
-    url: https://docs.withleaf.io/docs/welcome
-  - type: Authentication
-    url: https://docs.withleaf.io/docs/authentication
-- aid: leaf-agriculture:leaf-agriculture-api-reference-weather-api
-  name: Leaf Agriculture API Reference > Weather API
-  description: >-
-    The API Reference > Weather API from Leaf Agriculture — 8 operation(s) for api reference > weather.
+    The Beta > Prescriptions API from Leaf Agriculture — 6 operation(s) for beta > prescriptions.
   humanURL: https://withleaf.io
   tags:
-  - API Reference > Weather
+  - Beta > Prescriptions
   properties:
   - type: OpenAPI
-    url: openapi/leaf-agriculture-api-reference-weather-api-openapi.yml
+    url: openapi/leaf-agriculture-beta-prescriptions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-beta-products-api
+  name: Leaf Agriculture Beta > Products API
+  description: The Beta > Products API from Leaf Agriculture — 7 operation(s) for beta > products.
+  humanURL: https://withleaf.io
+  tags:
+  - Beta > Products
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-beta-products-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-beta-tank-mixes-api
+  name: Leaf Agriculture Beta > Tank Mixes API
+  description: The Beta > Tank Mixes API from Leaf Agriculture — 2 operation(s) for beta > tank mixes.
+  humanURL: https://withleaf.io
+  tags:
+  - Beta > Tank Mixes
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-beta-tank-mixes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-beta-varieties-api
+  name: Leaf Agriculture Beta > Varieties API
+  description: The Beta > Varieties API from Leaf Agriculture — 4 operation(s) for beta > varieties.
+  humanURL: https://withleaf.io
+  tags:
+  - Beta > Varieties
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-beta-varieties-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-boundaries-api
+  name: Leaf Agriculture Boundaries API
+  description: The Boundaries API from Leaf Agriculture — 3 operation(s) for boundaries.
+  humanURL: https://withleaf.io
+  tags:
+  - Boundaries
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-boundaries-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-configurations-api
+  name: Leaf Agriculture Configurations API
+  description: The Configurations API from Leaf Agriculture — 2 operation(s) for configurations.
+  humanURL: https://withleaf.io
+  tags:
+  - Configurations
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-configurations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-crop-monitoring-api
+  name: Leaf Agriculture Crop Monitoring API
+  description: The Crop Monitoring API from Leaf Agriculture — 6 operation(s) for crop monitoring.
+  humanURL: https://withleaf.io
+  tags:
+  - Crop Monitoring
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-crop-monitoring-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-farms-api
+  name: Leaf Agriculture Farms API
+  description: The Farms API from Leaf Agriculture — 3 operation(s) for farms.
+  humanURL: https://withleaf.io
+  tags:
+  - Farms
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-farms-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-field-operations-api
+  name: Leaf Agriculture Field Operations API
+  description: The Field Operations API from Leaf Agriculture — 2 operation(s) for field operations.
+  humanURL: https://withleaf.io
+  tags:
+  - Field Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-field-operations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-field-uploads-api
+  name: Leaf Agriculture Field Uploads API
+  description: The Field Uploads API from Leaf Agriculture — 3 operation(s) for field uploads.
+  humanURL: https://withleaf.io
+  tags:
+  - Field Uploads
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-field-uploads-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-fields-api
+  name: Leaf Agriculture Fields API
+  description: The Fields API from Leaf Agriculture — 6 operation(s) for fields.
+  humanURL: https://withleaf.io
+  tags:
+  - Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-fields-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-growers-api
+  name: Leaf Agriculture Growers API
+  description: The Growers API from Leaf Agriculture — 5 operation(s) for growers.
+  humanURL: https://withleaf.io
+  tags:
+  - Growers
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-growers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-integrations-api
+  name: Leaf Agriculture Integrations API
+  description: The Integrations API from Leaf Agriculture — 1 operation(s) for integrations.
+  humanURL: https://withleaf.io
+  tags:
+  - Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-integrations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-irrigation-api
+  name: Leaf Agriculture Irrigation API
+  description: The Irrigation API from Leaf Agriculture — 5 operation(s) for irrigation.
+  humanURL: https://withleaf.io
+  tags:
+  - Irrigation
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-irrigation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-connect-api
+  name: Leaf Agriculture Leaf Connect API
+  description: The Leaf Connect API from Leaf Agriculture — 8 operation(s) for leaf connect.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Connect
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-connect-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-agleader-app-keys-api
+  name: Leaf Agriculture Leaf Link > AgLeader App Keys API
+  description: >-
+    The Leaf Link > AgLeader App Keys API from Leaf Agriculture — 2 operation(s) for leaf link > agleader
+    app keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > AgLeader App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-agleader-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-api-keys-api
+  name: Leaf Agriculture Leaf Link > API Keys API
+  description: >-
+    The Leaf Link > API Keys API from Leaf Agriculture — 2 operation(s) for leaf link > api keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > API Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-api-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-climatefieldview-app-keys-api
+  name: Leaf Agriculture Leaf Link > ClimateFieldView App Keys API
+  description: >-
+    The Leaf Link > ClimateFieldView App Keys API from Leaf Agriculture — 2 operation(s) for leaf link
+    > climatefieldview app keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > ClimateFieldView App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-climatefieldview-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-cnhi-app-keys-api
+  name: Leaf Agriculture Leaf Link > CNHi App Keys API
+  description: >-
+    The Leaf Link > CNHi App Keys API from Leaf Agriculture — 2 operation(s) for leaf link > cnhi app
+    keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > CNHi App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-cnhi-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-johndeere-app-keys-api
+  name: Leaf Agriculture Leaf Link > JohnDeere App Keys API
+  description: >-
+    The Leaf Link > JohnDeere App Keys API from Leaf Agriculture — 2 operation(s) for leaf link > johndeere
+    app keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > JohnDeere App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-johndeere-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-ravenslingshot-app-keys-api
+  name: Leaf Agriculture Leaf Link > RavenSlingshot App Keys API
+  description: >-
+    The Leaf Link > RavenSlingshot App Keys API from Leaf Agriculture — 2 operation(s) for leaf link >
+    ravenslingshot app keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > RavenSlingshot App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-ravenslingshot-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-stara-app-keys-api
+  name: Leaf Agriculture Leaf Link > Stara App Keys API
+  description: >-
+    The Leaf Link > Stara App Keys API from Leaf Agriculture — 2 operation(s) for leaf link > stara app
+    keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > Stara App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-stara-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-link-trimble-app-keys-api
+  name: Leaf Agriculture Leaf Link > Trimble App Keys API
+  description: >-
+    The Leaf Link > Trimble App Keys API from Leaf Agriculture — 2 operation(s) for leaf link > trimble
+    app keys.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Link > Trimble App Keys
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-link-trimble-app-keys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-leaf-users-api
+  name: Leaf Agriculture Leaf Users API
+  description: The Leaf Users API from Leaf Agriculture — 2 operation(s) for leaf users.
+  humanURL: https://withleaf.io
+  tags:
+  - Leaf Users
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-leaf-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-machine-file-conversion-api
+  name: Leaf Agriculture Machine File Conversion API
+  description: >-
+    The Machine File Conversion API from Leaf Agriculture — 11 operation(s) for machine file conversion.
+  humanURL: https://withleaf.io
+  tags:
+  - Machine File Conversion
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-machine-file-conversion-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-magic-link-authentication-api
+  name: Leaf Agriculture Magic Link > Authentication API
+  description: >-
+    The Magic Link > Authentication API from Leaf Agriculture — 3 operation(s) for magic link > authentication.
+  humanURL: https://withleaf.io
+  tags:
+  - Magic Link > Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-magic-link-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-magic-link-file-upload-api
+  name: Leaf Agriculture Magic Link > File Upload API
+  description: >-
+    The Magic Link > File Upload API from Leaf Agriculture — 3 operation(s) for magic link > file upload.
+  humanURL: https://withleaf.io
+  tags:
+  - Magic Link > File Upload
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-magic-link-file-upload-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-magic-link-provider-api
+  name: Leaf Agriculture Magic Link > Provider API
+  description: >-
+    The Magic Link > Provider API from Leaf Agriculture — 3 operation(s) for magic link > provider.
+  humanURL: https://withleaf.io
+  tags:
+  - Magic Link > Provider
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-magic-link-provider-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-magic-link-with-user-creation-api
+  name: Leaf Agriculture Magic Link > With User Creation API
+  description: >-
+    The Magic Link > With User Creation API from Leaf Agriculture — 3 operation(s) for magic link > with
+    user creation.
+  humanURL: https://withleaf.io
+  tags:
+  - Magic Link > With User Creation
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-magic-link-with-user-creation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-operations-api
+  name: Leaf Agriculture Operations API
+  description: The Operations API from Leaf Agriculture — 11 operation(s) for operations.
+  humanURL: https://withleaf.io
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-operations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-agleader-api
+  name: Leaf Agriculture Provider Credentials > AgLeader API
+  description: >-
+    The Provider Credentials > AgLeader API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > agleader.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > AgLeader
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-agleader-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-agrimatics-api
+  name: Leaf Agriculture Provider Credentials > Agrimatics API
+  description: >-
+    The Provider Credentials > Agrimatics API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > agrimatics.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Agrimatics
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-agrimatics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-agvance-api
+  name: Leaf Agriculture Provider Credentials > Agvance API
+  description: >-
+    The Provider Credentials > Agvance API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > agvance.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Agvance
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-agvance-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-climatefieldview-api
+  name: Leaf Agriculture Provider Credentials > ClimateFieldView API
+  description: >-
+    The Provider Credentials > ClimateFieldView API from Leaf Agriculture — 2 operation(s) for provider
+    credentials > climatefieldview.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > ClimateFieldView
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-climatefieldview-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-cnhi-api
+  name: Leaf Agriculture Provider Credentials > CNHi API
+  description: >-
+    The Provider Credentials > CNHi API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > cnhi.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > CNHi
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-cnhi-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-johndeere-api
+  name: Leaf Agriculture Provider Credentials > JohnDeere API
+  description: >-
+    The Provider Credentials > JohnDeere API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > johndeere.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > JohnDeere
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-johndeere-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-lindsay-api
+  name: Leaf Agriculture Provider Credentials > Lindsay API
+  description: >-
+    The Provider Credentials > Lindsay API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > lindsay.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Lindsay
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-lindsay-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-organizations-api
+  name: Leaf Agriculture Provider Credentials > Organizations API
+  description: >-
+    The Provider Credentials > Organizations API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > organizations.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-organizations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-raven-api
+  name: Leaf Agriculture Provider Credentials > Raven API
+  description: >-
+    The Provider Credentials > Raven API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > raven.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Raven
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-raven-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-ravenslingshot-api
+  name: Leaf Agriculture Provider Credentials > RavenSlingshot API
+  description: >-
+    The Provider Credentials > RavenSlingshot API from Leaf Agriculture — 2 operation(s) for provider
+    credentials > ravenslingshot.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > RavenSlingshot
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-ravenslingshot-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-sentera-api
+  name: Leaf Agriculture Provider Credentials > Sentera API
+  description: >-
+    The Provider Credentials > Sentera API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > sentera.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Sentera
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-sentera-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-stara-api
+  name: Leaf Agriculture Provider Credentials > Stara API
+  description: >-
+    The Provider Credentials > Stara API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > stara.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Stara
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-stara-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-trimble-api
+  name: Leaf Agriculture Provider Credentials > Trimble API
+  description: >-
+    The Provider Credentials > Trimble API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > trimble.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Trimble
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-trimble-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-provider-credentials-valley-api
+  name: Leaf Agriculture Provider Credentials > Valley API
+  description: >-
+    The Provider Credentials > Valley API from Leaf Agriculture — 2 operation(s) for provider credentials
+    > valley.
+  humanURL: https://withleaf.io
+  tags:
+  - Provider Credentials > Valley
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-provider-credentials-valley-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-usage-tracking-api
+  name: Leaf Agriculture Usage Tracking API
+  description: The Usage Tracking API from Leaf Agriculture — 5 operation(s) for usage tracking.
+  humanURL: https://withleaf.io
+  tags:
+  - Usage Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-usage-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.withleaf.io/
+  - type: GettingStarted
+    url: https://docs.withleaf.io/docs/welcome
+  - type: Authentication
+    url: https://docs.withleaf.io/docs/authentication
+- aid: leaf-agriculture:leaf-agriculture-weather-api
+  name: Leaf Agriculture Weather API
+  description: The Weather API from Leaf Agriculture — 8 operation(s) for weather.
+  humanURL: https://withleaf.io
+  tags:
+  - Weather
+  properties:
+  - type: OpenAPI
+    url: openapi/leaf-agriculture-weather-api-openapi.yml
   - type: Documentation
     url: https://docs.withleaf.io/
   - type: GettingStarted

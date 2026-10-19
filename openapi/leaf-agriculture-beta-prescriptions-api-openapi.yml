@@ -1,0 +1,195 @@
+openapi: 3.2.0
+info:
+  title: Leaf Beta > Prescriptions API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Beta > Prescriptions
+paths:
+  /services/beta/prescription/api/users/{leafUserId}/ravenSlingshot:
+    get:
+      tags:
+      - Beta > Prescriptions
+      summary: Get Raven prescriptions
+      operationId: getRavenPrescriptions
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Beta > Prescriptions
+      summary: Upload Raven prescription
+      operationId: uploadRavenPrescription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/prescription/api/users/{leafUserId}/climateFieldView:
+    post:
+      tags:
+      - Beta > Prescriptions
+      summary: Upload CFV prescription
+      operationId: uploadCFVPrescription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/prescription/api/users/{leafUserId}/johnDeere:
+    post:
+      tags:
+      - Beta > Prescriptions
+      summary: Upload JD prescription
+      operationId: uploadJDPrescription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    get:
+      tags:
+      - Beta > Prescriptions
+      summary: Get JD prescriptions
+      operationId: getJDPrescriptions
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/prescription/api/users/{leafUserId}/cnhi:
+    get:
+      tags:
+      - Beta > Prescriptions
+      summary: Get CNHi prescriptions
+      operationId: getCNHiPrescriptions
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: companyId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Beta > Prescriptions
+      summary: Upload CNHi prescription
+      operationId: uploadCNHiPrescription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: companyId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/prescription/api/users/{leafUserId}/trimble:
+    post:
+      tags:
+      - Beta > Prescriptions
+      summary: Upload Trimble prescription
+      operationId: uploadTrimblePrescription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      - name: rateColumn
+        in: query
+        schema:
+          type: string
+      - name: rateUnits
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/prescription/api/users/{leafUserId}/agLeader:
+    post:
+      tags:
+      - Beta > Prescriptions
+      summary: Upload AgLeader prescription
+      operationId: uploadAgLeaderPrescription
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

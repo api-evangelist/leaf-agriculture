@@ -1,0 +1,137 @@
+openapi: 3.2.0
+info:
+  title: Leaf Growers API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Growers
+paths:
+  /services/fields/api/growers:
+    get:
+      tags:
+      - Growers
+      summary: Get all growers
+      operationId: getAllGrowers
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+  /services/fields/api/growers/{growerId}:
+    get:
+      tags:
+      - Growers
+      summary: Get a grower
+      operationId: getGrower
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: growerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/fields/api/users/{leafUserId}/growers:
+    post:
+      tags:
+      - Growers
+      summary: Create a grower
+      operationId: createGrower
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Grower created
+  /services/fields/api/users/{leafUserId}/growers/{growerId}:
+    put:
+      tags:
+      - Growers
+      summary: Update a grower
+      operationId: updateGrower
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: growerId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':
+          description: Grower updated
+  /services/fields/api/growers/enableSync:
+    post:
+      tags:
+      - Growers
+      summary: Enable preview fields by grower
+      operationId: enableSyncByGrower
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                growerIds:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Sync enabled
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

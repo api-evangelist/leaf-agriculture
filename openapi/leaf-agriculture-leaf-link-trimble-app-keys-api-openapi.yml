@@ -1,0 +1,99 @@
+openapi: 3.2.0
+info:
+  title: Leaf Link > Trimble App Keys API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Link > Trimble App Keys
+paths:
+  /services/usermanagement/api/app-keys/Trimble:
+    get:
+      operationId: getAllTrimbleAppKeys
+      summary: Get all Trimble app keys
+      tags:
+      - Leaf Link > Trimble App Keys
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createTrimbleAppKey
+      summary: Create Trimble app key
+      tags:
+      - Leaf Link > Trimble App Keys
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/app-keys/Trimble/{appName}:
+    get:
+      operationId: getTrimbleAppKey
+      summary: Get a Trimble app key
+      tags:
+      - Leaf Link > Trimble App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      operationId: updateTrimbleAppKey
+      summary: Update Trimble app key
+      tags:
+      - Leaf Link > Trimble App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteTrimbleAppKey
+      summary: Delete Trimble app key
+      tags:
+      - Leaf Link > Trimble App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

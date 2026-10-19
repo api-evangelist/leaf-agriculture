@@ -1,0 +1,282 @@
+openapi: 3.2.0
+info:
+  title: Leaf Machine File Conversion API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Machine File Conversion
+paths:
+  /services/operations/api/files:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get all files
+      operationId: getAllFiles
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: origin
+        in: query
+        schema:
+          type: string
+      - name: status
+        in: query
+        schema:
+          type: string
+      - name: createdTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: startTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: endTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: operationType
+        in: query
+        schema:
+          type: string
+      - name: minArea
+        in: query
+        schema:
+          type: number
+      - name: organizationId
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: batchId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/{fileId}:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get a file
+      operationId: getFile
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/{fileId}/images:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get file images
+      operationId: getFileImages
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/{fileId}/summary:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get file summary
+      operationId: getFileSummary
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/{fileId}/units:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get file units
+      operationId: getFileUnits
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/{fileId}/status:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get file status
+      operationId: getFileStatus
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/uncoveredFiles:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get uncovered files
+      operationId: getUncoveredFiles
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/batch:
+    post:
+      tags:
+      - Machine File Conversion
+      summary: Upload operation file
+      operationId: uploadOperationFile
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: File uploaded
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get all batches
+      operationId: getAllBatches
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/batch/{batchId}:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get batch
+      operationId: getBatch
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: batchId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/batch/{batchId}/status:
+    get:
+      tags:
+      - Machine File Conversion
+      summary: Get batch files status
+      operationId: getBatchFilesStatus
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: batchId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/files/merge:
+    post:
+      tags:
+      - Machine File Conversion
+      summary: Merge operation files
+      operationId: mergeOperationFiles
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Files merged
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

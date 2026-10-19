@@ -1,0 +1,99 @@
+openapi: 3.2.0
+info:
+  title: Leaf Link > ClimateFieldView App Keys API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Link > ClimateFieldView App Keys
+paths:
+  /services/usermanagement/api/app-keys/ClimateFieldView:
+    get:
+      operationId: getAllClimateFieldViewAppKeys
+      summary: Get all ClimateFieldView app keys
+      tags:
+      - Leaf Link > ClimateFieldView App Keys
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createClimateFieldViewAppKey
+      summary: Create ClimateFieldView app key
+      tags:
+      - Leaf Link > ClimateFieldView App Keys
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/app-keys/ClimateFieldView/{appName}:
+    get:
+      operationId: getClimateFieldViewAppKey
+      summary: Get a ClimateFieldView app key
+      tags:
+      - Leaf Link > ClimateFieldView App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      operationId: updateClimateFieldViewAppKey
+      summary: Update ClimateFieldView app key
+      tags:
+      - Leaf Link > ClimateFieldView App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteClimateFieldViewAppKey
+      summary: Delete ClimateFieldView app key
+      tags:
+      - Leaf Link > ClimateFieldView App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

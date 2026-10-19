@@ -1,0 +1,242 @@
+openapi: 3.2.0
+info:
+  title: Leaf Beta > Machines API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Beta > Machines
+paths:
+  /services/beta/api/users/{leafUserId}/machines:
+    get:
+      tags:
+      - Beta > Machines
+      summary: Get all machines
+      operationId: getAllMachines
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: providerOrganizationId
+        in: query
+        schema:
+          type: string
+      - name: serialNumber
+        in: query
+        schema:
+          type: string
+      - name: originType
+        in: query
+        schema:
+          type: string
+      - name: createdTime
+        in: query
+        schema:
+          type: string
+      - name: beforeCreatedTime
+        in: query
+        schema:
+          type: string
+      - name: afterCreatedTime
+        in: query
+        schema:
+          type: string
+      - name: vin
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Beta > Machines
+      summary: Create a machine
+      operationId: createMachine
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /services/beta/api/users/{leafUserId}/machines/{machineId}:
+    get:
+      tags:
+      - Beta > Machines
+      summary: Get a machine
+      operationId: getMachine
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - Beta > Machines
+      summary: Update a machine
+      operationId: updateMachine
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Beta > Machines
+      summary: Delete a machine
+      operationId: deleteMachine
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+  /services/beta/api/users/{leafUserId}/machines/{machineId}/files:
+    get:
+      tags:
+      - Beta > Machines
+      summary: Get machine files
+      operationId: getMachineFiles
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      - name: leafFileId
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      - name: originType
+        in: query
+        schema:
+          type: string
+      - name: createdTime
+        in: query
+        schema:
+          type: string
+      - name: beforeCreatedTime
+        in: query
+        schema:
+          type: string
+      - name: afterCreatedTime
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

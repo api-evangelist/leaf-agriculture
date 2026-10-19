@@ -1,0 +1,88 @@
+openapi: 3.2.0
+info:
+  title: Leaf Field Uploads API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Field Uploads
+paths:
+  /services/uploadservice/api/upload:
+    post:
+      tags:
+      - Field Uploads
+      summary: Upload a field file
+      operationId: uploadFieldFile
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: File uploaded
+    get:
+      tags:
+      - Field Uploads
+      summary: Get all uploads
+      operationId: getAllUploads
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+  /services/uploadservice/api/upload/{uploadId}:
+    get:
+      tags:
+      - Field Uploads
+      summary: Get an upload
+      operationId: getUpload
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: uploadId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/uploadservice/api/upload/{uploadId}/entries:
+    get:
+      tags:
+      - Field Uploads
+      summary: Get upload entries
+      operationId: getUploadEntries
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: uploadId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

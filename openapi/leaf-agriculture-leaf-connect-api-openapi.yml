@@ -1,0 +1,260 @@
+openapi: 3.2.0
+info:
+  title: Leaf Connect API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Connect
+paths:
+  /services/usermanagement/api/api-owners/sharing-relation/{sharingRelationRole}:
+    get:
+      operationId: getSharingRelation
+      summary: Get sharing relation
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sharingRelationRole
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/usermanagement/api/api-owners/sharing-relation/{sharingRelationRole}/{targetApiOwner}/status:
+    get:
+      operationId: getSharingRelationStatus
+      summary: Get sharing relation status
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sharingRelationRole
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/usermanagement/api/api-owners/sharing-relation/receiver:
+    post:
+      operationId: createSharingRelation
+      summary: Create sharing relation
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                receiverApiOwner:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/api-owners/sharing-relation/{sharingRelationRole}/{targetApiOwner}:
+    patch:
+      operationId: updateSharingRelationStatus
+      summary: Update sharing relation status
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sharingRelationRole
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+      responses:
+        '200':
+          description: OK
+  ? /services/usermanagement/api/api-owners/sharing-relation/{sharingRelationRole}/{targetApiOwner}/users-permissions/{leafUserId}
+  : get:
+      operationId: getUserPermissions
+      summary: Get user permissions
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sharingRelationRole
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteUserPermissions
+      summary: Delete user permissions
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sharingRelationRole
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+  /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiverApiOwner}/users-permissions/{leafUserId}:
+    post:
+      operationId: createUserPermissions
+      summary: Create user permissions
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: receiverApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                permissions:
+                  type: object
+                  properties:
+                    FIELDS:
+                      type: object
+                    OPERATIONS:
+                      type: object
+      responses:
+        '201':
+          description: Created
+  ? /services/usermanagement/api/api-owners/sharing-relation/receiver/{receiverApiOwner}/users-permissions/{leafUserId}/{sharingRelationResource}
+  : patch:
+      operationId: updateUserPermissions
+      summary: Update user permissions
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: receiverApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sharingRelationResource
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                actions:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: OK
+  /services/usermanagement/api/api-owners/sharing-relation/{sharingRelationRole}/{targetApiOwner}/invalidate-tokens:
+    post:
+      operationId: invalidateTokens
+      summary: Invalidate tokens
+      tags:
+      - Leaf Connect
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: sharingRelationRole
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: targetApiOwner
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,241 @@
+openapi: 3.2.0
+info:
+  title: Leaf Operations API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Operations
+paths:
+  /services/operations/api/operations:
+    get:
+      tags:
+      - Operations
+      summary: Get all operations
+      operationId: getAllOperations
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: fieldId
+        in: query
+        schema:
+          type: string
+      - name: updatedTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: startTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: endTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: operationType
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}:
+    get:
+      tags:
+      - Operations
+      summary: Get an operation
+      operationId: getOperation
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/summary:
+    get:
+      tags:
+      - Operations
+      summary: Get operation summary
+      operationId: getOperationSummary
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/filteredGeojson:
+    get:
+      tags:
+      - Operations
+      summary: Get filtered GeoJSON
+      operationId: getFilteredGeojson
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/standardGeojson:
+    get:
+      tags:
+      - Operations
+      summary: Get standard GeoJSON
+      operationId: getStandardGeojson
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/images:
+    get:
+      tags:
+      - Operations
+      summary: Get operation images
+      operationId: getOperationImages
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/imagesV2:
+    get:
+      tags:
+      - Operations
+      summary: Get operation images v2
+      operationId: getOperationImagesV2
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/geotiffImages:
+    get:
+      tags:
+      - Operations
+      summary: Get operation geotiff images
+      operationId: getOperationGeotiffImages
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/units:
+    get:
+      tags:
+      - Operations
+      summary: Get operation units
+      operationId: getOperationUnits
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/operations/api/operations/{operationId}/reprocess:
+    post:
+      tags:
+      - Operations
+      summary: Reprocess an operation
+      operationId: reprocessOperation
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Operation reprocessed
+  /services/operations/api/operations/CropOperationByField:
+    post:
+      tags:
+      - Operations
+      summary: Crop operation by field
+      operationId: cropOperationByField
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        '200':
+          description: Operation cropped
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

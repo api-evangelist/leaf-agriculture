@@ -1,0 +1,114 @@
+openapi: 3.2.0
+info:
+  title: Leaf Link > CNHi App Keys API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Leaf Link > CNHi App Keys
+paths:
+  /services/usermanagement/api/app-keys/CNHI:
+    get:
+      operationId: getAllCNHiAppKeys
+      summary: Get all CNHi app keys
+      tags:
+      - Leaf Link > CNHi App Keys
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createCNHiAppKey
+      summary: Create CNHi app key
+      tags:
+      - Leaf Link > CNHi App Keys
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created
+  /services/usermanagement/api/app-keys/CNHI/{appName}/{clientEnvironment}:
+    get:
+      operationId: getCNHiAppKey
+      summary: Get a CNHi app key
+      tags:
+      - Leaf Link > CNHi App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientEnvironment
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    put:
+      operationId: updateCNHiAppKey
+      summary: Update CNHi app key
+      tags:
+      - Leaf Link > CNHi App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientEnvironment
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteCNHiAppKey
+      summary: Delete CNHi app key
+      tags:
+      - Leaf Link > CNHi App Keys
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: appName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: clientEnvironment
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

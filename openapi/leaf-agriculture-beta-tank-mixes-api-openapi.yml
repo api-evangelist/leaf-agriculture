@@ -1,0 +1,69 @@
+openapi: 3.2.0
+info:
+  title: Leaf Beta > Tank Mixes API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Beta > Tank Mixes
+paths:
+  /services/beta/api/tankMixes:
+    get:
+      tags:
+      - Beta > Tank Mixes
+      summary: Get all tank mixes
+      operationId: getAllTankMixes
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/tankMixes/search:
+    get:
+      tags:
+      - Beta > Tank Mixes
+      summary: Search tank mixes
+      operationId: searchTankMixes
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

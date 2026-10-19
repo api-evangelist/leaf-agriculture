@@ -1,0 +1,189 @@
+openapi: 3.2.0
+info:
+  title: Leaf Beta > Products API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Beta > Products
+paths:
+  /services/beta/api/products:
+    get:
+      tags:
+      - Beta > Products
+      summary: Get all products
+      operationId: getAllProducts
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/users/{leafUserId}/products/summary:
+    get:
+      tags:
+      - Beta > Products
+      summary: Get summarized products
+      operationId: getSummarizedProducts
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: size
+        in: query
+        schema:
+          type: integer
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/products/search:
+    get:
+      tags:
+      - Beta > Products
+      summary: Search products
+      operationId: searchProducts
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/products/{productId}:
+    get:
+      tags:
+      - Beta > Products
+      summary: Get a product
+      operationId: getProduct
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/products/matching/operations/{operationId}:
+    get:
+      tags:
+      - Beta > Products
+      summary: Get matching products
+      operationId: getMatchingProducts
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/products/matching/operations/{operationId}/matches/{matchId}:
+    put:
+      tags:
+      - Beta > Products
+      summary: Update product match
+      operationId: updateProductMatch
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: matchId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/products/matching/operations/{operationId}/matches/{matchId}/historical:
+    get:
+      tags:
+      - Beta > Products
+      summary: Get match history
+      operationId: getMatchHistory
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: matchId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

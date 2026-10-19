@@ -1,0 +1,69 @@
+openapi: 3.2.0
+info:
+  title: Leaf Authentication > JohnDeere API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Authentication > JohnDeere
+paths:
+  /api/oauth/john-deere/get-url:
+    post:
+      tags:
+      - Authentication > JohnDeere
+      summary: Get John Deere auth URL
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientKey:
+                  type: string
+                clientSecret:
+                  type: string
+                clientRedirectUrl:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthJohnDeereGetUrl
+      x-operation-id-source: derived
+  /api/oauth/john-deere/get-token:
+    post:
+      tags:
+      - Authentication > JohnDeere
+      summary: Get John Deere Tokens
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientKey:
+                  type: string
+                clientSecret:
+                  type: string
+                responseUrl:
+                  type: string
+                clientRedirectUrl:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthJohnDeereGetToken
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

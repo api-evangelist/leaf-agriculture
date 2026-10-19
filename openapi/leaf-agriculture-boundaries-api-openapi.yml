@@ -1,0 +1,126 @@
+openapi: 3.2.0
+info:
+  title: Leaf Boundaries API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Boundaries
+paths:
+  /services/fields/api/users/{leafUserId}/fields/{fieldId}/boundaries:
+    get:
+      tags:
+      - Boundaries
+      summary: Get all boundaries
+      operationId: getAllBoundaries
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/fields/api/users/{leafUserId}/fields/{fieldId}/boundaries/{boundaryId}:
+    get:
+      tags:
+      - Boundaries
+      summary: Get a boundary
+      operationId: getBoundary
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: boundaryId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+  /services/fields/api/users/{leafUserId}/fields/{fieldId}/boundary:
+    get:
+      tags:
+      - Boundaries
+      summary: Get active boundary
+      operationId: getActiveBoundary
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+    put:
+      tags:
+      - Boundaries
+      summary: Update active boundary
+      operationId: updateActiveBoundary
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                geometry:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: MultiPolygon
+                    coordinates:
+                      type: array
+                      items:
+                        type: array
+      responses:
+        '200':
+          description: Boundary updated
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

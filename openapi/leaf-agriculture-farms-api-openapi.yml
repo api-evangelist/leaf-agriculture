@@ -1,0 +1,131 @@
+openapi: 3.2.0
+info:
+  title: Leaf Farms API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Farms
+paths:
+  /services/fields/api/farms:
+    get:
+      tags:
+      - Farms
+      summary: Get all farms
+      operationId: getAllFarms
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: query
+        schema:
+          type: string
+      - name: growerId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Successful response
+  /services/fields/api/users/{leafUserId}/farms/{farmId}:
+    get:
+      tags:
+      - Farms
+      summary: Get a farm
+      operationId: getFarm
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: farmId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+    put:
+      tags:
+      - Farms
+      summary: Update a farm
+      operationId: updateFarm
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: farmId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                growerId:
+                  type: string
+      responses:
+        '200':
+          description: Farm updated
+  /services/fields/api/users/{leafUserId}/farms:
+    post:
+      tags:
+      - Farms
+      summary: Create a farm
+      operationId: createFarm
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                growerId:
+                  type: string
+      responses:
+        '201':
+          description: Farm created
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

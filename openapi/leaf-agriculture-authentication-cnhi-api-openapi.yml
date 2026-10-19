@@ -1,0 +1,73 @@
+openapi: 3.2.0
+info:
+  title: Leaf Authentication > CNHi API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Authentication > CNHi
+paths:
+  /api/oauth/cnhi/get-url:
+    post:
+      tags:
+      - Authentication > CNHi
+      summary: Get CNHi auth URL
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                client_redirect_url:
+                  type: string
+                production:
+                  type: boolean
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthCnhiGetUrl
+      x-operation-id-source: derived
+  /api/oauth/cnhi/get-token:
+    post:
+      tags:
+      - Authentication > CNHi
+      summary: Get CNHi Refresh Token
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                client_redirect_url:
+                  type: string
+                response_url:
+                  type: string
+                production:
+                  type: boolean
+      responses:
+        '200':
+          description: Successful response
+      operationId: postApiOauthCnhiGetToken
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

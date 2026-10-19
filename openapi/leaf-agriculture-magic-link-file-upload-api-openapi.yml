@@ -1,0 +1,89 @@
+openapi: 3.2.0
+info:
+  title: Leaf Magic Link > File Upload API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Magic Link > File Upload
+paths:
+  /services/widgets/api/magic-link/file-upload:
+    get:
+      operationId: getAllFileUploadMagicLinks
+      summary: Get all file upload magic links
+      tags:
+      - Magic Link > File Upload
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+  /services/widgets/api/magic-link/file-upload/{magicLinkId}:
+    get:
+      operationId: getFileUploadMagicLink
+      summary: Get a file upload magic link
+      tags:
+      - Magic Link > File Upload
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: magicLinkId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteFileUploadMagicLink
+      summary: Delete file upload magic link
+      tags:
+      - Magic Link > File Upload
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: magicLinkId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content
+  /services/widgets/api/magic-link/users/{leafUserId}/file-upload:
+    post:
+      operationId: createFileUploadMagicLink
+      summary: Create file upload magic link
+      tags:
+      - Magic Link > File Upload
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                expiresIn:
+                  type: integer
+                settings:
+                  type: object
+      responses:
+        '201':
+          description: Created
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

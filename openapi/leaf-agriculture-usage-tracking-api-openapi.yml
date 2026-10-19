@@ -1,0 +1,101 @@
+openapi: 3.2.0
+info:
+  title: Leaf Usage Tracking API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Usage Tracking
+paths:
+  /services/billingapplication/api/billing/contracts:
+    get:
+      operationId: listContracts
+      summary: List contracts
+      tags:
+      - Usage Tracking
+      security:
+      - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+  /services/billingapplication/api/billing/contracts/{contractId}:
+    get:
+      operationId: getContract
+      summary: Get a contract
+      tags:
+      - Usage Tracking
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: contractId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/billingapplication/api/billing/contracts/{contractId}/consumption:
+    get:
+      operationId: getContractConsumption
+      summary: Get contract consumption
+      tags:
+      - Usage Tracking
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: contractId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/billingapplication/api/billing/contracts/{contractId}/consumption/api-owner:
+    get:
+      operationId: getConsumptionForApiOwner
+      summary: Get consumption for API owner
+      tags:
+      - Usage Tracking
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: contractId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/billingapplication/api/billing/contracts/{contractId}/consumption/leaf-user/{leafUserId}:
+    get:
+      operationId: getConsumptionForLeafUser
+      summary: Get consumption for Leaf user
+      tags:
+      - Usage Tracking
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: contractId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,160 @@
+openapi: 3.2.0
+info:
+  title: Leaf Irrigation API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Irrigation
+paths:
+  /services/irrigation/api/users/{leafUserId}/irrigation-equipment/:
+    get:
+      tags:
+      - Irrigation
+      summary: Get all irrigation equipment
+      operationId: getAllIrrigationEquipment
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: providerEquipmentId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/irrigation/api/users/{leafUserId}/irrigation-equipment/{equipmentId}:
+    get:
+      tags:
+      - Irrigation
+      summary: Get an irrigation equipment
+      operationId: getIrrigationEquipment
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: equipmentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/irrigation/api/users/{leafUserId}/irrigation/applied-irrigation:
+    get:
+      tags:
+      - Irrigation
+      summary: Get as-applied irrigation
+      operationId: getAppliedIrrigation
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/irrigation/api/users/{leafUserId}/irrigation/fields:
+    get:
+      tags:
+      - Irrigation
+      summary: Get all irrigated fields
+      operationId: getAllIrrigatedFields
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: equipmentId
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /services/irrigation/api/users/{leafUserId}/irrigation/fields/{fieldId}:
+    get:
+      tags:
+      - Irrigation
+      summary: Get an irrigated field
+      operationId: getIrrigatedField
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fieldId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: irrigationId
+        in: query
+        schema:
+          type: string
+      - name: provider
+        in: query
+        schema:
+          type: string
+      - name: startTime
+        in: query
+        schema:
+          type: string
+      - name: endTime
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

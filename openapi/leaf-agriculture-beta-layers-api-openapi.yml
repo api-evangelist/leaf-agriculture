@@ -1,0 +1,67 @@
+openapi: 3.2.0
+info:
+  title: Leaf Beta > Layers API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Beta > Layers
+paths:
+  /services/beta/api/users/{leafUserId}/layers:
+    get:
+      tags:
+      - Beta > Layers
+      summary: Get all layers
+      operationId: getAllLayers
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: size
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+  /services/beta/api/users/{leafUserId}/layers/climateFieldView:
+    post:
+      tags:
+      - Beta > Layers
+      summary: Upload layer to CFV
+      operationId: uploadLayerToCFV
+      security:
+      - bearerAuth: []
+      parameters:
+      - name: leafUserId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: uploadType
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

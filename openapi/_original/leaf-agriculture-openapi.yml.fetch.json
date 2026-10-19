@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.withleaf.io/openapi.yaml",
+ "final": "https://docs.withleaf.io/openapi.yaml",
+ "status": 200,
+ "content_type": "text/yaml",
+ "bytes": 142340,
+ "sha256": "996a726d9e69fbe5c04b08ea03525bb3bd88b66bd8ac22ac0d5cde00eb289198",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "re-archived: the provider's current document replaced a stale archive (roadmap#793); the old files are in openapi/_superseded/2026-10-19-stale"
+}

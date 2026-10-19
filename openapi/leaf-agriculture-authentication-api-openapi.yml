@@ -1,0 +1,41 @@
+openapi: 3.2.0
+info:
+  title: Leaf Authentication API
+  description: Food and Agriculture developers use Leaf's API to access clean, standardized, and aggregated Farm data from all major sources.
+  version: 1.0.0
+servers:
+- url: https://api.withleaf.io
+security:
+- bearerAuth: []
+tags:
+- name: Authentication
+paths:
+  /api/authenticate:
+    post:
+      tags:
+      - Authentication
+      summary: Get Leaf Token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+                rememberMe:
+                  type: boolean
+      responses:
+        '200':
+          description: Successful authentication
+      operationId: postApiAuthenticate
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
